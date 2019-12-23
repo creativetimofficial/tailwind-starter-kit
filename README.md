@@ -3,7 +3,7 @@
 
 ![version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/tailwind-starter-kit.svg?maxAge=2592000)</a> <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/tailwind-starter-kit.svg?maxAge=2592000)</a> <a href="https://gitter.im/creative-tim-general/Lobby" target="_blank">![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)</a> <a href="https://discord.gg/E4aHAQy" target="_blank">![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)</a>
 
-## Description
+![Tailwind Starter Kit](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/creative-tim/opt_tsp_tailwindcss_thumbnail.jpg)
 
 ### A beautiful extension for TailwindCSS.
 
