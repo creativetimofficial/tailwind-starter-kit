@@ -20,7 +20,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/compiled-tailwind.min.css"
+      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
     />
     <title>Dashboard | Tailwind Starter Kit by Creative Tim</title>
   </head>
@@ -28,7 +28,7 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
       <nav
-        class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+        class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
       >
         <div
           class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
@@ -39,14 +39,13 @@
             onclick="toggleNavbar('example-collapse-sidebar')"
           >
             <i class="fas fa-bars"></i></button
-          ><a
-            class="md:block md:text-center md:pb-4 text-gray-900 mr-0 inline-block whitespace-no-wrap text-xl"
-            href="#/"
-            ><img
-              src="./assets/img/blue.png"
-              class="max-w-full md:h-10 h-8 align-middle border-none inline-block"
-              alt="..."
-          /></a>
+          >
+          <a
+            class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
+            href="javascript:void(0)"
+          >
+            Tailwind Starter Kit
+          </a>
           <ul class="md:hidden items-center flex flex-wrap list-none">
             <li class="inline-block relative">
               <a
@@ -83,15 +82,15 @@
             </li>
             <li class="inline-block relative">
               <a
-                class="text-gray-600 block py-1 px-3"
+                class="text-gray-600 block"
                 href="#pablo"
                 onclick="openDropdown(event,'user-responsive-dropdown')"
                 ><div class="items-center flex">
                   <span
-                    class="w-8 h-8 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"
+                    class="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"
                     ><img
                       alt="..."
-                      class="w-full rounded-full align-middle border-none"
+                      class="w-full rounded-full align-middle border-none shadow-lg"
                       src="./assets/img/team-1-800x800.jpg"
                   /></span></div
               ></a>
@@ -131,12 +130,12 @@
             >
               <div class="flex flex-wrap">
                 <div class="w-6/12">
-                  <a href="#/"
-                    ><img
-                      alt="..."
-                      src="./assets/img/blue.png"
-                      class="align-middle border-none"
-                  /></a>
+                  <a
+                    class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
+                    href="javascript:void(0)"
+                  >
+                    Tailwind Starter Kit
+                  </a>
                 </div>
                 <div class="w-6/12 flex justify-end">
                   <button
@@ -159,55 +158,60 @@
               </div>
             </form>
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-              <li class="inline-flex">
+              <li class="items-center">
                 <a
-                  class="text-gray-900 text-base py-3 font-normal leading-snug"
+                  class="text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block"
                   href="#/dashboard"
-                  ><i class="fas fa-tv text-indigo-500 w-8"></i> Dashboard</a
+                  ><i class="fas fa-tv opacity-75 mr-2 text-sm"></i>
+                  Dashboard</a
                 >
               </li>
-              <li class="inline-flex">
+              <li class="items-center">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
+                  class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
                   href="#/landing"
-                  ><i class="fas fa-globe text-blue-500 w-8"></i> Lading Page</a
+                  ><i class="fas fa-newspaper text-gray-500 mr-2 text-sm"></i>
+                  Landing Page</a
                 >
               </li>
-              <li class="inline-flex">
+              <li class="items-center">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
+                  class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
                   href="#/profile"
-                  ><i class="fas fa-user text-yellow-500 w-8"></i> User
-                  Profile</a
+                  ><i class="fas fa-user-circle text-gray-500 mr-2 text-sm"></i>
+                  Profile Page</a
                 >
               </li>
-              <li class="inline-flex">
+              <li class="items-center">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
+                  class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
                   href="#/login"
-                  ><i class="fas fa-user-secret text-teal-500 w-8"></i> Login</a
+                  ><i class="fas fa-fingerprint text-gray-500 mr-2 text-sm"></i>
+                  Login</a
                 >
               </li>
-              <li class="inline-flex">
+              <li class="items-center">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug opacity-50"
+                  class="text-gray-400 text-xs uppercase py-3 font-bold block"
                   href="#pablo"
-                  ><i class="fas fa-sign-in-alt text-pink-500 w-8"></i> Register
-                  (Soon)</a
+                  ><i
+                    class="fas fa-clipboard-list text-gray-400 mr-2 text-sm"
+                  ></i>
+                  Register (soon)</a
                 >
               </li>
-              <li class="inline-flex">
+              <li class="items-center">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug opacity-50"
+                  class="text-gray-400 text-xs uppercase py-3 font-bold block"
                   href="#pablo"
-                  ><i class="fas fa-cogs text-red-500 w-8"></i> Settings
-                  (Soon)</a
+                  ><i class="fas fa-tools text-gray-400 mr-2 text-sm"></i>
+                  Settings (soon)</a
                 >
               </li>
             </ul>
             <hr class="my-4 md:min-w-full" />
             <h6
-              class="md:min-w-full py-1 uppercase text-gray-600 text-sm font-medium"
+              class="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
             >
               Documentation
             </h6>
@@ -216,44 +220,52 @@
             >
               <li class="inline-flex">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
+                  class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold"
                   href="#/documentation/styles"
-                  ><i class="fas fa-paint-brush w-8"></i> Styles</a
+                  ><i
+                    class="fas fa-paint-brush mr-2 text-gray-500 text-base"
+                  ></i>
+                  Styles</a
                 >
               </li>
               <li class="inline-flex">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
+                  class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold"
                   href="#/documentation/alerts"
-                  ><i class="fab fa-css3-alt w-8"></i> CSS</a
+                  ><i class="fab fa-css3-alt mr-2 text-gray-500 text-base"></i>
+                  CSS Components</a
                 >
               </li>
               <li class="inline-flex">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
+                  class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold"
                   href="#/documentation/vue/alerts"
-                  ><i class="fab fa-vuejs w-8"></i> VueJS</a
+                  ><i class="fab fa-vuejs mr-2 text-gray-500 text-base"></i>
+                  VueJS</a
                 >
               </li>
               <li class="inline-flex">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
-                  href="#/documentation/vue/alerts"
-                  ><i class="fab fa-react w-8"></i> React</a
+                  class="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
+                  href="#/documentation/react/alerts"
+                  ><i class="fab fa-react mr-2 text-gray-500 text-base"></i>
+                  React</a
                 >
               </li>
               <li class="inline-flex">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
-                  href="#/documentation/vue/alerts"
-                  ><i class="fab fa-angular w-8"></i> Angular</a
+                  class="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
+                  href="#/documentation/angular/alerts"
+                  ><i class="fab fa-angular mr-2 text-gray-500 text-base"></i>
+                  Angular</a
                 >
               </li>
               <li class="inline-flex">
                 <a
-                  class="text-gray-600 text-base py-3 font-normal leading-snug"
-                  href="#/documentation/vue/alerts"
-                  ><i class="fab fa-js-square w-8"></i> JavaScript</a
+                  class="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
+                  href="#/documentation/javascript/alerts"
+                  ><i class="fab fa-js-square mr-2 text-gray-500 text-base"></i>
+                  Javascript</a
                 >
               </li>
             </ul>
@@ -268,43 +280,39 @@
             class="w-full mx-autp items-center flex justify-between md:flex-no-wrap flex-wrap md:px-10 px-4"
           >
             <a
-              class="text-white uppercase hidden lg:inline-block font-semibold"
-              href="https://www.creative-tim.com/learning-lab/tailwindcss-starter-project#/dashboard"
+              class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+              href="./index.html"
               >Dashboard</a
             >
             <form
-              class="mr-3 md:flex hidden flex-row flex-wrap items-center lg:ml-auto"
+              class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
             >
               <div class="relative flex w-full flex-wrap items-stretch">
-                <div class="flex">
-                  <span
-                    class="font-normal leading-snug flex text-center white-space-no-wrap border border-solid border-gray-200 placeholder-gray-300 text-gray-100 bg-transparent rounded-full text-base items-center rounded-r-none pl-3 py-2 border-r-0"
-                    ><i class="fas fa-search"></i
-                  ></span>
-                </div>
+                <span
+                  class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+                  ><i class="fas fa-search"></i
+                ></span>
                 <input
                   type="text"
-                  placeholder="Placeholder"
-                  class="px-3 py-2 h-12 border border-solid  border-gray-200 placeholder-gray-200 text-white bg-transparent rounded-full text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal rounded-l-none flex-1 border-l-0"
+                  placeholder="Search here..."
+                  class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
                 />
               </div>
             </form>
             <ul
               class="flex-col md:flex-row list-none items-center hidden md:flex"
             >
-              <a
-                class="text-gray-600 block py-1 px-3"
-                href="#pablo"
-                onclick="openDropdown(event,'user-dropdown')"
-                ><div class="items-center flex">
+              <a class="text-gray-600 block" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
+                <div class="items-center flex">
                   <span
-                    class="w-8 h-8 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"
+                    class="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full"
                     ><img
                       alt="..."
-                      class="w-full rounded-full align-middle border-none"
+                      class="w-full rounded-full align-middle border-none shadow-lg"
                       src="./assets/img/team-1-800x800.jpg"
-                  /></span></div
-              ></a>
+                  /></span>
+                </div>
+              </a>
               <div
                 class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
                 style="min-width: 12rem;"
@@ -333,146 +341,124 @@
             </ul>
           </div>
         </nav>
-        <div class="relative bg-blue-500 md:pt-32 pb-32 pt-12">
+        <!-- Header -->
+        <div class="relative bg-pink-600 md:pt-32 pb-32 pt-12">
           <div class="px-4 md:px-10 mx-auto w-full">
             <div>
+              <!-- Card stats -->
               <div class="flex flex-wrap">
                 <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div
-                    class="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0"
-                  >
+                  <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div class="flex-auto p-4">
                       <div class="flex flex-wrap">
-                        <div
-                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
-                        >
-                          <h5
-                            class="text-gray-500 uppercase font-semibold text-xs"
-                          >
+                        <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                          <h5 class="text-gray-500 uppercase font-bold text-xs">
                             Traffic
                           </h5>
-                          <span class="font-semibold text-xl text-gray-700"
-                            >350,897</span
-                          >
+                          <span class="font-semibold text-xl text-gray-800">
+                            350,897
+                          </span>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
-                          <div
-                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500"
-                          >
+                          <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500">
                             <i class="far fa-chart-bar"></i>
                           </div>
                         </div>
                       </div>
-                      <p class="text-xs text-gray-400 mt-4 font-light">
-                        <span class="text-green-500 mr-2"
-                          ><i class="fas fa-arrow-up"></i> 3.48%</span
-                        ><span class="whitespace-no-wrap"
-                          >Since last month</span
-                        >
+                        <p class="text-sm text-gray-500 mt-4">
+                        <span class="text-green-500 mr-2">
+                          <i class="fas fa-arrow-up"></i> 3.48%
+                        </span>
+                        <span class="whitespace-no-wrap">
+                          Since last month
+                        </span>
                       </p>
                     </div>
                   </div>
                 </div>
                 <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div
-                    class="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0"
-                  >
+                  <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div class="flex-auto p-4">
                       <div class="flex flex-wrap">
-                        <div
-                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
-                        >
-                          <h5
-                            class="text-gray-500 uppercase font-semibold text-xs"
-                          >
+                        <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                          <h5 class="text-gray-500 uppercase font-bold text-xs">
                             New users
                           </h5>
-                          <span class="font-semibold text-xl text-gray-700"
-                            >2,356</span
-                          >
+                          <span class="font-semibold text-xl text-gray-800">
+                            2,356
+                          </span>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
-                          <div
-                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500"
-                          >
+                          <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500">
                             <i class="fas fa-chart-pie"></i>
                           </div>
                         </div>
                       </div>
-                      <p class="text-xs text-gray-400 mt-4 font-light">
-                        <span class="text-red-500 mr-2"
-                          ><i class="fas fa-arrow-down"></i> 3.48%</span
-                        ><span class="whitespace-no-wrap">Since last week</span>
+                      <p class="text-sm text-gray-500 mt-4">
+                        <span class="text-red-500 mr-2">
+                          <i class="fas fa-arrow-down"></i> 3.48%
+                        </span>
+                        <span class="whitespace-no-wrap">
+                          Since last week
+                        </span>
                       </p>
                     </div>
                   </div>
                 </div>
                 <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div
-                    class="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0"
-                  >
+                  <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div class="flex-auto p-4">
                       <div class="flex flex-wrap">
-                        <div
-                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
-                        >
-                          <h5
-                            class="text-gray-500 uppercase font-semibold text-xs"
-                          >
+                        <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                          <h5 class="text-gray-500 uppercase font-bold text-xs">
                             Sales
                           </h5>
-                          <span class="font-semibold text-xl text-gray-700"
-                            >924</span
-                          >
+                          <span class="font-semibold text-xl text-gray-800">
+                            924
+                          </span>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
-                          <div
-                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-yellow-500"
-                          >
+                          <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500">
                             <i class="fas fa-users"></i>
                           </div>
                         </div>
                       </div>
-                      <p class="text-xs text-gray-400 mt-4 font-light">
-                        <span class="text-orange-500 mr-2"
-                          ><i class="fas fa-arrow-down"></i> 1.10%</span
-                        ><span class="whitespace-no-wrap">Since yesterday</span>
+                      <p class="text-sm text-gray-500 mt-4">
+                        <span class="text-orange-500 mr-2">
+                          <i class="fas fa-arrow-down"></i> 1.10%
+                        </span>
+                        <span class="whitespace-no-wrap">
+                          Since yesterday
+                        </span>
                       </p>
                     </div>
                   </div>
                 </div>
                 <div class="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div
-                    class="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0"
-                  >
+                  <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div class="flex-auto p-4">
                       <div class="flex flex-wrap">
-                        <div
-                          class="relative w-full pr-4 max-w-full flex-grow flex-1"
-                        >
-                          <h5
-                            class="text-gray-500 uppercase font-semibold text-xs"
-                          >
+                        <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
+                          <h5 class="text-gray-500 uppercase font-bold text-xs">
                             Performance
                           </h5>
-                          <span class="font-semibold text-xl text-gray-700"
-                            >49,65%</span
-                          >
+                          <span class="font-semibold text-xl text-gray-800">
+                            49,65%
+                          </span>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
-                          <div
-                            class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500"
-                          >
+                          <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-blue-500">
                             <i class="fas fa-percent"></i>
                           </div>
                         </div>
                       </div>
-                      <p class="text-xs text-gray-400 mt-4 font-light">
-                        <span class="text-green-500 mr-2"
-                          ><i class="fas fa-arrow-up"></i> 12%</span
-                        ><span class="whitespace-no-wrap"
-                          >Since last month</span
-                        >
+                      <p class="text-sm text-gray-500 mt-4">
+                        <span class="text-green-500 mr-2">
+                          <i class="fas fa-arrow-up"></i> 12%
+                        </span>
+                        <span class="whitespace-no-wrap">
+                          Since last month
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -485,13 +471,11 @@
           <div class="flex flex-wrap">
             <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
               <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-indigo-900"
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-gray-900"
               >
                 <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
                   <div class="flex flex-wrap items-center">
-                    <div
-                      class="relative w-full px-4 max-w-full flex-grow flex-1"
-                    >
+                    <div class="relative w-full max-w-full flex-grow flex-1">
                       <h6
                         class="uppercase text-gray-200 mb-1 text-xs font-semibold"
                       >
@@ -503,8 +487,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="px-4 py-5 flex-auto">
-                  <div class="relative" style="height: 350px;">
+                <div class="p-4 flex-auto">
+                  <!-- Chart -->
+                  <div class="relative" style="height:350px">
                     <canvas id="line-chart"></canvas>
                   </div>
                 </div>
@@ -516,9 +501,7 @@
               >
                 <div class="rounded-t mb-0 px-4 py-3 bg-transparent">
                   <div class="flex flex-wrap items-center">
-                    <div
-                      class="relative w-full px-4 max-w-full flex-grow flex-1"
-                    >
+                    <div class="relative w-full max-w-full flex-grow flex-1">
                       <h6
                         class="uppercase text-gray-500 mb-1 text-xs font-semibold"
                       >
@@ -530,8 +513,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="px-4 py-5 flex-auto">
-                  <div class="relative" style="height: 350px;">
+                <div class="p-4 flex-auto">
+                  <!-- Chart -->
+                  <div class="relative" style="height:350px">
                     <canvas id="bar-chart"></canvas>
                   </div>
                 </div>
@@ -540,25 +524,19 @@
           </div>
           <div class="flex flex-wrap mt-4">
             <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-              <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
-              >
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
                 <div class="rounded-t mb-0 px-4 py-3 border-0">
                   <div class="flex flex-wrap items-center">
-                    <div
-                      class="relative w-full px-4 max-w-full flex-grow flex-1"
-                    >
+                    <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                       <h3 class="font-semibold text-base text-gray-800">
                         Page visits
                       </h3>
                     </div>
-                    <div
-                      class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
-                    >
+                    <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                       <button
-                        class="bg-indigo-500 text-white active:bg-indigo-600 text-sm font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+                        class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
                         type="button"
-                        style="transition: all 0.15s ease 0s;"
+                        style="transition:all .15s ease"
                       >
                         See all
                       </button>
@@ -566,147 +544,98 @@
                   </div>
                 </div>
                 <div class="block w-full overflow-x-auto">
-                  <table
-                    class="items-center w-full bg-transparent border-collapse"
-                  >
+                  <!-- Projects table -->
+                  <table class="items-center w-full bg-transparent border-collapse">
                     <thead>
                       <tr>
-                        <th
-                          class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-                        >
+                        <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                           Page name
                         </th>
-                        <th
-                          class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-                        >
+                        <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                           Visitors
                         </th>
-                        <th
-                          class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-                        >
+                        <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                           Unique users
                         </th>
-                        <th
-                          class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-                        >
+                        <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                           Bounce rate
                         </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           /argon/
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           4,569
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           340
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
-                          <i class="fas fa-arrow-up text-green-500 mr-4"></i
-                          >46,53%
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
+                          <i class="fas fa-arrow-up text-green-500 mr-4"></i>
+                          46,53%
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           /argon/index.html
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           3,985
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           319
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
-                          <i class="fas fa-arrow-down text-orange-500 mr-4"></i
-                          >46,53%
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
+                          <i class="fas fa-arrow-down text-orange-500 mr-4"></i>
+                          46,53%
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           /argon/charts.html
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           3,513
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           294
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
-                          <i class="fas fa-arrow-down text-orange-500 mr-4"></i
-                          >36,49%
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
+                          <i class="fas fa-arrow-down text-orange-500 mr-4"></i>
+                          36,49%
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           /argon/tables.html
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           2,050
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           147
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
-                          <i class="fas fa-arrow-up text-green-500 mr-4"></i
-                          >50,87%
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
+                          <i class="fas fa-arrow-up text-green-500 mr-4"></i>
+                          50,87%
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           /argon/profile.html
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           1,795
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           190
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
-                          <i class="fas fa-arrow-down text-red-500 mr-4"></i
-                          >46,53%
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
+                          <i class="fas fa-arrow-down text-red-500 mr-4"></i>
+                          46,53%
                         </td>
                       </tr>
                     </tbody>
@@ -715,25 +644,19 @@
               </div>
             </div>
             <div class="w-full xl:w-4/12 px-4">
-              <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
-              >
+              <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
                 <div class="rounded-t mb-0 px-4 py-3 border-0">
                   <div class="flex flex-wrap items-center">
-                    <div
-                      class="relative w-full px-4 max-w-full flex-grow flex-1"
-                    >
+                    <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                       <h3 class="font-semibold text-base text-gray-800">
                         Social traffic
                       </h3>
                     </div>
-                    <div
-                      class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
-                    >
+                    <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                       <button
-                        class="bg-indigo-500 text-white active:bg-indigo-600 text-sm font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+                        class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
                         type="button"
-                        style="transition: all 0.15s ease 0s;"
+                        style="transition:all .15s ease"
                       >
                         See all
                       </button>
@@ -741,51 +664,38 @@
                   </div>
                 </div>
                 <div class="block w-full overflow-x-auto">
-                  <table
-                    class="items-center w-full bg-transparent border-collapse"
-                  >
+                  <!-- Projects table -->
+                  <table class="items-center w-full bg-transparent border-collapse">
                     <thead class="thead-light">
                       <tr>
-                        <th
-                          class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-                        >
+                        <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                           Referral
                         </th>
-                        <th
-                          class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-                        >
+                        <th class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left">
                           Visitors
                         </th>
                         <th
                           class="px-6 bg-gray-100 text-gray-600 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-no-wrap font-semibold text-left"
-                          style="min-width: 140px;"
+                          style="min-width:140px"
                         ></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           Facebook
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           1,480
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           <div class="flex items-center">
                             <span class="mr-2">60%</span>
                             <div class="relative w-full">
-                              <div
-                                class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
-                              >
+                              <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
                                 <div
+                                  style="width:60%"
                                   class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
-                                  style="width: 60%;"
                                 ></div>
                               </div>
                             </div>
@@ -793,28 +703,20 @@
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           Facebook
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           5,480
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           <div class="flex items-center">
                             <span class="mr-2">70%</span>
                             <div class="relative w-full">
-                              <div
-                                class="overflow-hidden h-2 text-xs flex rounded bg-green-200"
-                              >
+                              <div class="overflow-hidden h-2 text-xs flex rounded bg-green-200">
                                 <div
+                                  style="width:70%"
                                   class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
-                                  style="width: 70%;"
                                 ></div>
                               </div>
                             </div>
@@ -822,28 +724,20 @@
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           Google
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           4,807
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           <div class="flex items-center">
                             <span class="mr-2">80%</span>
                             <div class="relative w-full">
-                              <div
-                                class="overflow-hidden h-2 text-xs flex rounded bg-purple-200"
-                              >
+                              <div class="overflow-hidden h-2 text-xs flex rounded bg-purple-200">
                                 <div
+                                  style="width:80%"
                                   class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500"
-                                  style="width: 80%;"
                                 ></div>
                               </div>
                             </div>
@@ -851,28 +745,20 @@
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           Instagram
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           3,678
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           <div class="flex items-center">
                             <span class="mr-2">75%</span>
                             <div class="relative w-full">
-                              <div
-                                class="overflow-hidden h-2 text-xs flex rounded bg-blue-200"
-                              >
+                              <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
                                 <div
+                                  style="width:75%"
                                   class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"
-                                  style="width: 75%;"
                                 ></div>
                               </div>
                             </div>
@@ -880,28 +766,20 @@
                         </td>
                       </tr>
                       <tr>
-                        <th
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left"
-                        >
+                        <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4 text-left">
                           twitter
                         </th>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           2,645
                         </td>
-                        <td
-                          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4"
-                        >
+                        <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-no-wrap p-4">
                           <div class="flex items-center">
                             <span class="mr-2">30%</span>
                             <div class="relative w-full">
-                              <div
-                                class="overflow-hidden h-2 text-xs flex rounded bg-orange-200"
-                              >
+                              <div class="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
                                 <div
-                                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-orange-500"
-                                  style="width: 30%;"
+                                  style="width:30%"
+                                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
                                 ></div>
                               </div>
                             </div>
@@ -915,49 +793,53 @@
             </div>
           </div>
           <footer class="block py-4">
-            <div class="px-4 mx-auto">
-              <div class="items-center flex flex-wrap justify-center px-4">
-                <div class="w-full xl:w-6/12">
-                  <div class="text-gray-700 text-center xl:text-left">
-                    © 2019
+            <div class="container mx-auto px-4">
+              <hr class="mb-4 border-b-1 border-gray-300" />
+              <div class="flex flex-wrap items-center md:justify-between justify-center">
+                <div class="w-full md:w-4/12 px-4">
+                  <div class="text-sm text-gray-600 font-semibold py-1">
+                    Copyright © <span id="javascript-date"></span>
                     <a
-                      href="https://www.creative-tim.com?ref=tsk-footer-docs"
-                      class="text-pink-500 font-medium no-underline"
-                      >Creative Tim</a
+                      href="https://www.creative-tim.com"
+                      class="text-gray-600 hover:text-gray-800 text-sm font-semibold py-1"
                     >
+                      Creative Tim
+                    </a>
                   </div>
                 </div>
-                <div class="w-full xl:w-6/12">
-                  <ul
-                    class="xl:justify-end justify-center flex flex-wrap pl-0 mb-0 list-none"
-                  >
-                    <li class="inline-flex">
+                <div class="w-full md:w-8/12 px-4">
+                  <ul class="flex flex-wrap list-none md:justify-end  justify-center">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com?ref=tsk-footer-docs"
-                        class="no-underline text-gray-700 block py-1 px-3"
-                        >Creative Tim</a
+                        href="https://www.creative-tim.com"
+                        class="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
+                        Creative Tim
+                      </a>
                     </li>
-                    <li class="inline-flex">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com/presentation?ref=tsk-footer-docs"
-                        class="no-underline text-gray-700 block py-1 px-3"
-                        >About us</a
+                        href="https://www.creative-tim.com/presentation"
+                        class="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
+                        About Us
+                      </a>
                     </li>
-                    <li class="inline-flex">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com/blog?ref=tsk-footer-docs"
-                        class="no-underline text-gray-700 block py-1 px-3"
-                        >Blog</a
+                        href="http://blog.creative-tim.com"
+                        class="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
+                        Blog
+                      </a>
                     </li>
-                    <li class="inline-flex">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com/license?ref=tsk-footer-docs"
-                        class="no-underline text-gray-700 block py-1 px-3"
-                        >License</a
+                        href="https://github.com/creativetimofficial/tailwind-starter-kit/blob/master/LICENSE.md"
+                        class="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
+                        MIT License
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -971,7 +853,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
       charset="utf-8"
     ></script>
-    <script src="https://unpkg.com/popper.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       /* Sidebar - Side navigation menu on mobile/responsive mode */
       function toggleNavbar(collapseID) {
@@ -994,8 +876,11 @@
         document.getElementById(dropdownID).classList.toggle("block");
       }
 
-      /* Chart initialisations */
+
       (function() {
+        /* Add current date to the footer */
+        document.getElementById("javascript-date").innerHTML = new Date().getFullYear();
+        /* Chart initialisations */
         /* Line Chart */
         var config = {
           type: "line",
@@ -1014,15 +899,15 @@
                 label: new Date().getFullYear(),
                 backgroundColor: "#4c51bf",
                 borderColor: "#4c51bf",
-                data: [10, 78, 56, 34, 100, 45, 13],
+                data: [65, 78, 66, 44, 56, 67, 75],
                 fill: false
               },
               {
                 label: new Date().getFullYear() - 1,
                 fill: false,
-                backgroundColor: "#b7791f",
-                borderColor: "#b7791f",
-                data: [7, 68, 86, 74, 10, 4, 87]
+                backgroundColor: "#ed64a6",
+                borderColor: "#ed64a6",
+                data: [40, 68, 86, 74, 56, 60, 87]
               }
             ]
           },
@@ -1030,14 +915,16 @@
             maintainAspectRatio: false,
             responsive: true,
             title: {
-              display: true,
+              display: false,
               text: "Sales Charts",
               fontColor: "white"
             },
             legend: {
               labels: {
                 fontColor: "white"
-              }
+              },
+              align: "end",
+              position: "bottom"
             },
             tooltips: {
               mode: "index",
@@ -1051,19 +938,20 @@
               xAxes: [
                 {
                   ticks: {
-                    fontColor: "white"
+                    fontColor: "rgba(255,255,255,.7)"
                   },
                   display: true,
                   scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: "Month",
                     fontColor: "white"
                   },
                   gridLines: {
+                    display: false,
                     borderDash: [2],
                     borderDashOffset: [2],
                     color: "rgba(33, 37, 41, 0.3)",
-                    zeroLineColor: "rgba(33, 37, 41, 0.1)",
+                    zeroLineColor: "rgba(0, 0, 0, 0)",
                     zeroLineBorderDash: [2],
                     zeroLineBorderDashOffset: [2]
                   }
@@ -1072,19 +960,20 @@
               yAxes: [
                 {
                   ticks: {
-                    fontColor: "white"
+                    fontColor: "rgba(255,255,255,.7)"
                   },
                   display: true,
                   scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: "Value",
                     fontColor: "white"
                   },
                   gridLines: {
-                    borderDash: [2],
-                    borderDashOffset: [2],
-                    color: "rgba(33, 37, 41, 0.3)",
-                    zeroLineColor: "rgba(33, 37, 41, 0.3)",
+                    borderDash: [3],
+                    borderDashOffset: [3],
+                    drawBorder: false,
+                    color: "rgba(255, 255, 255, 0.15)",
+                    zeroLineColor: "rgba(33, 37, 41, 0)",
                     zeroLineBorderDash: [2],
                     zeroLineBorderDashOffset: [2]
                   }
@@ -1112,17 +1001,19 @@
             datasets: [
               {
                 label: new Date().getFullYear(),
-                backgroundColor: "#48bb78",
-                borderColor: "#48bb78",
-                data: [10, 78, 56, 34, 100, 45, 13],
-                fill: false
+                backgroundColor: "#ed64a6",
+                borderColor: "#ed64a6",
+                data: [30, 78, 56, 34, 100, 45, 13],
+                fill: false,
+                barThickness: 8
               },
               {
                 label: new Date().getFullYear() - 1,
                 fill: false,
-                backgroundColor: "#ed8936",
-                borderColor: "#ed8936",
-                data: [7, 68, 86, 74, 10, 4, 87]
+                backgroundColor: "#4c51bf",
+                borderColor: "#4c51bf",
+                data: [27, 68, 86, 74, 10, 4, 87],
+                barThickness: 8
               }
             ]
           },
@@ -1130,7 +1021,7 @@
             maintainAspectRatio: false,
             responsive: true,
             title: {
-              display: true,
+              display: false,
               text: "Orders Chart"
             },
             tooltips: {
@@ -1141,10 +1032,17 @@
               mode: "nearest",
               intersect: true
             },
+            legend: {
+              labels: {
+                fontColor: "rgba(0,0,0,.4)"
+              },
+              align: "end",
+              position: "bottom"
+            },
             scales: {
               xAxes: [
                 {
-                  display: true,
+                  display: false,
                   scaleLabel: {
                     display: true,
                     labelString: "Month"
@@ -1163,14 +1061,15 @@
                 {
                   display: true,
                   scaleLabel: {
-                    display: true,
+                    display: false,
                     labelString: "Value"
                   },
                   gridLines: {
                     borderDash: [2],
+                    drawBorder: false,
                     borderDashOffset: [2],
-                    color: "rgba(33, 37, 41, 0.3)",
-                    zeroLineColor: "rgba(33, 37, 41, 0.3)",
+                    color: "rgba(33, 37, 41, 0.2)",
+                    zeroLineColor: "rgba(33, 37, 41, 0.15)",
                     zeroLineBorderDash: [2],
                     zeroLineBorderDashOffset: [2]
                   }

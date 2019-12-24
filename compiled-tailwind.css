@@ -336,6 +336,7 @@ html {
  */
 
 blockquote,
+dl,
 h1,
 h2,
 h3,
@@ -526,7 +527,8 @@ code {
 
 img,
 svg,
-canvas {
+canvas,
+iframe {
   display: block;
   vertical-align: middle;
 }
@@ -827,10 +829,6 @@ img {
   background-color: #5a67d8;
 }
 
-.bg-indigo-900 {
-  background-color: #3c366b;
-}
-
 .bg-purple-100 {
   background-color: #faf5ff;
 }
@@ -913,10 +911,6 @@ img {
 
 .border-transparent {
   border-color: transparent;
-}
-
-.border-gray-100 {
-  border-color: #f7fafc;
 }
 
 .border-gray-200 {
@@ -1675,10 +1669,6 @@ img {
   max-width: 100%;
 }
 
-.min-h-screen {
-  min-height: 100vh;
-}
-
 .min-w-0 {
   min-width: 0;
 }
@@ -1958,26 +1948,6 @@ img {
 
 .pb-64 {
   padding-bottom: 16rem;
-}
-
-.placeholder-gray-200::-webkit-input-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200::-moz-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200:-ms-input-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200::-ms-input-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200::placeholder {
-  color: #edf2f7;
 }
 
 .placeholder-gray-300::-webkit-input-placeholder {
@@ -2535,8 +2505,16 @@ img {
   color: #718096;
 }
 
+.hover\:text-gray-800:hover {
+  color: #2d3748;
+}
+
 .hover\:text-gray-900:hover {
   color: #1a202c;
+}
+
+.hover\:text-pink-600:hover {
+  color: #d53f8c;
 }
 
 .text-xs {
@@ -2758,10 +2736,6 @@ img {
             justify-content: space-between;
   }
 
-  .md\:h-10 {
-    height: 2.5rem;
-  }
-
   .md\:mt-4 {
     margin-top: 1rem;
   }
@@ -2807,8 +2781,8 @@ img {
     padding-right: 2.5rem;
   }
 
-  .md\:pb-4 {
-    padding-bottom: 1rem;
+  .md\:pb-2 {
+    padding-bottom: 0.5rem;
   }
 
   .md\:pr-12 {
@@ -2841,10 +2815,6 @@ img {
 
   .md\:shadow-none {
     box-shadow: none;
-  }
-
-  .md\:text-center {
-    text-align: center;
   }
 
   .md\:w-64 {
@@ -3051,17 +3021,8 @@ img {
 
 @media (min-width: 1280px) {
 
-  .xl\:justify-end {
-    -webkit-box-pack: end;
-            justify-content: flex-end;
-  }
-
   .xl\:mb-0 {
     margin-bottom: 0;
-  }
-
-  .xl\:text-left {
-    text-align: left;
   }
 
   .xl\:w-3\/12 {
