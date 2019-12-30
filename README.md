@@ -35,14 +35,16 @@ We also feature 16 dynamic components.
 
 ## Versions
 
-### FREE Dashboards
+### FREE Dashboard
+
+![Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)
 
 |Angular Dashboard Page|HTML Dashboard Page|React Dashboard Page|VueJS Dashboard Page|
 | --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/angular-dashboard-page" target="_blank">![Angular Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/html-dashboard-page" target="_blank">![HTML Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/react-dashboard-page" target="_blank">![React Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/vuejs-dashboard-page" target="_blank">![VueJS Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)</a>  |
+| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/angular-dashboard-page" target="_blank">Download Angular</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/html-dashboard-page" target="_blank">Download HTML</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/react-dashboard-page" target="_blank">Download React</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/vuejs-dashboard-page" target="_blank">Download Vue</a>  |
 
 
-### FREE Design Systems (Kits)
+### FREE Design System (UI Kit)
 
 
 |Angular Landing Page|HTML Landing Page|React Landing Page|VueJS Landing Page|
