@@ -1,6 +1,6 @@
 # Tailwind Starter Kit <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.creative-tim.com%2Flearning-lab%2Ftailwindcss-starter-project%23%2Fpresentation&text=Tailwind%20Starter%20Kit%20by%20Creative%20Tim&original_referer=&via=Creative%20Tim&hashtags=creativetim" target="_blank">![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)</a>
 
-![version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/tailwind-starter-kit.svg?maxAge=2592000)</a> <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/tailwind-starter-kit.svg?maxAge=2592000)</a> <a href="https://gitter.im/creative-tim-general/Lobby" target="_blank">![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)</a> <a href="https://discord.gg/E4aHAQy" target="_blank">![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)</a>
+![version](https://img.shields.io/badge/version-1.0.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/tailwind-starter-kit.svg)</a> <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/tailwind-starter-kit.svg)</a> <a href="https://gitter.im/creative-tim-general/Lobby" target="_blank">![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)</a> <a href="https://discord.gg/E4aHAQy" target="_blank">![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)</a>
 
 ![Tailwind Starter Kit](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/creative-tim/opt_tsp_tailwindcss_thumbnail.jpg)
 
@@ -36,7 +36,7 @@ We also feature 16 dynamic components.
 
 ### FREE Dashboard
 
-![Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/dashboard">![Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)</a>
 
 |Angular Dashboard Page|HTML Dashboard Page|React Dashboard Page|VueJS Dashboard Page|
 | --- | --- | --- | --- |
@@ -45,19 +45,21 @@ We also feature 16 dynamic components.
 
 ### FREE Design System (UI Kit)
 
-![Landing Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/landing.jpg)
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/landing">![Landing Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/landing.jpg)</a>
 
 |Angular Landing Page|HTML Landing Page|React Landing Page|VueJS Landing Page|
 | --- | --- | --- | --- |
 | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/angular-landing-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/html-landing-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/react-landing-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/vuejs-landing-page" target="_blank">Download Vue</a> |
 
 
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/login">![Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/login.jpg)</a>
+
 |Angular Login Page|HTML Login Page|React Login Page|VueJS Login Page|
 | --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/angular-login-page" target="_blank">![Angular Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/login.jpg)</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/html-login-page" target="_blank">![HTML Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/login.jpg)</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/react-login-page" target="_blank">![React Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/login.jpg)</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/vuejs-login-page" target="_blank">![VueJS Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/login.jpg)</a> |
+| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/angular-login-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/html-login-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/react-login-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/vuejs-login-page" target="_blank">Download Vue</a> |
 
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/profile" target="_blank" style="max-width:400px">![Profile Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/profile.jpg)</a>
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/profile">![Profile Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/profile.jpg)</a>
 
 |Angular Profile Page|HTML Profile Page|React Profile Page|VueJS Profile Page|
 | --- | --- | --- | --- |
