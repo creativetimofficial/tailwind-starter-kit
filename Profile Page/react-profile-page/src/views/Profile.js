@@ -18,7 +18,7 @@ export default function Profile() {
           >
             <span
               id="blackOverlay"
-              class="w-full h-full absolute opacity-50 bg-black"
+              className="w-full h-full absolute opacity-50 bg-black"
             ></span>
           </div>
           <div
@@ -91,7 +91,7 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className="text-center mt-12">
-                  <h3 class="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
+                  <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
                     Jenna Stones
                   </h3>
                   <div className="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
@@ -110,7 +110,7 @@ export default function Profile() {
                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
-                      <p class="mb-4 text-lg leading-relaxed text-gray-800">
+                      <p className="mb-4 text-lg leading-relaxed text-gray-800">
                         An artist of considerable range, Jenna the name taken by
                         Melbourne-raised, Brooklyn-based Nick Murphy writes,
                         performs and records all of his own music, giving it a
