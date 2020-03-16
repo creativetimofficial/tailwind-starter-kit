@@ -64,7 +64,7 @@ export default function Login() {
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                          for="grid-password"
+                          htmlFor="grid-password"
                         >
                           Email
                         </label>
@@ -79,7 +79,7 @@ export default function Login() {
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                          for="grid-password"
+                          htmlFor="grid-password"
                         >
                           Password
                         </label>
