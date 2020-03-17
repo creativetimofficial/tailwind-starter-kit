@@ -3,7 +3,7 @@
     <a
       class="text-gray-600 block py-1 px-3"
       href="#pablo"
-      v-on:click="toggleDropdown(event)"
+      v-on:click="toggleDropdown($event)"
       ref="btnDropdownRef"
     >
       <i class="fas fa-bell"></i>

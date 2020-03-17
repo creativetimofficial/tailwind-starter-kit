@@ -8,36 +8,35 @@
     >
       <!-- Brand -->
       <a
-        class="text-white uppercase hidden lg:inline-block font-semibold"
-        href="https://www.creative-tim.com/learning-lab/tailwindcss-starter-project#/dashboard"
+        class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+        href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/dashboard"
+        >Dashboard</a
       >
-        Dashboard
-      </a>
       <!-- Form -->
       <form
-        class="mr-3 md:flex hidden flex-row flex-wrap items-center lg:ml-auto"
+        class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
       >
         <div class="relative flex w-full flex-wrap items-stretch">
-          <div class="flex">
-            <span
-              class="font-normal leading-snug flex text-center white-space-no-wrap border border-solid border-gray-200 placeholder-gray-300 text-gray-100 bg-transparent rounded-full text-base items-center rounded-r-none pl-3 py-2 border-r-0"
-            >
-              <i class="fas fa-search"></i>
-            </span>
-          </div>
+          <span
+            class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+            ><i class="fas fa-search"></i
+          ></span>
           <input
             type="text"
-            placeholder="Placeholder"
-            class="px-3 py-2 h-12 border border-solid  border-gray-200 placeholder-gray-200 text-white bg-transparent rounded-full text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal rounded-l-none flex-1 border-l-0"
+            placeholder="Search here..."
+            class="px-3 py-3 placeholder-gray-400 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10"
           />
         </div>
       </form>
       <!-- User -->
-      <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+      <ul
+        class="flex-col md:flex-row list-none items-center hidden md:flex"
+      >
         <user-dropdown-component></user-dropdown-component>
       </ul>
     </div>
   </nav>
+
   <!-- End Navbar -->
 </template>
 <script>

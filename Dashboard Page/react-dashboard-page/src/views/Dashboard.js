@@ -9,23 +9,23 @@ export default function Dashboard() {
   return (
     <>
       <Sidebar />
-      <div className="relative md:ml-64 bg-gray-100">
+      <div className="relative md:ml-64 bg-gray-200">
         <Navbar />
         {/* Header */}
-        <div className="relative bg-blue-500 md:pt-32 pb-32 pt-12">
+        <div className="relative bg-pink-600 md:pt-32 pb-32 pt-12">
           <div className="px-4 md:px-10 mx-auto w-full">
             <div>
               {/* Card stats */}
               <div className="flex flex-wrap">
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0">
+                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div className="flex-auto p-4">
                       <div className="flex flex-wrap">
                         <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-                          <h5 className="text-gray-500 uppercase font-semibold text-xs">
+                          <h5 className="text-gray-500 uppercase font-bold text-xs">
                             Traffic
                           </h5>
-                          <span className="font-semibold text-xl text-gray-700">
+                          <span className="font-semibold text-xl text-gray-800">
                             350,897
                           </span>
                         </div>
@@ -35,7 +35,7 @@ export default function Dashboard() {
                           </div>
                         </div>
                       </div>
-                      <p className="text-xs text-gray-400 mt-4 font-light">
+                        <p className="text-sm text-gray-500 mt-4">
                         <span className="text-green-500 mr-2">
                           <i className="fas fa-arrow-up"></i> 3.48%
                         </span>
@@ -47,14 +47,14 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0">
+                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div className="flex-auto p-4">
                       <div className="flex flex-wrap">
                         <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-                          <h5 className="text-gray-500 uppercase font-semibold text-xs">
+                          <h5 className="text-gray-500 uppercase font-bold text-xs">
                             New users
                           </h5>
-                          <span className="font-semibold text-xl text-gray-700">
+                          <span className="font-semibold text-xl text-gray-800">
                             2,356
                           </span>
                         </div>
@@ -64,7 +64,7 @@ export default function Dashboard() {
                           </div>
                         </div>
                       </div>
-                      <p className="text-xs text-gray-400 mt-4 font-light">
+                      <p className="text-sm text-gray-500 mt-4">
                         <span className="text-red-500 mr-2">
                           <i className="fas fa-arrow-down"></i> 3.48%
                         </span>
@@ -76,24 +76,24 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0">
+                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div className="flex-auto p-4">
                       <div className="flex flex-wrap">
                         <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-                          <h5 className="text-gray-500 uppercase font-semibold text-xs">
+                          <h5 className="text-gray-500 uppercase font-bold text-xs">
                             Sales
                           </h5>
-                          <span className="font-semibold text-xl text-gray-700">
+                          <span className="font-semibold text-xl text-gray-800">
                             924
                           </span>
                         </div>
                         <div className="relative w-auto pl-4 flex-initial">
-                          <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-yellow-500">
+                          <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500">
                             <i className="fas fa-users"></i>
                           </div>
                         </div>
                       </div>
-                      <p className="text-xs text-gray-400 mt-4 font-light">
+                      <p className="text-sm text-gray-500 mt-4">
                         <span className="text-orange-500 mr-2">
                           <i className="fas fa-arrow-down"></i> 1.10%
                         </span>
@@ -105,14 +105,14 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded border border-solid border-gray-100 mb-6 xl:mb-0">
+                  <div className="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
                     <div className="flex-auto p-4">
                       <div className="flex flex-wrap">
                         <div className="relative w-full pr-4 max-w-full flex-grow flex-1">
-                          <h5 className="text-gray-500 uppercase font-semibold text-xs">
+                          <h5 className="text-gray-500 uppercase font-bold text-xs">
                             Performance
                           </h5>
-                          <span className="font-semibold text-xl text-gray-700">
+                          <span className="font-semibold text-xl text-gray-800">
                             49,65%
                           </span>
                         </div>
@@ -122,7 +122,7 @@ export default function Dashboard() {
                           </div>
                         </div>
                       </div>
-                      <p className="text-xs text-gray-400 mt-4 font-light">
+                      <p className="text-sm text-gray-500 mt-4">
                         <span className="text-green-500 mr-2">
                           <i className="fas fa-arrow-up"></i> 12%
                         </span>
@@ -154,7 +154,7 @@ export default function Dashboard() {
                     </div>
                     <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                       <button
-                        className="bg-indigo-500 text-white active:bg-indigo-600 text-sm font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+                        className="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                         style={{ transition: "all .15s ease" }}
                       >
@@ -274,7 +274,7 @@ export default function Dashboard() {
                     </div>
                     <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
                       <button
-                        className="bg-indigo-500 text-white active:bg-indigo-600 text-sm font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
+                        className="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1"
                         type="button"
                         style={{ transition: "all .15s ease" }}
                       >
@@ -399,7 +399,7 @@ export default function Dashboard() {
                               <div className="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
                                 <div
                                   style={{ width: "30%" }}
-                                  className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-orange-500"
+                                  className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
                                 ></div>
                               </div>
                             </div>
@@ -413,51 +413,52 @@ export default function Dashboard() {
             </div>
           </div>
           <footer className="block py-4">
-            <div className="px-4 mx-auto">
-              <div className="items-center flex flex-wrap justify-center px-4">
-                <div className="w-full xl:w-6/12">
-                  <div className="text-gray-700 text-center xl:text-left">
-                    © {new Date().getFullYear()}{" "}
+            <div className="container mx-auto px-4">
+              <hr className="mb-4 border-b-1 border-gray-300" />
+              <div className="flex flex-wrap items-center md:justify-between justify-center">
+                <div className="w-full md:w-4/12 px-4">
+                  <div className="text-sm text-gray-600 font-semibold py-1">
+                    Copyright © {new Date().getFullYear()}{" "}
                     <a
-                      href="https://www.creative-tim.com?ref=tsk-footer-docs"
-                      className="text-pink-500 font-medium no-underline"
+                      href="https://www.creative-tim.com"
+                      className="text-gray-600 hover:text-gray-800 text-sm font-semibold py-1"
                     >
                       Creative Tim
                     </a>
                   </div>
                 </div>
-                <div className="w-full xl:w-6/12">
-                  <ul className="xl:justify-end justify-center flex flex-wrap pl-0 mb-0 list-none">
-                    <li className="inline-flex">
+                <div className="w-full md:w-8/12 px-4">
+                  <ul className="flex flex-wrap list-none md:justify-end  justify-center">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com?ref=tsk-footer-docs"
-                        className="no-underline text-gray-700 block py-1 px-3"
+                        href="https://www.creative-tim.com"
+                        className="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
                         Creative Tim
                       </a>
                     </li>
-                    <li className="inline-flex">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com/presentation?ref=tsk-footer-docs"
-                        className="no-underline text-gray-700 block py-1 px-3"
+                        href="https://www.creative-tim.com/presentation"
+                        className="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
-                        About us
+                        About Us
                       </a>
                     </li>
-                    <li className="inline-flex">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com/blog?ref=tsk-footer-docs"
-                        className="no-underline text-gray-700 block py-1 px-3"
+                        href="http://blog.creative-tim.com"
+                        className="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
                         Blog
                       </a>
                     </li>
-                    <li className="inline-flex">
+                    <li>
                       <a
-                        href="https://www.creative-tim.com/license?ref=tsk-footer-docs"
-                        className="no-underline text-gray-700 block py-1 px-3"
+                        href="https://github.com/creativetimofficial/tailwind-starter-kit/blob/master/LICENSE.md"
+                        className="text-gray-700 hover:text-gray-900 text-sm font-semibold block py-1 px-3"
                       >
-                        License
+                        MIT License
                       </a>
                     </li>
                   </ul>

@@ -1,3 +1,20 @@
+/*!
+
+=========================================================
+* Tailwind Starter Kit by Creative Tim | Free TailwindCSS Kit Framework - v1.0.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/presentation
+* Copyright 2019 Creative Tim (https://www.creative-tim.com)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+*/
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -336,6 +353,7 @@ html {
  */
 
 blockquote,
+dl,
 h1,
 h2,
 h3,
@@ -526,7 +544,8 @@ code {
 
 img,
 svg,
-canvas {
+canvas,
+iframe {
   display: block;
   vertical-align: middle;
 }
@@ -707,10 +726,6 @@ img {
   background-color: #feebc8;
 }
 
-.bg-orange-300 {
-  background-color: #fbd38d;
-}
-
 .bg-orange-500 {
   background-color: #ed8936;
 }
@@ -791,10 +806,6 @@ img {
   background-color: #bee3f8;
 }
 
-.bg-blue-300 {
-  background-color: #90cdf4;
-}
-
 .bg-blue-400 {
   background-color: #63b3ed;
 }
@@ -825,10 +836,6 @@ img {
 
 .bg-indigo-600 {
   background-color: #5a67d8;
-}
-
-.bg-indigo-900 {
-  background-color: #3c366b;
 }
 
 .bg-purple-100 {
@@ -867,12 +874,52 @@ img {
   background-color: #d53f8c;
 }
 
+.hover\:bg-gray-500:hover {
+  background-color: #a0aec0;
+}
+
 .hover\:bg-red-500:hover {
   background-color: #f56565;
 }
 
+.hover\:bg-orange-500:hover {
+  background-color: #ed8936;
+}
+
+.hover\:bg-yellow-500:hover {
+  background-color: #ecc94b;
+}
+
+.hover\:bg-green-500:hover {
+  background-color: #48bb78;
+}
+
+.hover\:bg-teal-500:hover {
+  background-color: #38b2ac;
+}
+
+.hover\:bg-blue-500:hover {
+  background-color: #4299e1;
+}
+
+.hover\:bg-indigo-500:hover {
+  background-color: #667eea;
+}
+
+.hover\:bg-purple-500:hover {
+  background-color: #9f7aea;
+}
+
+.hover\:bg-pink-500:hover {
+  background-color: #ed64a6;
+}
+
 .active\:bg-gray-100:active {
   background-color: #f7fafc;
+}
+
+.active\:bg-gray-600:active {
+  background-color: #718096;
 }
 
 .active\:bg-gray-700:active {
@@ -887,16 +934,72 @@ img {
   background-color: #e53e3e;
 }
 
+.active\:bg-red-900:active {
+  background-color: #742a2a;
+}
+
+.active\:bg-orange-600:active {
+  background-color: #dd6b20;
+}
+
+.active\:bg-orange-900:active {
+  background-color: #7b341e;
+}
+
+.active\:bg-yellow-600:active {
+  background-color: #d69e2e;
+}
+
+.active\:bg-yellow-900:active {
+  background-color: #744210;
+}
+
 .active\:bg-green-600:active {
   background-color: #38a169;
+}
+
+.active\:bg-green-900:active {
+  background-color: #22543d;
+}
+
+.active\:bg-teal-600:active {
+  background-color: #319795;
+}
+
+.active\:bg-teal-900:active {
+  background-color: #234e52;
+}
+
+.active\:bg-blue-600:active {
+  background-color: #3182ce;
+}
+
+.active\:bg-blue-900:active {
+  background-color: #2a4365;
 }
 
 .active\:bg-indigo-600:active {
   background-color: #5a67d8;
 }
 
+.active\:bg-indigo-900:active {
+  background-color: #3c366b;
+}
+
+.active\:bg-purple-600:active {
+  background-color: #805ad5;
+}
+
+.active\:bg-purple-900:active {
+  background-color: #44337a;
+}
+
 .active\:bg-pink-600:active {
   background-color: #d53f8c;
+}
+
+.active\:bg-pink-900:active {
+  background-color: #702459;
 }
 
 .bg-center {
@@ -913,10 +1016,6 @@ img {
 
 .border-transparent {
   border-color: transparent;
-}
-
-.border-gray-100 {
-  border-color: #f7fafc;
 }
 
 .border-gray-200 {
@@ -959,10 +1058,6 @@ img {
   border-color: #e53e3e;
 }
 
-.border-red-900 {
-  border-color: #742a2a;
-}
-
 .border-orange-200 {
   border-color: #feebc8;
 }
@@ -973,10 +1068,6 @@ img {
 
 .border-orange-600 {
   border-color: #dd6b20;
-}
-
-.border-orange-900 {
-  border-color: #7b341e;
 }
 
 .border-yellow-200 {
@@ -991,10 +1082,6 @@ img {
   border-color: #d69e2e;
 }
 
-.border-yellow-900 {
-  border-color: #744210;
-}
-
 .border-green-200 {
   border-color: #c6f6d5;
 }
@@ -1005,10 +1092,6 @@ img {
 
 .border-green-600 {
   border-color: #38a169;
-}
-
-.border-green-900 {
-  border-color: #22543d;
 }
 
 .border-teal-200 {
@@ -1023,10 +1106,6 @@ img {
   border-color: #319795;
 }
 
-.border-teal-900 {
-  border-color: #234e52;
-}
-
 .border-blue-200 {
   border-color: #bee3f8;
 }
@@ -1037,10 +1116,6 @@ img {
 
 .border-blue-600 {
   border-color: #3182ce;
-}
-
-.border-blue-900 {
-  border-color: #2a4365;
 }
 
 .border-indigo-200 {
@@ -1055,10 +1130,6 @@ img {
   border-color: #5a67d8;
 }
 
-.border-indigo-900 {
-  border-color: #3c366b;
-}
-
 .border-purple-200 {
   border-color: #e9d8fd;
 }
@@ -1071,10 +1142,6 @@ img {
   border-color: #805ad5;
 }
 
-.border-purple-900 {
-  border-color: #44337a;
-}
-
 .border-pink-200 {
   border-color: #fed7e2;
 }
@@ -1085,10 +1152,6 @@ img {
 
 .border-pink-600 {
   border-color: #d53f8c;
-}
-
-.border-pink-900 {
-  border-color: #702459;
 }
 
 .rounded-sm {
@@ -1595,10 +1658,6 @@ img {
   margin-top: 12rem;
 }
 
-.mt-64 {
-  margin-top: 16rem;
-}
-
 .mr-auto {
   margin-right: auto;
 }
@@ -1673,10 +1732,6 @@ img {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.min-h-screen {
-  min-height: 100vh;
 }
 
 .min-w-0 {
@@ -1825,6 +1880,11 @@ img {
   padding-bottom: 2.5rem;
 }
 
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -1936,6 +1996,10 @@ img {
   padding-bottom: 5rem;
 }
 
+.pt-24 {
+  padding-top: 6rem;
+}
+
 .pt-32 {
   padding-top: 8rem;
 }
@@ -1958,26 +2022,6 @@ img {
 
 .pb-64 {
   padding-bottom: 16rem;
-}
-
-.placeholder-gray-200::-webkit-input-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200::-moz-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200:-ms-input-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200::-ms-input-placeholder {
-  color: #edf2f7;
-}
-
-.placeholder-gray-200::placeholder {
-  color: #edf2f7;
 }
 
 .placeholder-gray-300::-webkit-input-placeholder {
@@ -2535,8 +2579,16 @@ img {
   color: #718096;
 }
 
+.hover\:text-gray-800:hover {
+  color: #2d3748;
+}
+
 .hover\:text-gray-900:hover {
   color: #1a202c;
+}
+
+.hover\:text-pink-600:hover {
+  color: #d53f8c;
 }
 
 .text-xs {
@@ -2644,6 +2696,10 @@ img {
   width: 50%;
 }
 
+.w-10\/12 {
+  width: 83.333333%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -2674,8 +2730,16 @@ img {
     margin-top: 0;
   }
 
+  .sm\:ml-1 {
+    margin-left: 0.25rem;
+  }
+
   .sm\:mr-2 {
     margin-right: 0.5rem;
+  }
+
+  .sm\:pt-0 {
+    padding-top: 0;
   }
 
   .sm\:pr-10 {
@@ -2758,8 +2822,8 @@ img {
             justify-content: space-between;
   }
 
-  .md\:h-10 {
-    height: 2.5rem;
+  .md\:mt-0 {
+    margin-top: 0;
   }
 
   .md\:mt-4 {
@@ -2768,6 +2832,10 @@ img {
 
   .md\:mb-4 {
     margin-bottom: 1rem;
+  }
+
+  .md\:mt-64 {
+    margin-top: 16rem;
   }
 
   .md\:ml-64 {
@@ -2802,13 +2870,22 @@ img {
     overflow-y: auto;
   }
 
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:px-10 {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
 
-  .md\:pb-4 {
-    padding-bottom: 1rem;
+  .md\:pt-0 {
+    padding-top: 0;
+  }
+
+  .md\:pb-2 {
+    padding-bottom: 0.5rem;
   }
 
   .md\:pr-12 {
@@ -2841,10 +2918,6 @@ img {
 
   .md\:shadow-none {
     box-shadow: none;
-  }
-
-  .md\:text-center {
-    text-align: center;
   }
 
   .md\:w-64 {
@@ -2944,6 +3017,10 @@ img {
 
   .lg\:mr-4 {
     margin-right: 1rem;
+  }
+
+  .lg\:mt-16 {
+    margin-top: 4rem;
   }
 
   .lg\:ml-auto {
@@ -3051,17 +3128,8 @@ img {
 
 @media (min-width: 1280px) {
 
-  .xl\:justify-end {
-    -webkit-box-pack: end;
-            justify-content: flex-end;
-  }
-
   .xl\:mb-0 {
     margin-bottom: 0;
-  }
-
-  .xl\:text-left {
-    text-align: left;
   }
 
   .xl\:w-3\/12 {

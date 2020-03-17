@@ -18,7 +18,7 @@ const UserDropdown = () => {
   return (
     <>
       <a
-        className="text-gray-600 block py-1 px-3"
+        className="text-gray-600 block"
         href="#pablo"
         ref={btnDropdownRef}
         onClick={e => {
@@ -27,10 +27,10 @@ const UserDropdown = () => {
         }}
       >
         <div className="items-center flex">
-          <span className="w-8 h-8 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full">
+          <span className="w-12 h-12 text-sm text-white bg-gray-300 inline-flex items-center justify-center rounded-full">
             <img
               alt="..."
-              className="w-full rounded-full align-middle border-none"
+              className="w-full rounded-full align-middle border-none shadow-lg"
               src={require("assets/img/team-1-800x800.jpg")}
             />
           </span>
