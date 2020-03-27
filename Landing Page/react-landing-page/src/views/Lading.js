@@ -127,7 +127,7 @@ export default function Landing() {
                   JavaScript.
                 </p>
                 <a
-                  href="https://www.creative-tim.com/framework/tailwind-starter-kit"
+                  href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
                   className="font-bold text-gray-800 mt-8"
                 >
                   Check Tailwind Starter Kit!
