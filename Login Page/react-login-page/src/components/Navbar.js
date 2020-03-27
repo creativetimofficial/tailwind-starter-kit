@@ -19,7 +19,7 @@ export default function Navbar(props) {
                 (props.transparent ? "text-white" : "text-gray-800") +
                 " text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
               }
-              href="https://www.creative-tim.com/learning-lab/tailwindcss-starter-project#/presentation"
+              href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
             >
               Tailwind Starter Kit
             </a>
@@ -52,7 +52,7 @@ export default function Navbar(props) {
                       : "text-gray-800 hover:text-gray-600") +
                     " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                   }
-                  href="https://www.creative-tim.com/learning-lab/tailwindcss-starter-project#/login"
+                  href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/login"
                 >
                   <i
                     className={
