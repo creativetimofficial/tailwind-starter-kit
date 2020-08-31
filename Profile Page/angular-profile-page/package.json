@@ -20,7 +20,6 @@
     "@angular/platform-browser-dynamic": "10.0.14",
     "@angular/router": "10.0.14",
     "@fortawesome/fontawesome-free": "5.14.0",
-    "@popperjs/core": "2.4.4",
     "rxjs": "6.6.2",
     "tslib": "^2.0.1",
     "zone.js": "0.10.3"
