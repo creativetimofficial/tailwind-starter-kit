@@ -47,9 +47,9 @@ We also feature 16 dynamic components.
 
 <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/landing">![Landing Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/landing.jpg)</a>
 
-|Angular Landing Page|HTML Landing Page|React Landing Page|VueJS Landing Page|
-| --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/angular-landing-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/html-landing-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/react-landing-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/vuejs-landing-page" target="_blank">Download Vue</a> |
+|Angular Landing Page|HTML Landing Page|React Landing Page|VueJS Landing Page|NextJS Landing Page
+| --- | --- | --- | --- | --- |
+| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/angular-landing-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/html-landing-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/react-landing-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/vuejs-landing-page" target="_blank">Download Vue</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/next-landing-page" target="_blank">Download Next</a>
 
 
 <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/login">![Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/login.jpg)</a>
