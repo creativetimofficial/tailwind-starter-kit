@@ -163,7 +163,6 @@ Instagram: <a href="https://www.instagram.com/creativetimofficial/" target="_bla
 - Demo: <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/dashboard?ref=rdp-tsk-readme" target="_blank">https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/dashboard?ref=rdp-tsk-readme</a>
 - Download Page: <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/react-dashboard-page?ref=rdp-tsk-readme" target="_blank">https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/react-dashboard-page?ref=rdp-tsk-readme</a>
 - Documentation: <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/dashboard?ref=rdp-tsk-readme" target="_blank">https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/dashboard?ref=rdp-tsk-readme</a>
-- License Agreement: <a href="https://www.creative-tim.com/license?ref=rdp-tsk-readme" target="_blank">https://www.creative-tim.com/license?ref=rdp-tsk-readme</a>
 - Support: <a href="https://www.creative-tim.com/contact-us?ref=rdp-tsk-readme" target="_blank">https://www.creative-tim.com/contact-us?ref=rdp-tsk-readme</a>
 - Issues: <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues" target="_blank">Github Issues Page</a>
 
