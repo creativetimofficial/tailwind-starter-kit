@@ -130,6 +130,3 @@ Instagram: <a href="https://www.instagram.com/creativetimofficial/" target="_bla
 - Documentation: <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme" target="_blank">https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme</a>
 - Support: <a href="https://www.creative-tim.com/contact-us?ref=tsk-readme" target="_blank">https://www.creative-tim.com/contact-us?ref=tsk-readme</a>
 - Issues: <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues" target="_blank">Github Issues Page</a>
-
-
-
