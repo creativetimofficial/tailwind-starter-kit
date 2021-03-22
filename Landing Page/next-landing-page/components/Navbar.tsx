@@ -20,7 +20,7 @@ function Navbar(props: Props): ReactElement {
             <a
               className={
                 (props.transparent ? "text-white" : "text-gray-800") +
-                " title-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase"
+                " title-lg font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase"
               }
               href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
             >
