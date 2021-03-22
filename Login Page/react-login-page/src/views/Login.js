@@ -13,7 +13,7 @@ export default function Login() {
             className="absolute top-0 w-full h-full bg-gray-900"
             style={{
               backgroundImage:
-                "url(" + require("assets/img/register_bg_2.png") + ")",
+                "url(" + require("assets/img/register_bg_2.png").default + ")",
               backgroundSize: "100%",
               backgroundRepeat: "no-repeat"
             }}
@@ -37,7 +37,7 @@ export default function Login() {
                         <img
                           alt="..."
                           className="w-5 mr-1"
-                          src={require("assets/img/github.svg")}
+                          src={require("assets/img/github.svg").default}
                         />
                         Github
                       </button>
@@ -49,7 +49,7 @@ export default function Login() {
                         <img
                           alt="..."
                           className="w-5 mr-1"
-                          src={require("assets/img/google.svg")}
+                          src={require("assets/img/google.svg").default}
                         />
                         Google
                       </button>
@@ -70,7 +70,7 @@ export default function Login() {
                         </label>
                         <input
                           type="email"
-                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Email"
                           style={{ transition: "all .15s ease" }}
                         />
@@ -85,7 +85,7 @@ export default function Login() {
                         </label>
                         <input
                           type="password"
-                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Password"
                           style={{ transition: "all .15s ease" }}
                         />
