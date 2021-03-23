@@ -1,9 +1,9 @@
 <template>
   <nav
-    class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+    class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
   >
     <div
-      class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
+      class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
     >
       <!-- Toggler -->
       <button
@@ -15,7 +15,7 @@
       </button>
       <!-- Brand -->
       <a
-        class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
+        class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
         href="javascript:void(0)"
       >
         Tailwind Starter Kit
@@ -36,12 +36,12 @@
       >
         <!-- Collapse header -->
         <div
-          class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-gray-300"
+          class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200"
         >
           <div class="flex flex-wrap">
             <div class="w-6/12">
               <a
-                class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
+                class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                 href="javascript:void(0)"
               >
                 Tailwind Starter Kit
@@ -64,7 +64,7 @@
             <input
               type="text"
               placeholder="Search"
-              class="px-3 py-2 h-12 border border-solid  border-gray-600 placeholder-gray-400 text-gray-700 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
+              class="border-0 px-3 py-2 h-12 border border-solid  border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
             />
           </div>
         </form>
@@ -80,43 +80,43 @@
           </li>
           <li class="items-center">
             <a
-              class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
+              class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               href="#/landing"
-              ><i class="fas fa-newspaper text-gray-500 mr-2 text-sm"></i>
+              ><i class="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>
               Landing Page</a
             >
           </li>
           <li class="items-center">
             <a
-              class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
+              class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               href="#/profile"
-              ><i class="fas fa-user-circle text-gray-500 mr-2 text-sm"></i>
+              ><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
               Profile Page</a
             >
           </li>
           <li class="items-center">
             <a
-              class="text-gray-800 hover:text-gray-600 text-xs uppercase py-3 font-bold block"
+              class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               href="#/login"
-              ><i class="fas fa-fingerprint text-gray-500 mr-2 text-sm"></i>
+              ><i class="fas fa-fingerprint text-blueGray-400 mr-2 text-sm"></i>
               Login</a
             >
           </li>
           <li class="items-center">
             <a
-              class="text-gray-400 text-xs uppercase py-3 font-bold block"
+              class="text-blueGray-300 text-xs uppercase py-3 font-bold block"
               href="#pablo"
               ><i
-                class="fas fa-clipboard-list text-gray-400 mr-2 text-sm"
+                class="fas fa-clipboard-list text-blueGray-300 mr-2 text-sm"
               ></i>
               Register (soon)</a
             >
           </li>
           <li class="items-center">
             <a
-              class="text-gray-400 text-xs uppercase py-3 font-bold block"
+              class="text-blueGray-300 text-xs uppercase py-3 font-bold block"
               href="#pablo"
-              ><i class="fas fa-tools text-gray-400 mr-2 text-sm"></i>
+              ><i class="fas fa-tools text-blueGray-300 mr-2 text-sm"></i>
               Settings (soon)</a
             >
           </li>
@@ -125,7 +125,7 @@
         <hr class="my-4 md:min-w-full" />
         <!-- Heading -->
         <h6
-          class="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
         >
           Documentation
         </h6>
@@ -135,51 +135,51 @@
         >
           <li class="inline-flex">
             <a
-              class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold"
+              class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
               href="#/documentation/styles"
               ><i
-                class="fas fa-paint-brush mr-2 text-gray-500 text-base"
+                class="fas fa-paint-brush mr-2 text-blueGray-400 text-base"
               ></i>
               Styles</a
             >
           </li>
           <li class="inline-flex">
             <a
-              class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold"
+              class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
               href="#/documentation/alerts"
-              ><i class="fab fa-css3-alt mr-2 text-gray-500 text-base"></i>
+              ><i class="fab fa-css3-alt mr-2 text-blueGray-400 text-base"></i>
               CSS Components</a
             >
           </li>
           <li class="inline-flex">
             <a
-              class="text-gray-800 hover:text-gray-600 text-sm block mb-4 no-underline font-semibold"
+              class="text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold"
               href="#/documentation/vue/alerts"
-              ><i class="fab fa-vuejs mr-2 text-gray-500 text-base"></i>
+              ><i class="fab fa-vuejs mr-2 text-blueGray-400 text-base"></i>
               VueJS</a
             >
           </li>
           <li class="inline-flex">
             <a
-              class="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
+              class="text-blueGray-700 hover:text-blueGray-500  text-sm block mb-4 no-underline font-semibold"
               href="#/documentation/react/alerts"
-              ><i class="fab fa-react mr-2 text-gray-500 text-base"></i>
+              ><i class="fab fa-react mr-2 text-blueGray-400 text-base"></i>
               React</a
             >
           </li>
           <li class="inline-flex">
             <a
-              class="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
+              class="text-blueGray-700 hover:text-blueGray-500  text-sm block mb-4 no-underline font-semibold"
               href="#/documentation/angular/alerts"
-              ><i class="fab fa-angular mr-2 text-gray-500 text-base"></i>
+              ><i class="fab fa-angular mr-2 text-blueGray-400 text-base"></i>
               Angular</a
             >
           </li>
           <li class="inline-flex">
             <a
-              class="text-gray-800 hover:text-gray-600  text-sm block mb-4 no-underline font-semibold"
+              class="text-blueGray-700 hover:text-blueGray-500  text-sm block mb-4 no-underline font-semibold"
               href="#/documentation/javascript/alerts"
-              ><i class="fab fa-js-square mr-2 text-gray-500 text-base"></i>
+              ><i class="fab fa-js-square mr-2 text-blueGray-400 text-base"></i>
               Javascript</a
             >
           </li>

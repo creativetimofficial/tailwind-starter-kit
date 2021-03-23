@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-landing-page": {
+    "angular-dashboard-page": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-landing-page",
+            "outputPath": "dist/angular-dashboard-page",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,10 @@
               "src/styles.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "chart.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -64,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-landing-page:build"
+            "browserTarget": "angular-dashboard-page:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-landing-page:build:production"
+              "browserTarget": "angular-dashboard-page:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-landing-page:build"
+            "browserTarget": "angular-dashboard-page:build"
           }
         },
         "test": {
@@ -112,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-landing-page:serve"
+            "devServerTarget": "angular-dashboard-page:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-landing-page:serve:production"
+              "devServerTarget": "angular-dashboard-page:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "angular-landing-page"
-}
+      }},
+      "defaultProject": "angular-dashboard-page"
+    }

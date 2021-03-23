@@ -1,16 +1,16 @@
 {
   "name": "react-dashboard-page",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.11.2",
-    "chart.js": "2.9.3",
-    "popper.js": "1.16.0",
-    "react": "16.11.0",
-    "react-dom": "16.11.0",
-    "react-router": "5.1.2",
-    "react-router-dom": "5.1.2",
-    "react-scripts": "3.2.0"
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@popperjs/core": "2.9.1",
+    "chart.js": "2.9.4",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +33,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "optionalDependencies": {
+    "typescript": "4.2.3"
   }
 }
