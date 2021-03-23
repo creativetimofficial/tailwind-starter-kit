@@ -6,7 +6,7 @@
         <div
           class="absolute top-0 w-full h-full bg-gray-900"
           style="background-size: 100%; background-repeat: no-repeat;"
-          :style="{'background-image': 'url(' + require('../assets/img/register_bg_2.png') + ')'}"
+          :style="{'background-image': 'url(' + require('../assets/img/register_bg_2.png').default + ')'}"
         ></div>
         <div class="container mx-auto px-4 h-full">
           <div class="flex content-center items-center justify-center h-full">
@@ -57,7 +57,7 @@
                         >Email</label
                       ><input
                         type="email"
-                        class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Email"
                         style="transition: all 0.15s ease 0s;"
                       />
@@ -69,7 +69,7 @@
                         >Password</label
                       ><input
                         type="password"
-                        class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                        class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Password"
                         style="transition: all 0.15s ease 0s;"
                       />
@@ -79,7 +79,7 @@
                         ><input
                           id="customCheckLogin"
                           type="checkbox"
-                          class="form-checkbox text-gray-800 ml-1 w-5 h-5"
+                          class="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
                           style="transition: all 0.15s ease 0s;"
                         /><span class="ml-2 text-sm font-semibold text-gray-700"
                           >Remember me</span
