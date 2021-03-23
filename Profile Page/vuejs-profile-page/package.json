@@ -1,6 +1,6 @@
 {
   "name": "vuejs-profile-page",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,17 +9,19 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
+    "@popperjs/core": "2.9.1",
     "core-js": "3.9.1",
-    "vue": "2.6.12"
+    "vue": "3.0.7"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "4.5.12",
-    "@vue/cli-plugin-eslint": "4.5.12",
-    "@vue/cli-service": "4.5.12",
+    "@vue/cli-plugin-babel": "5.0.0-alpha.7",
+    "@vue/cli-plugin-eslint": "5.0.0-alpha.7",
+    "@vue/cli-service": "5.0.0-alpha.7",
+    "@vue/compiler-sfc": "3.0.7",
     "babel-eslint": "10.1.0",
     "eslint": "7.22.0",
     "eslint-plugin-vue": "7.8.0",
-    "vue-template-compiler": "2.6.12"
+    "vue-router": "4.0.5"
   },
   "eslintConfig": {
     "root": true,
@@ -27,21 +29,17 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/vue3-essential",
       "eslint:recommended"
     ],
-    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+    },
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not dead"
   ]
 }
