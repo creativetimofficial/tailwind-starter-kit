@@ -37,7 +37,7 @@ export default function Landing() {
           </div>
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-            style={{ height: "70px", transform: "translateZ(0)" }}
+            style={{ height: "70px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -176,7 +176,7 @@ export default function Landing() {
         <section className="relative py-20">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style={{ height: "80px", transform: "translateZ(0)" }}
+            style={{ height: "80px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -437,7 +437,7 @@ export default function Landing() {
         <section className="pb-20 relative block bg-gray-900">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style={{ height: "80px", transform: "translateZ(0)" }}
+            style={{ height: "80px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
