@@ -45,7 +45,7 @@ const Hero = () => (<div className="relative pt-16 pb-32 flex content-center ite
   </div>
   <div
     className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-    style={{ height: "70px", transform: "translateZ(0)" }}
+    style={{ height: "70px" }}
   >
     <svg
       className="absolute bottom-0 overflow-hidden"
@@ -184,7 +184,7 @@ const Services = () => <section className="pb-20 bg-gray-300 -mt-24">
 const Featured = () =>  <section className="relative py-20">
 <div
   className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-  style={{ height: "80px", transform: "translateZ(0)" }}
+  style={{ height: "80px" }}
 >
   <svg
     className="absolute bottom-0 overflow-hidden"
@@ -444,7 +444,7 @@ const Team = ()=> <section className="pt-20 pb-48">
 const Finisher = ()=><section className="pb-20 relative block bg-gray-900">
 <div
   className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-  style={{ height: "80px", transform: "translateZ(0)" }}
+  style={{ height: "80px" }}
 >
   <svg
     className="absolute bottom-0 overflow-hidden"
