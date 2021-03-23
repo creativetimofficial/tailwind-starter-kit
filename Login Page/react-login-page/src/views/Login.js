@@ -70,7 +70,7 @@ export default function Login() {
                         </label>
                         <input
                           type="email"
-                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                          className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Email"
                           style={{ transition: "all .15s ease" }}
                         />
@@ -85,7 +85,7 @@ export default function Login() {
                         </label>
                         <input
                           type="password"
-                          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                          className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="Password"
                           style={{ transition: "all .15s ease" }}
                         />
@@ -95,7 +95,7 @@ export default function Login() {
                           <input
                             id="customCheckLogin"
                             type="checkbox"
-                            className="form-checkbox text-gray-800 ml-1 w-5 h-5"
+                            className="form-checkbox border-0 rounded text-gray-800 ml-1 w-5 h-5"
                             style={{ transition: "all .15s ease" }}
                           />
                           <span className="ml-2 text-sm font-semibold text-gray-700">
