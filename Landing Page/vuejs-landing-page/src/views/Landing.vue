@@ -33,7 +33,7 @@
         </div>
         <div
           class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-          style="height: 70px; transform: translateZ(0px);"
+          style="height: 70px;"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -178,7 +178,7 @@
       <section class="relative py-20">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-          style="height: 80px; transform: translateZ(0px);"
+          style="height: 80px;"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -420,7 +420,7 @@
       <section class="pb-20 relative block bg-gray-900">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-          style="height: 80px; transform: translateZ(0px);"
+          style="height: 80px;"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
