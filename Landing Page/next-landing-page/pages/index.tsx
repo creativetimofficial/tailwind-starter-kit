@@ -536,7 +536,7 @@ const Contact = ()=>  <section className="relative block py-24 lg:pt-0 bg-gray-9
                 </label>
             <input
               type="text"
-              className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+              className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
               placeholder="Full Name"
               style={{ transition: "all .15s ease" }}
             />
@@ -551,7 +551,7 @@ const Contact = ()=>  <section className="relative block py-24 lg:pt-0 bg-gray-9
                 </label>
             <input
               type="email"
-              className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+              className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
               placeholder="Email"
               style={{ transition: "all .15s ease" }}
             />
@@ -567,7 +567,7 @@ const Contact = ()=>  <section className="relative block py-24 lg:pt-0 bg-gray-9
             <textarea
               rows={4}
               cols={80}
-              className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+              className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
               placeholder="Type a message..."
             />
           </div>
