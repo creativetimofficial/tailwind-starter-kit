@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.1.0] 2021-03-22
+## [1.1.0] 2021-03-23
 ### Bug fixing
 - https://github.com/creativetimofficial/tailwind-starter-kit/issues/19
 - https://github.com/creativetimofficial/tailwind-starter-kit/issues/16
