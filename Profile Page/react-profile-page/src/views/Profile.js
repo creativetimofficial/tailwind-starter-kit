@@ -23,7 +23,7 @@ export default function Profile() {
           </div>
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-            style={{ height: "70px", transform: "translateZ(0)" }}
+            style={{ height: "70px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
