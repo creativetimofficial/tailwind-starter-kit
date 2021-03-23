@@ -36,34 +36,34 @@ We also feature 16 dynamic components.
 
 ### FREE Dashboard
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/dashboard">![Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/dashboard.jpg)</a>
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/dashboard">![Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/dashboard.jpg)</a>
 
 |Angular Dashboard Page|HTML Dashboard Page|React Dashboard Page|VueJS Dashboard Page|
 | --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/angular-dashboard-page" target="_blank">Download Angular</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/html-dashboard-page" target="_blank">Download HTML</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/react-dashboard-page" target="_blank">Download React</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Dashboard%20Page/vuejs-dashboard-page" target="_blank">Download Vue</a>  |
+| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/angular-dashboard-page" target="_blank">Download Angular</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/html-dashboard-page" target="_blank">Download HTML</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/react-dashboard-page" target="_blank">Download React</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/vuejs-dashboard-page" target="_blank">Download Vue</a>  |
 
 
 ### FREE Design System (UI Kit)
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/landing">![Landing Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/landing.jpg)</a>
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/landing">![Landing Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/landing.jpg)</a>
 
 |Angular Landing Page|HTML Landing Page|React Landing Page|VueJS Landing Page|NextJS Landing Page|
 | --- | --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/angular-landing-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/html-landing-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/react-landing-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/vuejs-landing-page" target="_blank">Download Vue</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Landing%20Page/next-landing-page" target="_blank">Download Next</a> |
+| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/angular-landing-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/html-landing-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/react-landing-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/vuejs-landing-page" target="_blank">Download Vue</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/next-landing-page" target="_blank">Download Next</a> |
 
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/login">![Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/login.jpg)</a>
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/login">![Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/login.jpg)</a>
 
 |Angular Login Page|HTML Login Page|React Login Page|VueJS Login Page|
 | --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/angular-login-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/html-login-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/react-login-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Login%20Page/vuejs-login-page" target="_blank">Download Vue</a> |
+| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/angular-login-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/html-login-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/react-login-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/vuejs-login-page" target="_blank">Download Vue</a> |
 
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/profile">![Profile Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/master/images/profile.jpg)</a>
+<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/profile">![Profile Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/profile.jpg)</a>
 
 |Angular Profile Page|HTML Profile Page|React Profile Page|VueJS Profile Page|
 | --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Profile%20Page/angular-profile-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Profile%20Page/html-profile-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Profile%20Page/react-profile-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/master/Profile%20Page/vuejs-profile-page" target="_blank">Download Vue</a> |
+| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/angular-profile-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/html-profile-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/react-profile-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/vuejs-profile-page" target="_blank">Download Vue</a> |
 
 ## Documentation
 The documentation for the Tailwind Starter Kit is hosted at our <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme" target="_blank">website</a>.
@@ -98,7 +98,7 @@ We use GitHub Issues as the official bug tracker for the Angular Landing Page. H
 
 
 
-- Licensed under <a href="https://github.com/creativetimofficial/tailwind-starter-kit/blob/master/LICENSE.md" target="_blank">MIT</a>
+- Licensed under <a href="https://github.com/creativetimofficial/tailwind-starter-kit/blob/main/LICENSE.md" target="_blank">MIT</a>
 
 ## Useful Links
 
