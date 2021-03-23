@@ -1,22 +1,31 @@
-import Vue from 'vue'
+import { createApp } from "vue";
+import { createWebHistory, createRouter } from "vue-router";
+
+// views
+
 import Profile from './views/Profile.vue'
+
+// styles
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-Vue.config.productionTip = false
+// mouting point for the whole app
 
-const routes = {
-  '/profile': Profile
-}
+import App from "@/App.vue";
 
-new Vue({
-  data: {
-    currentRoute: window.location.pathname
+// routes
+
+const routes = [
+  {
+    path: "/profile",
+    component: Profile,
   },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || Profile
-    }
-  },
-  render (h) { return h(this.ViewComponent) },
-}).$mount('#app')
+  { path: "/:pathMatch(.*)*", redirect: "/profile" },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+createApp(App).use(router).mount("#app");

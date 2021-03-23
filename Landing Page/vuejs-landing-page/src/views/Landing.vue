@@ -33,7 +33,7 @@
         </div>
         <div
           class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-          style="height: 70px; transform: translateZ(0px);"
+          style="height: 70px;"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -178,7 +178,7 @@
       <section class="relative py-20">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-          style="height: 80px; transform: translateZ(0px);"
+          style="height: 80px;"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -420,7 +420,7 @@
       <section class="pb-20 relative block bg-gray-900">
         <div
           class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-          style="height: 80px; transform: translateZ(0px);"
+          style="height: 80px;"
         >
           <svg
             class="absolute bottom-0 overflow-hidden"
@@ -511,7 +511,7 @@
                       >Full Name</label
                     ><input
                       type="text"
-                      class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                      class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                       placeholder="Full Name"
                       style="transition: all 0.15s ease 0s;"
                     />
@@ -523,7 +523,7 @@
                       >Email</label
                     ><input
                       type="email"
-                      class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                      class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                       placeholder="Email"
                       style="transition: all 0.15s ease 0s;"
                     />
@@ -536,7 +536,7 @@
                     ><textarea
                       rows="4"
                       cols="80"
-                      class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                      class="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                       placeholder="Type a message..."
                     ></textarea>
                   </div>

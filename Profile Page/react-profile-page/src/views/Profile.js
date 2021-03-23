@@ -23,7 +23,7 @@ export default function Profile() {
           </div>
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-            style={{ height: "70px", transform: "translateZ(0)" }}
+            style={{ height: "70px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -50,7 +50,7 @@ export default function Profile() {
                     <div className="relative">
                       <img
                         alt="..."
-                        src={require("assets/img/team-2-800x800.jpg")}
+                        src={require("assets/img/team-2-800x800.jpg").default}
                         className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
                         style={{ maxWidth: "150px" }}
                       />

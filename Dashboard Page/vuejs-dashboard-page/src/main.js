@@ -1,22 +1,31 @@
-import Vue from 'vue'
+import { createApp } from "vue";
+import { createWebHistory, createRouter } from "vue-router";
+
+// views
+
 import Dashboard from './views/Dashboard.vue'
+
+// styles
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-Vue.config.productionTip = false
+// mouting point for the whole app
 
-const routes = {
-  '/dashboard': Dashboard
-}
+import App from "@/App.vue";
 
-new Vue({
-  data: {
-    currentRoute: window.location.pathname
+// routes
+
+const routes = [
+  {
+    path: "/admin/dashboard",
+    component: Dashboard,
   },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || Dashboard
-    }
-  },
-  render (h) { return h(this.ViewComponent) },
-}).$mount('#app')
+  { path: "/:pathMatch(.*)*", redirect: "/admin/dashboard" },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+createApp(App).use(router).mount("#app");

@@ -37,7 +37,7 @@ export default function Landing() {
           </div>
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-            style={{ height: "70px", transform: "translateZ(0)" }}
+            style={{ height: "70px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -176,7 +176,7 @@ export default function Landing() {
         <section className="relative py-20">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style={{ height: "80px", transform: "translateZ(0)" }}
+            style={{ height: "80px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -282,7 +282,7 @@ export default function Landing() {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src={require("assets/img/team-1-800x800.jpg")}
+                    src={require("assets/img/team-1-800x800.jpg").default}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -320,7 +320,7 @@ export default function Landing() {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src={require("assets/img/team-2-800x800.jpg")}
+                    src={require("assets/img/team-2-800x800.jpg").default}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -352,7 +352,7 @@ export default function Landing() {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src={require("assets/img/team-3-800x800.jpg")}
+                    src={require("assets/img/team-3-800x800.jpg").default}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -390,7 +390,7 @@ export default function Landing() {
                 <div className="px-6">
                   <img
                     alt="..."
-                    src={require("assets/img/team-4-470x470.png")}
+                    src={require("assets/img/team-4-470x470.png").default}
                     className="shadow-lg rounded-full max-w-full mx-auto"
                     style={{ maxWidth: "120px" }}
                   />
@@ -437,7 +437,7 @@ export default function Landing() {
         <section className="pb-20 relative block bg-gray-900">
           <div
             className="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-            style={{ height: "80px", transform: "translateZ(0)" }}
+            style={{ height: "80px" }}
           >
             <svg
               className="absolute bottom-0 overflow-hidden"
@@ -528,7 +528,7 @@ export default function Landing() {
                       </label>
                       <input
                         type="text"
-                        className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                        className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Full Name"
                         style={{ transition: "all .15s ease" }}
                       />
@@ -543,7 +543,7 @@ export default function Landing() {
                       </label>
                       <input
                         type="email"
-                        className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                        className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Email"
                         style={{ transition: "all .15s ease" }}
                       />
@@ -559,7 +559,7 @@ export default function Landing() {
                       <textarea
                         rows="4"
                         cols="80"
-                        className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                        className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                         placeholder="Type a message..."
                       />
                     </div>
