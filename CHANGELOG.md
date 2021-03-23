@@ -41,8 +41,9 @@
   - https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/vue/popovers/left (you can check the Angular, JS and React as well from here)
   - https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/vue/tooltips/left (you can check the Angular, JS and React as well from here)
 - `typescript` (for the React versions to stop console warnings - NOTE: the projects are not based on TypeScript)
+- `@vue/compiler-sfc@3.0.7` (for the VueJS versions since we've upgraded to Vue@3)
+- `vue-router@4.0.5` (for the VueJS versions since we've upgraded to Vue@3)
 ### Angular Updated dependencies
-#### Dashboard Page
 ```
 @angular/animations                   8.2.12   →     11.2.6
 @angular/common                       8.2.12   →     11.2.6
@@ -77,128 +78,12 @@ ts-node                                7.0.0   →      9.1.1
 tslint                                5.15.0   →      6.1.3
 typescript                             3.5.3   →      4.0.7
 ```
-#### Landing Page
-```
-@angular/animations                   8.2.12   →     11.2.6
-@angular/common                       8.2.12   →     11.2.6
-@angular/compiler                     8.2.12   →     11.2.6
-@angular/core                         8.2.12   →     11.2.6
-@angular/forms                        8.2.12   →     11.2.6
-@angular/platform-browser             8.2.12   →     11.2.6
-@angular/platform-browser-dynamic     8.2.12   →     11.2.6
-@angular/router                       8.2.12   →     11.2.6
-@fortawesome/fontawesome-free         5.11.2   →     5.15.3
-rxjs                                   6.4.0   →      6.6.6
-tslib                                ^1.10.0   →     ^2.1.0
-zone.js                                0.9.1   →     0.11.4
-@angular-devkit/build-angular       0.803.15   →   0.1102.5
-@angular/cli                          8.3.15   →     11.2.5
-@angular/compiler-cli                 8.2.12   →     11.2.6
-@angular/language-service             8.2.12   →     11.2.6
-@types/node                            8.9.4   →   14.14.35
-@types/jasmine                         3.3.8   →      3.6.7
-@types/jasminewd2                      2.0.3   →      2.0.8
-codelyzer                             ^5.0.0   →     ^6.0.1
-jasmine-core                           3.4.0   →      3.7.1
-jasmine-spec-reporter                  4.2.1   →      6.0.0
-karma                                  4.1.0   →      6.2.0
-karma-chrome-launcher                  2.2.0   →      3.1.0
-karma-coverage-istanbul-reporter       2.0.1   →      3.0.3
-karma-jasmine                          2.0.1   →      4.0.1
-karma-jasmine-html-reporter           ^1.4.0   →     ^1.5.4
-protractor                             5.4.0   →      7.0.0
-ts-node                                7.0.0   →      9.1.1
-tslint                                5.15.0   →      6.1.3
-typescript                             3.5.3   →      4.0.7
-```
-#### Login Page
-```
-@angular/animations                   8.2.12   →     11.2.6
-@angular/common                       8.2.12   →     11.2.6
-@angular/compiler                     8.2.12   →     11.2.6
-@angular/core                         8.2.12   →     11.2.6
-@angular/forms                        8.2.12   →     11.2.6
-@angular/platform-browser             8.2.12   →     11.2.6
-@angular/platform-browser-dynamic     8.2.12   →     11.2.6
-@angular/router                       8.2.12   →     11.2.6
-@fortawesome/fontawesome-free         5.11.2   →     5.15.3
-rxjs                                   6.4.0   →      6.6.6
-tslib                                ^1.10.0   →     ^2.1.0
-zone.js                                0.9.1   →     0.11.4
-@angular-devkit/build-angular       0.803.15   →   0.1102.5
-@angular/cli                          8.3.15   →     11.2.5
-@angular/compiler-cli                 8.2.12   →     11.2.6
-@angular/language-service             8.2.12   →     11.2.6
-@types/node                            8.9.4   →   14.14.35
-@types/jasmine                         3.3.8   →      3.6.7
-@types/jasminewd2                      2.0.3   →      2.0.8
-codelyzer                             ^5.0.0   →     ^6.0.1
-jasmine-core                           3.4.0   →      3.7.1
-jasmine-spec-reporter                  4.2.1   →      6.0.0
-karma                                  4.1.0   →      6.2.0
-karma-chrome-launcher                  2.2.0   →      3.1.0
-karma-coverage-istanbul-reporter       2.0.1   →      3.0.3
-karma-jasmine                          2.0.1   →      4.0.1
-karma-jasmine-html-reporter           ^1.4.0   →     ^1.5.4
-protractor                             5.4.0   →      7.0.0
-ts-node                                7.0.0   →      9.1.1
-tslint                                5.15.0   →      6.1.3
-typescript                             3.5.3   →      4.0.7
-```
-#### Profile Page
-```
-@angular/animations                   8.2.12   →     11.2.6
-@angular/common                       8.2.12   →     11.2.6
-@angular/compiler                     8.2.12   →     11.2.6
-@angular/core                         8.2.12   →     11.2.6
-@angular/forms                        8.2.12   →     11.2.6
-@angular/platform-browser             8.2.12   →     11.2.6
-@angular/platform-browser-dynamic     8.2.12   →     11.2.6
-@angular/router                       8.2.12   →     11.2.6
-@fortawesome/fontawesome-free         5.11.2   →     5.15.3
-rxjs                                   6.4.0   →      6.6.6
-tslib                                ^1.10.0   →     ^2.1.0
-zone.js                                0.9.1   →     0.11.4
-@angular-devkit/build-angular       0.803.15   →   0.1102.5
-@angular/cli                          8.3.15   →     11.2.5
-@angular/compiler-cli                 8.2.12   →     11.2.6
-@angular/language-service             8.2.12   →     11.2.6
-@types/node                            8.9.4   →   14.14.35
-@types/jasmine                         3.3.8   →      3.6.7
-@types/jasminewd2                      2.0.3   →      2.0.8
-codelyzer                             ^5.0.0   →     ^6.0.1
-jasmine-core                           3.4.0   →      3.7.1
-jasmine-spec-reporter                  4.2.1   →      6.0.0
-karma                                  4.1.0   →      6.2.0
-karma-chrome-launcher                  2.2.0   →      3.1.0
-karma-coverage-istanbul-reporter       2.0.1   →      3.0.3
-karma-jasmine                          2.0.1   →      4.0.1
-karma-jasmine-html-reporter           ^1.4.0   →     ^1.5.4
-protractor                             5.4.0   →      7.0.0
-ts-node                                7.0.0   →      9.1.1
-tslint                                5.15.0   →      6.1.3
-typescript                             3.5.3   →      4.0.7
-```
 ### HTML Updated dependencies
-#### Dashboard Page
 ```
 @fortawesome/fontawesome-free    5.11.2   →     5.15.3
 chart.js                          2.9.3   →      2.9.4
 ```
-#### Landing Page
-```
-@fortawesome/fontawesome-free    5.11.2   →     5.15.3
-```
-#### Login Page
-```
-@fortawesome/fontawesome-free    5.11.2   →     5.15.3
-```
-#### Profile Page
-```
-@fortawesome/fontawesome-free    5.11.2   →     5.15.3
-```
 ### React Updated dependencies
-#### Dashboard Page
 ```
 @fortawesome/fontawesome-free    5.11.2   →   5.15.3
 chart.js                          2.9.3   →    2.9.4
@@ -208,93 +93,37 @@ react-router                      5.1.2   →    5.2.0
 react-router-dom                  5.1.2   →    5.2.0
 react-scripts                     3.2.0   →    4.0.3
 ```
-#### Landing Page
-```
-@fortawesome/fontawesome-free    5.11.2   →   5.15.3
-react                           16.11.0   →   17.0.1
-react-dom                       16.11.0   →   17.0.1
-react-router                      5.1.2   →    5.2.0
-react-router-dom                  5.1.2   →    5.2.0
-react-scripts                     3.2.0   →    4.0.3
-```
-#### Login Page
-```
-@fortawesome/fontawesome-free    5.11.2   →   5.15.3
-react                           16.11.0   →   17.0.1
-react-dom                       16.11.0   →   17.0.1
-react-router                      5.1.2   →    5.2.0
-react-router-dom                  5.1.2   →    5.2.0
-react-scripts                     3.2.0   →    4.0.3
-```
-#### Profile Page
-```
-@fortawesome/fontawesome-free    5.11.2   →   5.15.3
-react                           16.11.0   →   17.0.1
-react-dom                       16.11.0   →   17.0.1
-react-router                      5.1.2   →    5.2.0
-react-router-dom                  5.1.2   →    5.2.0
-react-scripts                     3.2.0   →    4.0.3
-```
 ### VueJS Updated dependencies
-#### Dashboard Page
 ```
 @fortawesome/fontawesome-free   5.11.2   →   5.15.3
 chart.js                         2.9.3   →    2.9.4
 core-js                          3.3.2   →    3.9.1
-vue                             2.6.10   →   2.6.12
-@vue/cli-plugin-babel            4.0.0   →   4.5.12
-@vue/cli-plugin-eslint           4.0.0   →   4.5.12
-@vue/cli-service                 4.0.0   →   4.5.12
-babel-eslint                    10.0.3   →   10.1.0
-eslint                          5.16.0   →   7.22.0
-eslint-plugin-vue                5.0.0   →    7.8.0
-vue-template-compiler           2.6.10   →   2.6.12
-```
-#### Landing Page
-```
-@fortawesome/fontawesome-free   5.11.2   →   5.15.3
-core-js                          3.3.2   →    3.9.1
-vue                             2.6.10   →   2.6.12
-@vue/cli-plugin-babel            4.0.0   →   4.5.12
-@vue/cli-plugin-eslint           4.0.0   →   4.5.12
-@vue/cli-service                 4.0.0   →   4.5.12
-babel-eslint                    10.0.3   →   10.1.0
-eslint                          5.16.0   →   7.22.0
-eslint-plugin-vue                5.0.0   →    7.8.0
-vue-template-compiler           2.6.10   →   2.6.12
-```
-#### Login Page
-```
-@fortawesome/fontawesome-free   5.11.2   →   5.15.3
-core-js                          3.3.2   →    3.9.1
-vue                             2.6.10   →   2.6.12
-@vue/cli-plugin-babel            4.0.0   →   4.5.12
-@vue/cli-plugin-eslint           4.0.0   →   4.5.12
-@vue/cli-service                 4.0.0   →   4.5.12
-babel-eslint                    10.0.3   →   10.1.0
-eslint                          5.16.0   →   7.22.0
-eslint-plugin-vue                5.0.0   →    7.8.0
-vue-template-compiler           2.6.10   →   2.6.12
-```
-#### Profile Page
-```
-@fortawesome/fontawesome-free   5.11.2   →   5.15.3
-core-js                          3.3.2   →    3.9.1
-vue                             2.6.10   →   2.6.12
-@vue/cli-plugin-babel            4.0.0   →   4.5.12
-@vue/cli-plugin-eslint           4.0.0   →   4.5.12
-@vue/cli-service                 4.0.0   →   4.5.12
+vue                             2.6.10   →    3.0.7
+@vue/cli-plugin-babel            4.0.0   →   5.0.0-alpha.7
+@vue/cli-plugin-eslint           4.0.0   →   5.0.0-alpha.7
+@vue/cli-service                 4.0.0   →   5.0.0-alpha.7
 babel-eslint                    10.0.3   →   10.1.0
 eslint                          5.16.0   →   7.22.0
 eslint-plugin-vue                5.0.0   →    7.8.0
 vue-template-compiler           2.6.10   →   2.6.12
 ```
 ### NextJS Updated dependencies
-#### Landing Page
 ```
+@fortawesome/fontawesome-free     ^5.15.0   →     ^5.15.3
+next-images                        ^1.6.0   →      ^1.7.0
+react                            ^16.12.0   →     ^17.0.2
+@types/react                     ^16.9.16   →     ^17.0.3
+react-dom                        ^16.12.0   →     ^17.0.2
+@types/react-dom                  ^16.9.4   →     ^17.0.3
+sass                             ^1.26.11   →     ^1.32.8
+@fullhuman/postcss-purgecss        ^3.0.0   →      ^4.0.3
+@types/node                     ^12.12.21   →   ^14.14.35
+tailwindcss                       ^1.8.10   →      ^2.0.4
+typescript                            4.0   →         4.2
 ```
 ### Warning
 _When doing a clean install, you might have some warnings, those come from `node_modules` and do not affect the project in any way._
+
 
 ## [1.0.0] 2019-12-20
 ### Original Release
