@@ -10,15 +10,15 @@ Tailwind Starter Kit is Free and Open Source. It does not change or add any CSS 
 
 ### CSS Components
 
-Tailwind Starter Kit comes with 120 Fully Coded CSS elements.
+Tailwind Starter Kit comes with 120 Fully Coded CSS elements. The elements are coded using the TailwindCSS Framework.
 
 ### Pages
 
-This extension also comes with 4 sample pages.
+This extension also comes with 4 full-fledged sample pages that a dev can use to make a website in a rush.
 
 ### JavaScript Components
 
-We also feature 16 dynamic components.
+We also feature 16 dynamic components built with the help of JS, again, to make websites easily and in a short time.
 
 
 ## Table of Contents
