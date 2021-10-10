@@ -35,7 +35,7 @@ The documentation for the Profile Page is hosted at our <a href="https://www.cre
 
 ## Quick start
 
-- <a href="https://github.com/creativetimofficial/tailwind-starter-kit/archive/master.zip" target="_blank">Download from Github</a>.
+- <a href="https://github.com/creativetimofficial/tailwind-starter-kit/archive/main.zip" target="_blank">Download from Github</a>.
 - <a href="https://github.com/creativetimofficial/tailwind-starter-kit" target="_blank">Check it on Github</a>.
 
 ## Browser Support
