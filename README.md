@@ -26,6 +26,7 @@ We also feature 16 dynamic components.
 * [Versions](#versions)
 * [Documentation](#documentation)
 * [Quick Start](#quick-start)
+* [Custom themes and dashboards](#custom-themes-and-dashboards)
 * [Browser Support](#browser-support)
 * [Reporting Issues](#reporting-issues)
 * [Licensing](#licensing)
@@ -73,8 +74,21 @@ The documentation for the Tailwind Starter Kit is hosted at our <a href="https:/
 
 ## Quick start
 
-- <a href="https://github.com/creativetimofficial/tailwind-starter-kit/archive/master.zip" target="_blank">Download from Github</a>.
+- <a href="https://github.com/creativetimofficial/tailwind-starter-kit/archive/main.zip" target="_blank">Download from Github</a>.
 - <a href="https://github.com/creativetimofficial/tailwind-starter-kit" target="_blank">Check it on Github</a>.
+
+## Custom themes and dashboards
+| Javascript | React | Angular |
+|:---:|:---:|:---:|
+| [<img src="https://s3.amazonaws.com/creativetim_bucket/products/392/thumb/opt_notus_js_thumbnail.jpg">](https://www.creative-tim.com/product/notus-js?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/394/thumb/opt_notus_react_thumbnail.jpg">](https://www.creative-tim.com/product/notus-react?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/391/thumb/opt_notus_angular_thumbnail.jpg">](https://www.creative-tim.com/product/notus-angular?ref=ctd-readme) |
+
+| Vuejs | NextJs | Svelte |
+|:---:|:---:|:---:|
+| [<img src="https://s3.amazonaws.com/creativetim_bucket/products/396/thumb/opt_notus_vuejs_thumbnail.jpg">](https://www.creative-tim.com/product/vue-notus?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/393/thumb/opt_notus_nextjs_thumbnail.jpg">](https://www.creative-tim.com/product/notus-nextjs?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/395/thumb/opt_notus_svelte_thumbnail.jpg">](https://www.creative-tim.com/product/notus-svelte?ref=ctd-readme) |
+
+| Notus Pro React | 
+|:---:|
+| [<img src="https://s3.amazonaws.com/creativetim_bucket/products/452/thumb/opt_np_react_thumbnail.jpg?1619006214">](https://www.creative-tim.com/product/notus-pro-react) | 
 
 ## Browser Support
 
