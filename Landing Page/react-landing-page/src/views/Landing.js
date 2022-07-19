@@ -2,6 +2,8 @@ import React from "react";
 
 import Navbar from "components/Navbar.js";
 import Footer from "components/Footer.js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGraduationCap, faGifts } from '@fortawesome/free-solid-svg-icons';
 
 export default function Landing() {
   return (
@@ -14,26 +16,10 @@ export default function Landing() {
             }}>
           <div className="absolute top-0 w-full h-full bg-center bg-cover"
               style={{
-                backgroundImage: "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')"
+                backgroundImage: "url('https://www.gweigators.io/static/media/twitterbannerxFULL.1d0ed082.png')"
               }}>
-            <span id="blackOverlay" className="w-full h-full absolute opacity-75 bg-black"></span>
           </div>
           <div className="container relative mx-auto">
-              <div className="items-center flex flex-wrap">
-                <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-                  <div className="pr-12">
-                    <h1 className="text-white font-semibold text-5xl">
-                      Your story starts with us.
-                    </h1>
-                    <p className="mt-4 text-lg text-gray-300">
-                      This is a simple example of a Landing Page you can build
-                      using Tailwind Starter Kit. It features multiple CSS
-                      components based on the Tailwindcss design system.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
           </div>
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
@@ -63,11 +49,11 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                      <i className="fas fa-award"></i>
+                      <FontAwesomeIcon icon={faGraduationCap} />
                     </div>
-                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                    <h6 className="text-xl font-semibold">Student Ran</h6>
                     <p className="mt-2 mb-4 text-gray-600">
-                      Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.
+                      We are a University of Florida student run project that focuses on NIL initiatives.
                     </p>
                   </div>
                 </div>
@@ -77,13 +63,13 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-blue-400">
-                      <i className="fas fa-retweet"></i>
+                    <FontAwesomeIcon icon={faGraduationCap} />
                     </div>
                     <h6 className="text-xl font-semibold">
-                      Free Revisions
+                      For Everybody
                     </h6>
                     <p className="mt-2 mb-4 text-gray-600">
-                      Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.
+                      Gwei Gators are for students, teachers, student athletes, and alumni.
                     </p>
                   </div>
                 </div>
@@ -93,13 +79,11 @@ export default function Landing() {
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                   <div className="px-4 py-5 flex-auto">
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400">
-                      <i className="fas fa-fingerprint"></i>
+                      <FontAwesomeIcon icon={faGifts} />
                     </div>
-                    <h6 className="text-xl font-semibold">
-                      Verified Company
-                    </h6>
+                    <h6 className="text-xl font-semibold"> Exclusive Perks</h6>
                     <p className="mt-2 mb-4 text-gray-600">
-                      Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!
+                      Gwei Gators enable you to enter giveaways, participate in exclusive tailgates, and network with UF Student Athletes!
                     </p>
                   </div>
                 </div>

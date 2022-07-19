@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-router": "5.2.0",
