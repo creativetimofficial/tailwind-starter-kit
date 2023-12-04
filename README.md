@@ -6,7 +6,7 @@
 
 ### A beautiful extension for TailwindCSS.
 
-Tailwind Starter Kit is Free and Open Source. It does not change or add any CSS to the already one from TailwindCSS. It features multiple HTML elements and it comes with dynamic components for ReactJS, Vue and Angular.
+Tailwind Starter Kit is Free and Open Source. It does not change or add any CSS to the original TailwindCSS framework. It features multiple HTML elements and it comes with dynamic components for ReactJS, Vue and Angular.
 
 ### CSS Components
 
@@ -100,7 +100,7 @@ At present, we officially aim to support the last two versions of the following 
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the Angular Landing Page. Here are some advices for our users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the Angular Landing Page. Here is some advice for our users that want to report an issue:
 
 1. Make sure that you are using the latest version of the Angular Landing Page. Check the CHANGELOG from your dashboard on our <a href="https://www.creative-tim.com/?ref=tsk-readme" target="_blank">website</a>.
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
