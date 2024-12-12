@@ -96,13 +96,16 @@ function toggleModal(event) {
   if (modal) {
     const isHidden = modal.classList.contains("pointer-events-none");
     modal.classList.toggle("opacity-0", !isHidden);
-    modal.classList.toggle("pointer-events-none", isHidden);
+    if (isHidden) {
+      modal.classList.remove("pointer-events-none");
+    } else {
+      setTimeout(() => modal.classList.add("pointer-events-none"), 300);
+    }
     modal.classList.toggle("opacity-100", isHidden);
     const modalContent = modal.querySelector(isHidden ? ".scale-95" : ".scale-100");
     modalContent.classList.toggle("scale-95", !isHidden);
     modalContent.classList.toggle("scale-100", isHidden);
     modal.setAttribute("aria-hidden", !isHidden);
-    if (!isHidden) setTimeout(() => modal.classList.add("pointer-events-none"), 300);
   }
 }
 function closeModal(event) {
