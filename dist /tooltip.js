@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
+
 // Tooltip component
 function initTooltips() {
   const tooltipTriggers = document.querySelectorAll("[data-dui-toggle='tooltip']");
