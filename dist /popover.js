@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
+
 // Popover component
 function initPopovers() {
   const popoverTriggers = document.querySelectorAll("[data-dui-toggle='popover']");
