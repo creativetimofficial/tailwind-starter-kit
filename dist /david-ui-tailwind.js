@@ -1,16 +1,27 @@
-// Include Popper.js for Popovers and Tooltips
-<script src="https://unpkg.com/@popperjs/core@2"></script>
+// Dynamically load Popper.js for Dropdowns, Popovers, and Tooltips
+function loadPopperJs(callback) {
+  const script = document.createElement("script");
+  script.src = "https://unpkg.com/@popperjs/core@2";
+  script.defer = true;
+  script.onload = callback; // Callback function after script is loaded
+  document.head.appendChild(script);
+}
 
-// Initialize all components at the start
+// Initialize components that don't depend on Popper.js immediately
 (function () {
   initAlert();
   initCollapse();
-  initDropdowns();
   initModal();
-  initPopovers();
   initTabs();
-  initTooltips();
 }());
+
+// Initialize components that depend on Popper.js after it is loaded
+loadPopperJs(() => {
+  initDropdowns();
+  initPopovers();
+  initTooltips();
+});
+
 
 // Alert component
 function closeAlert(event) {

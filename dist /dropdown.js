@@ -1,4 +1,11 @@
-<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
+// Dynamically load Popper.js for Dropdowns, Popovers, and Tooltips
+function loadPopperJs(callback) {
+  const script = document.createElement("script");
+  script.src = "https://unpkg.com/@popperjs/core@2";
+  script.defer = true;
+  script.onload = callback; // Callback function after script is loaded
+  document.head.appendChild(script);
+}
 
 // Dropdown component
 class Dropdown {
@@ -38,7 +45,8 @@ function initDropdowns() {
   if (dropdownElement) new Dropdown(dropdownElement);
 }
 
-// Initialize all components at the start
-(function () {
+// Initialize components that depend on Popper.js after it is loaded
+loadPopperJs(() => {
   initDropdowns();
-}());
+});
+
