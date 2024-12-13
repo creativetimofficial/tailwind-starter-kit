@@ -27,8 +27,6 @@ class Dropdown {
       placement: this.placement,
       modifiers: [
         { name: 'offset', options: { offset: [0, 5] } },
-        { name: 'preventOverflow', options: { boundary: 'viewport' } }, // Ensure the dropdown stays within the viewport
-        { name: 'hide', enabled: false }, // Disable the automatic hiding based on `data-popper-reference-hidden`
       ],
     });
 
