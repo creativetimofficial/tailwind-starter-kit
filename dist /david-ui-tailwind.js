@@ -44,7 +44,7 @@ class Dropdown {
     this.popperInstance = null;
 
     // Get placement dynamically from the attribute or default to 'bottom-start'
-    this.placement = this.dropdown.getAttribute('data-placement') || 'bottom-start';
+    this.placement = this.dropdown.getAttribute('data-dui-placement') || 'bottom-start';
 
     this.init();
   }
