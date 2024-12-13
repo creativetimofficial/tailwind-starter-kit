@@ -56,6 +56,11 @@ class Dropdown {
       modifiers: [{ name: 'offset', options: { offset: [0, 5] } }],
     });
 
+    // Check if the dropdown should be open by default
+    if (this.dropdown.hasAttribute('data-dui-open')) {
+      this.openDropdown(); // Open the dropdown
+    }
+
     // Add event listeners for toggle and close behavior
     this.button.addEventListener('click', (e) => {
       e.stopPropagation(); // Prevent event bubbling to parent dropdowns
@@ -71,9 +76,17 @@ class Dropdown {
 
   toggleDropdown() {
     const isExpanded = this.button.getAttribute('aria-expanded') === 'true';
-    this.button.setAttribute('aria-expanded', !isExpanded);
-    this.menu.hidden = isExpanded;
-    this.menu.classList.toggle('hidden', isExpanded);
+    if (isExpanded) {
+      this.closeDropdown();
+    } else {
+      this.openDropdown();
+    }
+  }
+
+  openDropdown() {
+    this.button.setAttribute('aria-expanded', true);
+    this.menu.hidden = false;
+    this.menu.classList.remove('hidden');
     this.popperInstance.update();
 
     // Close other sibling dropdowns if applicable
