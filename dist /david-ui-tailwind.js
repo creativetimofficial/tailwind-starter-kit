@@ -40,37 +40,74 @@ class Dropdown {
   constructor(dropdownElement) {
     this.dropdown = dropdownElement;
     this.button = this.dropdown.querySelector('[data-dui-toggle="dropdown"]');
-    this.menu = this.dropdown.querySelector('ul');
+    this.menu = this.dropdown.querySelector('[data-dui-role="menu"]');
     this.popperInstance = null;
+
+    // Get placement dynamically from the attribute or default to 'bottom-start'
+    this.placement = this.dropdown.getAttribute('data-placement') || 'bottom-start';
+
     this.init();
   }
+
   init() {
+    // Initialize Popper.js with dynamic placement
     this.popperInstance = Popper.createPopper(this.button, this.menu, {
-      placement: 'bottom-start',
-      modifiers: [{ name: 'offset', options: { offset: [0, 5] } }]
+      placement: this.placement,
+      modifiers: [{ name: 'offset', options: { offset: [0, 5] } }],
     });
+
+    // Add event listeners for toggle and close behavior
     this.button.addEventListener('click', (e) => {
-      e.stopPropagation();
+      e.stopPropagation(); // Prevent event bubbling to parent dropdowns
       this.toggleDropdown();
     });
-    document.addEventListener('click', () => this.closeDropdown());
+
+    document.addEventListener('click', (e) => {
+      if (!this.dropdown.contains(e.target)) {
+        this.closeDropdown();
+      }
+    });
   }
+
   toggleDropdown() {
     const isExpanded = this.button.getAttribute('aria-expanded') === 'true';
     this.button.setAttribute('aria-expanded', !isExpanded);
     this.menu.hidden = isExpanded;
     this.menu.classList.toggle('hidden', isExpanded);
     this.popperInstance.update();
+
+    // Close other sibling dropdowns if applicable
+    this.closeSiblings();
   }
+
   closeDropdown() {
     this.button.setAttribute('aria-expanded', false);
     this.menu.hidden = true;
     this.menu.classList.add('hidden');
   }
+
+  closeSiblings() {
+    const siblingMenus = this.dropdown.parentElement.querySelectorAll(
+      '[data-dui-role="menu"]:not(.hidden)'
+    );
+
+    siblingMenus.forEach((siblingMenu) => {
+      if (siblingMenu !== this.menu) {
+        siblingMenu.classList.add('hidden');
+        siblingMenu.parentElement
+          .querySelector('[data-dui-toggle="dropdown"]')
+          .setAttribute('aria-expanded', false);
+      }
+    });
+  }
 }
+
+// Initialize all dropdowns dynamically
 function initDropdowns() {
-  const dropdownElement = document.querySelector('.dropdown');
-  if (dropdownElement) new Dropdown(dropdownElement);
+  const dropdownElements = document.querySelectorAll('.dropdown');
+  dropdownElements.forEach((dropdownElement) => {
+    new Dropdown(dropdownElement);
+  });
 }
 
 // Collapse component
