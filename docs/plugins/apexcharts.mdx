@@ -1,0 +1,483 @@
+---
+title: React and Tailwind CSS Apexcharts - Material Tailwind v3
+description: Implement interactive charts with Apexcharts using React and Tailwind CSS in Material Tailwind v3. Visualize data effectively with customizable and responsive charts.
+github: plugins/apexcharts
+prev: docs/react/plugins/algolia-search
+next: docs/react/plugins/data-table
+---
+
+# Tailwind CSS Carousel - React
+
+Use our Tailwind CSS chart examples using apexcharts to add charts for visualizing data in your web projects.
+
+See below our beautiful chart examples that you can use in your Tailwind CSS and React project. The examples below are using the <Link href="https://swiperjs.com/" target="_blank">apexcharts and react-apexcharts libraries</Link> for chat functionalities and <Link href="https://github.com/pacocoursey/next-themes" target="_blank">next-themes</Link> for detecting the user's system color scheme, make sure to install them before using the examples.
+
+---
+
+## Install Required Dependency
+
+We're using `apexcharts` and `react-apexcharts` libraries for making chart components. Make sure to install it before using the example.
+
+<CodePreview>
+```bash
+npm install apexcharts react-apexcharts next-themes
+```
+</CodePreview>
+
+---
+
+## Line Chart
+
+<OldComponentPreview demo={<Apexcharts.LineChart />}>
+```tsx
+"use client";
+
+import * as React from "react";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import { Card, Typography } from "@material-tailwind/react";
+import { SelectFace3d } from "iconoir-react";
+import type { ApexOptions } from "apexcharts";
+import { useTheme } from "next-themes";
+
+function rgbToHex(rgb) {
+  return (
+    "#" +
+    rgb
+      .map((x) => {
+        const hex = parseInt(x, 10).toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      })
+      .join("")
+  );
+}
+
+export function LineChart() {
+  const { theme } = useTheme();
+  const [vars, setVars] = React.useState<CSSStyleDeclaration | null>(null);
+
+  React.useEffect(() => {
+    const cssVarValue = window.getComputedStyle(document.documentElement);
+
+    setVars(cssVarValue);
+  }, [theme]);
+
+  const chartColor = vars
+    ? rgbToHex(vars.getPropertyValue("--color-primary").split(" "))
+    : "";
+  const textColor = vars
+    ? rgbToHex(vars.getPropertyValue("--color-foreground").split(" "))
+    : "";
+  const lineColor = vars
+    ? rgbToHex(vars.getPropertyValue("--color-surface").split(" "))
+    : "";
+
+  const chartConfig = React.useMemo(
+    () =>
+      ({
+        type: "line",
+        height: 240,
+        series: [
+          {
+            name: "Sales",
+            data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+          },
+          title: {
+            show: "",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          colors: [chartColor],
+          stroke: {
+            curve: "smooth",
+            lineCap: "round",
+          },
+          markers: {
+            size: 0,
+          },
+          xaxis: {
+            axisTicks: {
+              show: false,
+            },
+            axisBorder: {
+              show: false,
+            },
+            labels: {
+              style: {
+                colors: textColor,
+                fontSize: "12px",
+                fontFamily: "inherit",
+                fontWeight: 400,
+              },
+            },
+            categories: [
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ],
+          },
+          yaxis: {
+            labels: {
+              style: {
+                colors: textColor,
+                fontSize: "12px",
+                fontFamily: "inherit",
+                fontWeight: 400,
+              },
+            },
+          },
+          grid: {
+            show: true,
+            borderColor: lineColor,
+            strokeDashArray: 5,
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+            padding: {
+              top: 5,
+              right: 20,
+            },
+          },
+          fill: {
+            opacity: 0.8,
+          },
+          tooltip: {
+            theme: "dark",
+          },
+        },
+      }) as ApexOptions,
+    [chartColor, textColor, lineColor],
+  );
+
+  return (
+    <Card>
+      <Card.Header className="m-0 flex flex-wrap items-center gap-4 p-4">
+        <Card
+          color="primary"
+          className="grid h-16 w-16 shrink-0 place-items-center rounded-md text-primary-foreground md:h-20 md:w-20"
+        >
+          <SelectFace3d className="h-6 w-6 md:h-8 md:w-8" />
+        </Card>
+        <div>
+          <Typography type="h6">Line Chart</Typography>
+          <Typography className="mt-1 max-w-sm text-foreground">
+            Visualize your data in a simple way using the
+            @material-tailwind/react chart plugin.
+          </Typography>
+        </div>
+      </Card.Header>
+      <Card.Body>
+        <Chart {...chartConfig} />
+      </Card.Body>
+    </Card>
+  );
+}
+```
+</OldComponentPreview>
+
+---
+
+## Bar Chart
+
+<OldComponentPreview demo={<Apexcharts.BarChart />}>
+```tsx
+"use client";
+
+import * as React from "react";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import { SelectFace3d } from "iconoir-react";
+import type { ApexOptions } from "apexcharts";
+import { Card, Typography } from "@material-tailwind/react";
+import { useTheme } from "next-themes";
+
+function rgbToHex(rgb) {
+  return (
+    "#" +
+    rgb
+      .map((x) => {
+        const hex = parseInt(x, 10).toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      })
+      .join("")
+  );
+}
+
+export function BarChart() {
+  const { theme } = useTheme();
+  const [vars, setVars] = React.useState<CSSStyleDeclaration | null>(null);
+
+  React.useEffect(() => {
+    const cssVarValue = window.getComputedStyle(document.documentElement);
+
+    setVars(cssVarValue);
+  }, [theme]);
+
+  const chartColor = vars
+    ? rgbToHex(vars.getPropertyValue("--color-primary").split(" "))
+    : "";
+  const textColor = vars
+    ? rgbToHex(vars.getPropertyValue("--color-foreground").split(" "))
+    : "";
+  const lineColor = vars
+    ? rgbToHex(vars.getPropertyValue("--color-surface").split(" "))
+    : "";
+
+  const chartConfig = React.useMemo(
+    () =>
+      ({
+        type: "bar",
+        height: 240,
+        series: [
+          {
+            name: "Sales",
+            data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+          },
+          title: {
+            show: "",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          colors: [chartColor],
+          plotOptions: {
+            bar: {
+              columnWidth: "24%",
+              borderRadius: 2,
+            },
+          },
+          xaxis: {
+            axisTicks: {
+              show: false,
+            },
+            axisBorder: {
+              show: false,
+            },
+            labels: {
+              style: {
+                colors: textColor,
+                fontSize: "12px",
+                fontFamily: "inherit",
+                fontWeight: 400,
+              },
+            },
+            categories: [
+              "Apr",
+              "May",
+              "Jun",
+              "Jul",
+              "Aug",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Dec",
+            ],
+          },
+          yaxis: {
+            labels: {
+              style: {
+                colors: textColor,
+                fontSize: "12px",
+                fontFamily: "inherit",
+                fontWeight: 400,
+              },
+            },
+          },
+          grid: {
+            show: true,
+            borderColor: lineColor,
+            strokeDashArray: 5,
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+            padding: {
+              top: 5,
+              right: 20,
+            },
+          },
+          fill: {
+            opacity: 0.8,
+          },
+          tooltip: {
+            theme: "dark",
+          },
+        },
+      }) as ApexChart as ApexOptions,
+    [chartColor, textColor, lineColor],
+  );
+
+  return (
+    <Card>
+      <Card.Header className="m-0 flex flex-wrap items-center gap-4 p-4">
+        <Card
+          color="primary"
+          className="grid h-16 w-16 shrink-0 place-items-center rounded-md text-primary-foreground md:h-20 md:w-20"
+        >
+          <SelectFace3d className="h-6 w-6 md:h-8 md:w-8" />
+        </Card>
+        <div>
+          <Typography type="h6">Bar Chart</Typography>
+          <Typography className="mt-1 max-w-sm text-foreground">
+            Visualize your data in a simple way using the
+            @material-tailwind/react chart plugin.
+          </Typography>
+        </div>
+      </Card.Header>
+      <Card.Body>
+        <Chart {...chartConfig} />
+      </Card.Body>
+    </Card>
+  );
+}
+```
+</OldComponentPreview>
+
+---
+
+## Pie Chart
+
+<OldComponentPreview demo={<Apexcharts.PieChart />}>
+```tsx
+"use client";
+
+import * as React from "react";
+import dynamic from "next/dynamic";
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import { SelectFace3d } from "iconoir-react";
+import type { ApexOptions } from "apexcharts";
+import { Card, Typography } from "@material-tailwind/react";
+import { useTheme } from "next-themes";
+
+function rgbToHex(rgb) {
+  return (
+    "#" +
+    rgb
+      .map((x) => {
+        const hex = parseInt(x, 10).toString(16);
+        return hex.length === 1 ? "0" + hex : hex;
+      })
+      .join("")
+  );
+}
+
+export function PieChart() {
+  const { theme } = useTheme();
+  const [vars, setVars] = React.useState<CSSStyleDeclaration | null>(null);
+
+  React.useEffect(() => {
+    const cssVarValue = window.getComputedStyle(document.documentElement);
+
+    setVars(cssVarValue);
+  }, [theme]);
+
+  const colorPrimary = vars
+    ? rgbToHex(vars.getPropertyValue("--color-primary").split(" "))
+    : "";
+  const colorInfo = vars
+    ? rgbToHex(vars.getPropertyValue("--color-info").split(" "))
+    : "";
+  const colorSuccess = vars
+    ? rgbToHex(vars.getPropertyValue("--color-success").split(" "))
+    : "";
+  const colorWarning = vars
+    ? rgbToHex(vars.getPropertyValue("--color-warning").split(" "))
+    : "";
+  const colorError = vars
+    ? rgbToHex(vars.getPropertyValue("--color-error").split(" "))
+    : "";
+
+  const chartConfig = React.useMemo(
+    () =>
+      ({
+        type: "pie",
+        height: 240,
+        width: 480,
+        series: [44, 55, 13, 43, 22],
+        options: {
+          responsive: [
+            {
+              breakpoint: 600,
+              options: {
+                chart: {
+                  width: "100%",
+                },
+              },
+            },
+          ],
+          chart: {
+            toolbar: {
+              show: false,
+            },
+          },
+          title: {
+            show: "",
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          legend: {
+            show: false,
+          },
+          labels: ["Primary", "Info", "Success", "Warning", "Error"],
+          colors: [
+            colorPrimary,
+            colorInfo,
+            colorSuccess,
+            colorWarning,
+            colorError,
+          ],
+        },
+      }) as ApexOptions,
+    [colorPrimary, colorInfo, colorSuccess, colorWarning, colorError],
+  );
+
+  return (
+    <Card>
+      <Card.Header className="m-0 flex flex-wrap items-center gap-4 p-4">
+        <Card
+          color="primary"
+          className="grid h-16 w-16 shrink-0 place-items-center rounded-md text-primary-foreground md:h-20 md:w-20"
+        >
+          <SelectFace3d className="h-6 w-6 md:h-8 md:w-8" />
+        </Card>
+        <div>
+          <Typography type="h6">Pie Chart</Typography>
+          <Typography className="mt-1 max-w-sm text-foreground">
+            Visualize your data in a simple way using the
+            @material-tailwind/react chart plugin.
+          </Typography>
+        </div>
+      </Card.Header>
+      <Card.Body className="grid place-items-center">
+        <Chart {...chartConfig} />
+      </Card.Body>
+    </Card>
+  );
+}
+```
+</OldComponentPreview>

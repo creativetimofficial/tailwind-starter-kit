@@ -1,0 +1,103 @@
+---
+title: Tailwind CSS Alert - Components Library @David UI
+description: Explore Tailwind CSS alert components at David UI. Build notifications for success, error, or warnings with accessible, responsive, and stylish designs.
+github: Alert
+prev: docs/react/inputs
+next: docs/react/Alert-group
+---
+
+<ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+
+<InfoBadge />
+
+# Tailwind CSS Alerts
+
+David UI’s alert component is ideal for displaying messages like success, error, or warnings. 
+
+Built with Tailwind CSS and HTML, it ensures accessibility and supports various styles and colors. Its responsive design fits seamlessly into any interface. 
+
+Check out David UI's alert examples to add impactful notifications to your Tailwind CSS applications.
+
+
+---
+
+## Basic Alert
+
+This example showcases an alert with white text on a dark gray background, offering strong contrast for improved readability.
+
+<PreviewWithCode relativePath="alert/alert-demo.tsx" language="html" />
+
+---
+
+## Alert Variants
+
+This set showcases four alert variants: Ghost (subtle, semi-transparent background), Outline (transparent with a defined border), Solid (bold, solid background), and Gradient (vibrant gradient effect). Each variant is visually distinct, responsive, and adaptable to various UI needs.
+
+<PreviewWithCode relativePath="alert/alert-variants.tsx" language="html" />
+
+---
+
+## Alert Colors
+
+Choose from 19 color options for the Alert component by applying specific color classes. The example below showcases a selection of available colors.
+
+<PreviewWithCode relativePath="alert/alert-colors.tsx" language="html" />
+
+---
+
+## Alert Icon
+
+Optimize your Tailwind CSS alert with an icon at the beginning by incorporating the `i` tag for a visually enriched component.
+
+<PreviewWithCode relativePath="alert/alert-icon.tsx" language="html" />
+
+---
+
+## Alert with List
+
+The Alert component supports a variety of embedded elements. The example below illustrates an alert containing a list.
+
+<PreviewWithCode relativePath="alert/alert-with-list.tsx" language="html" />
+
+---
+
+## Alert Dismissible
+This example includes a dismiss button on the right with an intuitive "close" icon, allowing users to easily remove the alert.
+
+<PreviewWithCode relativePath="alert/alert-dismissible.tsx" language="html" />
+
+---
+
+## Alert Custom Close Icon
+
+Replace the default close icon with any DOM element to customize the appearance of the Alert component's dismiss feature.
+
+<PreviewWithCode relativePath="alert/alert-custom-close-icon.tsx" language="html" />
+
+---
+
+## Alert with Content
+
+Combine elements such as titles and descriptions within the Alert component to create more comprehensive and informative alerts.
+
+<PreviewWithCode relativePath="alert/alert-with-content.tsx" language="html" />
+
+
+---
+
+## Alert Custom Styles
+
+Here is an example of how you can implement unique styles for the Alert component.
+
+<PreviewWithCode relativePath="alert/alert-custom-styles.tsx" language="html" />
+
+---
+
+## Required Script
+The alert component needs a required script file for the dismissible functionality to work. Add the script below to the bottom of your HTML file.
+
+If you don't plan to use dismissible alerts, you can skip this step.
+
+
+
+<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>

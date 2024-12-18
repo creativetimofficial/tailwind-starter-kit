@@ -1,0 +1,44 @@
+{
+  "name": "david-ai",
+  "version": "1.0.0",
+  "description": "David UI is a free and open-source collection of customizable, production-ready UI components built with Tailwind CSS",
+  "main": "dist/david-ai.js",
+  "module": "dist/david-ai.esm.js",
+  "unpkg": "dist/david-ai.min.js",
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "build:watch": "rollup -c --watch",
+    "dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creativetimofficial/david-ai.git"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "tailwindcss",
+    "javascript"
+  ],
+  "author": "Creative Tim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creativetimofficial/david-ai/issues"
+  },
+  "homepage": "https://creative-tim.com/david-ui",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "rollup": "^3.25.1"
+  }
+}

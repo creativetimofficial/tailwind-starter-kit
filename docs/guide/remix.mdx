@@ -1,0 +1,167 @@
+---
+title: Material Tailwind with Remix - Installation Guide
+description: Learn how to use Material Tailwind components with Remix and Tailwind CSS to easily create elegant and flexible pages.
+github: guide/remix
+prev: docs/react/guide/next
+next: docs/react/guide/astro
+---
+
+# Material Tailwind with Remix
+
+Learn how to setup and install `@material-tailwind/react` with Remix.
+
+---
+
+## Creating a Remix Project
+
+First, create a new Remix project using the command below, it will create a new Remix project.
+
+For more details check the <Link href="https://remix.run/docs/en/main/start/quickstart?ref=material-tailwind" target="_blank">Remix Official Documentation</Link>.
+
+<CodePreview>
+```bash
+npx create-remix@latest
+```
+</CodePreview>
+
+---
+
+## Install Tailwind CSS
+
+Once you have created your Remix project, you need to install and configure Tailwind CSS by running the following command:
+
+<CodePreview>
+```bash
+npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init --ts -p
+```
+</CodePreview>
+
+### Configure Your Template Paths
+
+Once you have installed Tailwind CSS, you need to configure your template paths in your `tailwind.config.ts` file.
+
+<CodePreview>
+```ts
+// highlight(4)
+import type { Config } from 'tailwindcss'
+
+export default {
+  content: ["./app/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+} satisfies Config
+```
+</CodePreview>
+
+### Add Tailwind CSS Directives to CSS
+
+Next, you need to add the Tailwind CSS directives to your CSS file. Create a `./app/tailwind.css` file and add the `@tailwind` directives for each of Tailwind's layers.
+
+<CodePreview>
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+</CodePreview>
+
+### Import CSS File
+
+Next, you need to import the newly-created `tailwind.css` file in your `./app/root.tsx` file.
+
+<CodePreview>
+```tsx
+// highlight(9,10,11,12,13,14)
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
+
+import type { LinksFunction } from "@remix-run/node";
+import stylesheet from "~/tailwind.css?url";
+
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+];
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export default function App() {
+  return <Outlet />;
+}
+```
+</CodePreview>
+
+---
+
+## Install Material Tailwind
+
+Once you installed and configured Tailwind CSS, you need to install `@material-tailwind/react` by running the following command:
+
+<CodePreview>
+```bash
+npm i @material-tailwind/react@beta
+```
+</CodePreview>
+
+---
+
+## Add Plugin and Template Path
+
+Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.ts` file.
+
+<CodePreview>
+```ts
+// highlight(2,7,12)
+import type { Config } from 'tailwindcss'
+import { mtConfig } from "@material-tailwind/react";
+
+export default {
+  content: [
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [mtConfig],
+} satisfies Config
+```
+</CodePreview>
+
+---
+
+## Example
+
+Now you're ready to use Material Tailwind components in your Remix project. Here's an example of how to use the `Button` component:
+
+<OldComponentPreview demo={<Button.ButtonDemo />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export default function Index() {
+  return <Button>Button</Button>
+}
+```
+</OldComponentPreview>

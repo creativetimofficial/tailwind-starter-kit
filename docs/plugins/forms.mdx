@@ -1,0 +1,510 @@
+---
+title: React and Tailwind CSS Forms Plugin- Material Tailwind v3
+description: Build and style forms with React and Tailwind CSS using Material Tailwind v3. Improve user input with customizable and responsive form components.
+github: plugins/forms
+prev: docs/react/plugins/data-picker
+next: docs/react/plugins/swiper
+---
+
+# Tailwind CSS Form - React
+
+Easily create form using our components based on Tailwind CSS and React.
+
+Forms are essential user interface design element, providing users with the means to enter non-standardized responses.
+
+See below our beautiful form examples that you can use in your Tailwind CSS and React project. The examples below are using the <Link href="https://react-hook-form.com/" target="_blank">react-hook-form</Link>, <Link href="https://github.com/react-hook-form/resolvers" target="_blank">@hookform/resolvers</Link> and <Link href="https://zod.dev/">zod</Link> make sure to install them before using the example.
+
+---
+
+## Install Required Dependencies
+
+We're using `react-hook-form`, `@hookform/resolvers` and `zod` libraries to create a functional form with validation. Make sure to install them before using the example.
+
+<CodePreview>
+```bash
+npm install react-hook-form @hookform/resolvers zod
+```
+</CodePreview>
+
+---
+
+## Form Demo
+
+<OldComponentPreview demo={<Forms.FormDemo />}>
+```tsx
+"use client";
+
+import * as React from "react";
+
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Input,
+  Button,
+  Checkbox,
+  Typography,
+  InputFieldProps,
+} from "@material-tailwind/react";
+import { Lock, Mail, ProfileCircle } from "iconoir-react";
+
+const formSchema = z.object({
+  name: z.string().min(1, { message: "Name is required." }),
+  email: z.string().email({ message: "Invalid email." }),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters." }),
+});
+
+type FormInputs = z.infer<typeof formSchema>;
+
+type TextFieldProps = InputFieldProps & {
+  label: string;
+  error?: string;
+  icon: React.ElementType;
+};
+
+const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
+  ({ label, error, icon: Icon, ...props }, ref) => {
+    const id = React.useId();
+
+    return (
+      <Typography
+        as="label"
+        htmlFor={id}
+        color="default"
+        className="mb-6 block space-y-1.5"
+      >
+        <span className="text-sm font-semibold">{label}</span>
+        <Input
+          ref={ref}
+          {...props}
+          id={id}
+          isError={Boolean(error)}
+          color={error ? "error" : "primary"}
+        >
+          <Input.Icon>
+            <Icon className="h-full w-full" />
+          </Input.Icon>
+        </Input>
+        {error && (
+          <Typography type="small" color="error">
+            {error}
+          </Typography>
+        )}
+      </Typography>
+    );
+  },
+);
+
+export function FormDemo() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormInputs>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  });
+
+  function onSubmit(data: FormInputs) {
+    console.log(data);
+  }
+
+  const nameError = errors.name?.message;
+  const emailError = errors.email?.message;
+  const passwordError = errors.password?.message;
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md">
+      <TextField
+        label="Name"
+        error={nameError}
+        icon={ProfileCircle}
+        placeholder="Alex Smith"
+        {...register("name")}
+      />
+      <TextField
+        type="email"
+        label="Email Address"
+        error={emailError}
+        icon={Mail}
+        placeholder="someone@example.com"
+        {...register("email")}
+      />
+      <TextField
+        type="password"
+        label="Password"
+        error={passwordError}
+        icon={Lock}
+        placeholder="******"
+        {...register("password")}
+      />
+      <div className="my-6 flex items-center gap-2">
+        <Checkbox>
+          <Checkbox.Indicator />
+        </Checkbox>
+        <Typography
+          htmlFor="remember"
+          className="flex items-center gap-1 text-foreground"
+        >
+          I&apos;m agree with the
+          <Typography as="a" href="#" color="primary">
+            Terms and Conditions
+          </Typography>
+        </Typography>
+      </div>
+      <Button type="submit" className="w-full">
+        Sign Up
+      </Button>
+      <Typography
+        type="small"
+        className="my-4 flex items-center justify-center gap-1 text-foreground"
+      >
+        Already have an account?
+        <Typography
+          as="a"
+          href="#"
+          type="small"
+          color="primary"
+          className="font-bold"
+        >
+          Sign In
+        </Typography>
+      </Typography>
+    </form>
+  );
+}
+```
+</OldComponentPreview>
+
+---
+
+## Checkout Form
+
+<OldComponentPreview demo={<Forms.CheckoutForm />}>
+```tsx
+"use client";
+
+import * as React from "react";
+
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Card,
+  Tabs,
+  Input,
+  Button,
+  Checkbox,
+  Typography,
+  InputFieldProps,
+} from "@material-tailwind/react";
+import {
+  Mail,
+  Calendar,
+  CreditCard,
+  LockSquare,
+  ProfileCircle,
+  Globe,
+  Post,
+} from "iconoir-react";
+
+const cardFormSchema = z.object({
+  email: z.string().email({ message: "Invalid email." }),
+  cardNumber: z.string().min(15, { message: "Invalid card number." }),
+  expiry: z.string().min(4, { message: "Invalid expiry date." }),
+  cvc: z.string().min(3, { message: "Invalid CVC." }),
+  holderName: z.string().min(1, { message: "Holder name is required." }),
+});
+
+const paypalFormSchema = z.object({
+  email: z.string().email({ message: "Invalid email." }),
+  country: z.string().min(1, { message: "Country is required." }),
+  postalCode: z.string().min(1, { message: "Postal code is required." }),
+});
+
+type CardFormInputs = z.infer<typeof cardFormSchema>;
+type PaypalFormInputs = z.infer<typeof paypalFormSchema>;
+
+type TextFieldProps = InputFieldProps & {
+  label: string;
+  error?: string;
+  icon: React.ElementType;
+};
+
+const TextField = React.forwardRef<typeof Input.Field, TextFieldProps>(
+  ({ label, error, icon: Icon, ...props }, ref) => {
+    const id = React.useId();
+
+    return (
+      <Typography
+        as="label"
+        htmlFor={id}
+        color="default"
+        className="mb-6 block w-full space-y-1.5"
+      >
+        <span className="text-sm font-semibold">{label}</span>
+        <Input
+          ref={ref}
+          {...props}
+          id={id}
+          isError={Boolean(error)}
+          color={error ? "error" : "primary"}
+        >
+          <Input.Icon>
+            <Icon className="h-full w-full" />
+          </Input.Icon>
+        </Input>
+        {error && (
+          <Typography type="small" color="error">
+            {error}
+          </Typography>
+        )}
+      </Typography>
+    );
+  },
+);
+
+function formatExpires(value: string) {
+  return value
+    .replace(/[^0-9]/g, "")
+    .replace(/^([2-9])$/g, "0$1")
+    .replace(/^(1{1})([3-9]{1})$/g, "0$1/$2")
+    .replace(/^0{1,}/g, "0")
+    .replace(/^([0-1]{1}[0-9]{1})([0-9]{1,2}).*/g, "$1/$2");
+}
+
+export function CheckoutForm() {
+  const cardForm = useForm<CardFormInputs>({
+    resolver: zodResolver(cardFormSchema),
+    defaultValues: {
+      email: "",
+      cardNumber: "",
+      expiry: "",
+      cvc: "",
+      holderName: "",
+    },
+  });
+
+  const paypalForm = useForm<PaypalFormInputs>({
+    resolver: zodResolver(paypalFormSchema),
+    defaultValues: {
+      email: "",
+      country: "",
+      postalCode: "",
+    },
+  });
+
+  function cardFormOnSubmit(data: CardFormInputs) {
+    console.log(data);
+  }
+
+  function paypalFormOnSubmit(data: PaypalFormInputs) {
+    console.log(data);
+  }
+
+  const emailError = cardForm.formState.errors.email?.message;
+  const cardNumberError = cardForm.formState.errors.cardNumber?.message;
+  const expiryError = cardForm.formState.errors.expiry?.message;
+  const cvcError = cardForm.formState.errors.cvc?.message;
+  const holderNameError = cardForm.formState.errors.holderName?.message;
+
+  const emailErrorPaypal = paypalForm.formState.errors.email?.message;
+  const countryError = paypalForm.formState.errors.country?.message;
+  const postalCodeError = paypalForm.formState.errors.postalCode?.message;
+
+  return (
+    <Card className="w-full max-w-md">
+      <Card.Header>
+        <Card
+          color="primary"
+          className="grid h-40 place-items-center rounded-md shadow-none"
+        >
+          <Typography type="h5" className="text-white">
+            Material Tailwind PRO
+          </Typography>
+        </Card>
+      </Card.Header>
+      <Card.Body>
+        <Tabs defaultValue="card">
+          <Tabs.List className="w-full">
+            <Tabs.Trigger type="button" className="w-full" value="card">
+              Card
+            </Tabs.Trigger>
+            <Tabs.Trigger type="button" className="w-full" value="paypal">
+              PayPal
+            </Tabs.Trigger>
+            <Tabs.TriggerIndicator />
+          </Tabs.List>
+          <Tabs.Panel
+            as="form"
+            onSubmit={cardForm.handleSubmit(cardFormOnSubmit)}
+            value="card"
+          >
+            <TextField
+              type="email"
+              label="Email Address"
+              error={emailError}
+              icon={Mail}
+              placeholder="someone@example.com"
+              {...cardForm.register("email")}
+            />
+            <TextField
+              label="Card Number"
+              error={cardNumberError}
+              icon={CreditCard}
+              placeholder="XXXX XXXX XXXX XXXX"
+              {...cardForm.register("cardNumber")}
+              value={cardForm.watch("cardNumber")}
+              onChange={(event) => {
+                const newValue = event.target.value;
+                const digits = newValue.replace(/\D/g, "");
+
+                if (digits.length > 16) {
+                  return;
+                }
+
+                if (!digits || /^[\d\s]+$/.test(digits)) {
+                  const formattedDigits = digits.replace(
+                    /(\d{4})(?=\d)/g,
+                    "$1 ",
+                  );
+
+                  cardForm.setValue("cardNumber", formattedDigits);
+                }
+
+                cardForm.trigger("cardNumber");
+              }}
+            />
+            <div className="flex w-full gap-4">
+              <TextField
+                label="Expiry Date"
+                error={expiryError}
+                icon={Calendar}
+                placeholder="mm/yy"
+                {...cardForm.register("expiry")}
+                value={cardForm.watch("expiry")}
+                onChange={(event) => {
+                  const newValue = event.target.value;
+                  const digits = newValue.replace(/\D/g, "");
+
+                  if (digits.length > 4 || digits.length < 4) {
+                    cardForm.setError("expiry", {
+                      type: "manual",
+                      message: "Invalid expiry date.",
+                    });
+                  }
+
+                  cardForm.setValue("expiry", formatExpires(digits));
+
+                  cardForm.trigger("expiry");
+                }}
+              />
+              <TextField
+                label="CVC"
+                error={cvcError}
+                icon={LockSquare}
+                placeholder="000"
+                maxLength={3}
+                {...cardForm.register("cvc")}
+                value={cardForm.watch("cvc")}
+                onChange={(event) => {
+                  const newValue = event.target.value;
+                  const digits = newValue.replace(/\D/g, "");
+
+                  if (digits.length > 3) {
+                    return;
+                  }
+
+                  cardForm.setValue("cvc", digits);
+
+                  cardForm.trigger("cvc");
+                }}
+              />
+            </div>
+            <TextField
+              label="Holder Name"
+              error={holderNameError}
+              icon={ProfileCircle}
+              placeholder="Alex Smith"
+              {...cardForm.register("holderName")}
+            />
+            <div className="my-6 flex items-center gap-2">
+              <Checkbox>
+                <Checkbox.Indicator />
+              </Checkbox>
+              <Typography
+                htmlFor="remember"
+                className="flex items-center gap-1 text-foreground"
+              >
+                I&apos;m agree with the
+                <Typography as="a" href="#" color="primary">
+                  Terms and Conditions
+                </Typography>
+              </Typography>
+            </div>
+            <Button type="submit" className="w-full">
+              Pay Now
+            </Button>
+          </Tabs.Panel>
+          <Tabs.Panel
+            as="form"
+            onSubmit={paypalForm.handleSubmit(paypalFormOnSubmit)}
+            value="paypal"
+          >
+            <TextField
+              type="email"
+              label="Email Address"
+              error={emailErrorPaypal}
+              icon={Mail}
+              placeholder="someone@example.com"
+              {...paypalForm.register("email")}
+            />
+            <TextField
+              label="Country"
+              error={countryError}
+              icon={Globe}
+              placeholder="United Arab Emirates"
+              {...paypalForm.register("country")}
+            />
+            <TextField
+              label="Postal Code"
+              error={postalCodeError}
+              icon={Post}
+              placeholder="123456"
+              {...paypalForm.register("postalCode")}
+              value={paypalForm.watch("postalCode")}
+              onChange={(event) => {
+                const newValue = event.target.value;
+                const digits = newValue.replace(/\D/g, "");
+
+                if (newValue !== digits) {
+                  return;
+                }
+
+                paypalForm.setValue("postalCode", digits);
+                paypalForm.trigger("postalCode");
+              }}
+            />
+            <Button type="submit" className="w-full">
+              Pay With PayPal
+            </Button>
+          </Tabs.Panel>
+        </Tabs>
+        <Typography
+          type="small"
+          className="my-4 flex items-center justify-center gap-1 text-foreground"
+        >
+          Payments are secure and encrypted
+        </Typography>
+      </Card.Body>
+    </Card>
+  );
+}
+```
+</OldComponentPreview>

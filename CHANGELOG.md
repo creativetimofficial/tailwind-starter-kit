@@ -1,5 +1,15 @@
 # Change Log
 
+
+## David AI - Release 1.0.0 - 2024-12-18
+**Rename the project from Tailwind Starter Kit to David AI**
+
+### Changed
+- The project name from Tailwind Starter Kit to David AI
+- Added David UI HTML components
+- Added David AI JavaScript components
+- Added David UI Docs pages
+
 ## [1.1.0] 2021-03-23
 ### Bug fixing
 - https://github.com/creativetimofficial/tailwind-starter-kit/issues/19

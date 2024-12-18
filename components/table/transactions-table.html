@@ -1,0 +1,228 @@
+
+<div class="w-full px-2">
+  <div class="mb-4 flex flex-col justify-between gap-8 md:flex-row md:items-center">
+    <div>
+      <h6 class="font-sans antialiased font-bold text-base md:text-lg lg:text-xl text-current">Recent Transactions</h6>
+      <p class="font-sans antialiased text-base text-current mt-1">These are details about the last transactions</p>
+    </div>
+    <div class="flex w-full shrink-0 gap-2 md:w-max">
+      <div class="w-full md:w-72">
+        <div class="relative w-full">
+          <input placeholder="Search" type="text" class="w-full aria-disabled:cursor-not-allowed outline-none focus:outline-none text-stone-800 dark:text-white placeholder:text-stone-600/60 ring-transparent border border-stone-200 transition-all ease-in disabled:opacity-50 disabled:pointer-events-none select-none text-sm py-2 px-2.5 ring shadow-sm bg-white rounded-lg duration-100 hover:border-stone-300 hover:ring-none focus:border-stone-400 focus:ring-none peer" />
+          <span class="pointer-events-none absolute top-1/2 -translate-y-1/2 text-stone-600/70 peer-focus:text-stone-800 peer-focus:text-stone-800 dark:peer-hover:text-white dark:peer-focus:text-white transition-all duration-300 ease-in overflow-hidden w-5 h-5"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5"><path d="M17 17L21 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M3 11C3 15.4183 6.58172 19 11 19C13.213 19 15.2161 18.1015 16.6644 16.6493C18.1077 15.2022 19 13.2053 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </span>
+        </div>
+      </div>
+      <button class="justify-center border align-middle select-none font-sans font-medium text-center duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed focus:shadow-none text-sm py-1.5 px-3 shadow-sm hover:shadow bg-stone-800 hover:bg-stone-700 relative bg-gradient-to-b from-stone-700 to-stone-800 border-stone-900 text-stone-50 rounded-lg hover:bg-gradient-to-b hover:from-stone-800 hover:to-stone-800 hover:border-stone-900 after:absolute after:inset-0 after:rounded-[inherit] after:box-shadow after:shadow-[inset_0_1px_0px_rgba(255,255,255,0.25),inset_0_-2px_0px_rgba(0,0,0,0.35)] after:pointer-events-none transition antialiased flex items-center gap-3"><svg width="1.5em" height="1.5em" stroke-width="2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4"><path d="M6 20L18 20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 4V16M12 16L15.5 12.5M12 16L8.5 12.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg> Download</button>
+    </div>
+  </div>
+  <div class="w-full overflow-hidden rounded-lg border border-stone-200">
+    <table class="w-full text-left">
+      <thead class="border-b border-stone-200 bg-stone-100 text-sm font-medium text-stone-600 dark:bg-surface-dark">
+        <tr>
+          <th class="px-2.5 py-2 text-start font-medium">Transaction</th>
+          <th class="px-2.5 py-2 text-start font-medium">Amount</th>
+          <th class="px-2.5 py-2 text-start font-medium">Date</th>
+          <th class="px-2.5 py-2 text-start font-medium">Status</th>
+          <th class="px-2.5 py-2 text-start font-medium">Account</th>
+          <th class="px-2.5 py-2 text-start font-medium"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-spotify.svg" alt="Spotify" class="inline-block object-center w-11 h-11 rounded-md border border-surface-light bg-stone-100 object-contain p-1 dark:bg-surface-dark" />
+              <small class="font-sans antialiased text-sm text-current font-bold">Spotify</small>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">$2,500</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">Wed 3:00pm</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="w-max">
+              <div class="relative inline-flex w-max items-center border font-sans font-medium rounded-md text-xs p-0.5 bg-green-500/10 border-transparent text-green-500 shadow-none">
+                <span class="font-sans text-current leading-none my-0.5 mx-1.5">paid</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-12 rounded-md border border-surface-light p-1">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png" alt="visa" class="inline-block object-center rounded h-full w-full object-contain p-1" />
+              </div>
+              <div class="flex flex-col">
+                <small class="font-sans antialiased text-sm text-current capitalize">visa 1234</small>
+                <small class="font-sans antialiased text-sm text-current opacity-70">06/2026</small>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none outline-none group"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4"><path d="M14.3632 5.65156L15.8431 4.17157C16.6242 3.39052 17.8905 3.39052 18.6716 4.17157L20.0858 5.58579C20.8668 6.36683 20.8668 7.63316 20.0858 8.41421L18.6058 9.8942M14.3632 5.65156L4.74749 15.2672C4.41542 15.5993 4.21079 16.0376 4.16947 16.5054L3.92738 19.2459C3.87261 19.8659 4.39148 20.3848 5.0115 20.33L7.75191 20.0879C8.21972 20.0466 8.65806 19.8419 8.99013 19.5099L18.6058 9.8942M14.3632 5.65156L18.6058 9.8942" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-amazon.svg" alt="Amazon" class="inline-block object-center w-11 h-11 rounded-md border border-surface-light bg-stone-100 object-contain p-1 dark:bg-surface-dark" />
+              <small class="font-sans antialiased text-sm text-current font-bold">Amazon</small>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">$5,000</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">Wed 1:00pm</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="w-max">
+              <div class="relative inline-flex w-max items-center border font-sans font-medium rounded-md text-xs p-0.5 bg-green-500/10 border-transparent text-green-500 shadow-none">
+                <span class="font-sans text-current leading-none my-0.5 mx-1.5">paid</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-12 rounded-md border border-surface-light p-1">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/mastercard.png" alt="master-card" class="inline-block object-center rounded h-full w-full object-contain p-1" />
+              </div>
+              <div class="flex flex-col">
+                <small class="font-sans antialiased text-sm text-current capitalize">master card 1234</small>
+                <small class="font-sans antialiased text-sm text-current opacity-70">06/2026</small>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none outline-none group"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4"><path d="M14.3632 5.65156L15.8431 4.17157C16.6242 3.39052 17.8905 3.39052 18.6716 4.17157L20.0858 5.58579C20.8668 6.36683 20.8668 7.63316 20.0858 8.41421L18.6058 9.8942M14.3632 5.65156L4.74749 15.2672C4.41542 15.5993 4.21079 16.0376 4.16947 16.5054L3.92738 19.2459C3.87261 19.8659 4.39148 20.3848 5.0115 20.33L7.75191 20.0879C8.21972 20.0466 8.65806 19.8419 8.99013 19.5099L18.6058 9.8942M14.3632 5.65156L18.6058 9.8942" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-pinterest.svg" alt="Pinterest" class="inline-block object-center w-11 h-11 rounded-md border border-surface-light bg-stone-100 object-contain p-1 dark:bg-surface-dark" />
+              <small class="font-sans antialiased text-sm text-current font-bold">Pinterest</small>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">$3,400</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">Mon 7:40pm</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="w-max">
+              <div class="relative inline-flex w-max items-center border font-sans font-medium rounded-md text-xs p-0.5 bg-warning/10 border-transparent text-amber-500 shadow-none">
+                <span class="font-sans text-current leading-none my-0.5 mx-1.5">pending</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-12 rounded-md border border-surface-light p-1">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/mastercard.png" alt="master-card" class="inline-block object-center rounded h-full w-full object-contain p-1" />
+              </div>
+              <div class="flex flex-col">
+                <small class="font-sans antialiased text-sm text-current capitalize">master card 1234</small>
+                <small class="font-sans antialiased text-sm text-current opacity-70">06/2026</small>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none outline-none group"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4"><path d="M14.3632 5.65156L15.8431 4.17157C16.6242 3.39052 17.8905 3.39052 18.6716 4.17157L20.0858 5.58579C20.8668 6.36683 20.8668 7.63316 20.0858 8.41421L18.6058 9.8942M14.3632 5.65156L4.74749 15.2672C4.41542 15.5993 4.21079 16.0376 4.16947 16.5054L3.92738 19.2459C3.87261 19.8659 4.39148 20.3848 5.0115 20.33L7.75191 20.0879C8.21972 20.0466 8.65806 19.8419 8.99013 19.5099L18.6058 9.8942M14.3632 5.65156L18.6058 9.8942" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-google.svg" alt="Google" class="inline-block object-center w-11 h-11 rounded-md border border-surface-light bg-stone-100 object-contain p-1 dark:bg-surface-dark" />
+              <small class="font-sans antialiased text-sm text-current font-bold">Google</small>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">$1,000</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <small class="font-sans antialiased text-sm text-current">Wed 5:00pm</small>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="w-max">
+              <div class="relative inline-flex w-max items-center border font-sans font-medium rounded-md text-xs p-0.5 bg-green-500/10 border-transparent text-green-500 shadow-none">
+                <span class="font-sans text-current leading-none my-0.5 mx-1.5">paid</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-12 rounded-md border border-surface-light p-1">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png" alt="visa" class="inline-block object-center rounded h-full w-full object-contain p-1" />
+              </div>
+              <div class="flex flex-col">
+                <small class="font-sans antialiased text-sm text-current capitalize">visa 1234</small>
+                <small class="font-sans antialiased text-sm text-current opacity-70">06/2026</small>
+              </div>
+            </div>
+          </td>
+          <td class="p-4 border-b border-surface-light">
+            <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none outline-none group"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4"><path d="M14.3632 5.65156L15.8431 4.17157C16.6242 3.39052 17.8905 3.39052 18.6716 4.17157L20.0858 5.58579C20.8668 6.36683 20.8668 7.63316 20.0858 8.41421L18.6058 9.8942M14.3632 5.65156L4.74749 15.2672C4.41542 15.5993 4.21079 16.0376 4.16947 16.5054L3.92738 19.2459C3.87261 19.8659 4.39148 20.3848 5.0115 20.33L7.75191 20.0879C8.21972 20.0466 8.65806 19.8419 8.99013 19.5099L18.6058 9.8942M14.3632 5.65156L18.6058 9.8942" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td class="p-4">
+            <div class="flex items-center gap-3">
+              <img src="https://docs.material-tailwind.com/img/logos/logo-netflix.svg" alt="netflix" class="inline-block object-center w-11 h-11 rounded-md border border-surface-light bg-stone-100 object-contain p-1 dark:bg-surface-dark" />
+              <small class="font-sans antialiased text-sm text-current font-bold">netflix</small>
+            </div>
+          </td>
+          <td class="p-4">
+            <small class="font-sans antialiased text-sm text-current">$14,000</small>
+          </td>
+          <td class="p-4">
+            <small class="font-sans antialiased text-sm text-current">Wed 3:30am</small>
+          </td>
+          <td class="p-4">
+            <div class="w-max">
+              <div class="relative inline-flex w-max items-center border font-sans font-medium rounded-md text-xs p-0.5 bg-red-500/10 border-transparent text-red-500 shadow-none">
+                <span class="font-sans text-current leading-none my-0.5 mx-1.5">cancelled</span>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <div class="flex items-center gap-3">
+              <div class="h-9 w-12 rounded-md border border-surface-light p-1">
+                <img src="https://demos.creative-tim.com/test/corporate-ui-dashboard/assets/img/logos/visa.png" alt="visa" class="inline-block object-center rounded h-full w-full object-contain p-1" />
+              </div>
+              <div class="flex flex-col">
+                <small class="font-sans antialiased text-sm text-current capitalize">visa 1234</small>
+                <small class="font-sans antialiased text-sm text-current opacity-70">06/2026</small>
+              </div>
+            </div>
+          </td>
+          <td class="p-4">
+            <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[38px] min-h-[38px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none outline-none group"><svg width="1.5em" height="1.5em" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-4 w-4"><path d="M14.3632 5.65156L15.8431 4.17157C16.6242 3.39052 17.8905 3.39052 18.6716 4.17157L20.0858 5.58579C20.8668 6.36683 20.8668 7.63316 20.0858 8.41421L18.6058 9.8942M14.3632 5.65156L4.74749 15.2672C4.41542 15.5993 4.21079 16.0376 4.16947 16.5054L3.92738 19.2459C3.87261 19.8659 4.39148 20.3848 5.0115 20.33L7.75191 20.0879C8.21972 20.0466 8.65806 19.8419 8.99013 19.5099L18.6058 9.8942M14.3632 5.65156L18.6058 9.8942" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="flex items-center justify-between border-t border-surface-light py-4">
+    <button class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed focus:shadow-none text-sm py-1.5 px-3 shadow-sm bg-transparent relative text-stone-700 hover:text-stone-700 border-stone-300 hover:bg-transparent duration-150 hover:border-stone-600 rounded-lg hover:opacity-60 hover:shadow-none">Previous</button>
+    <div class="flex items-center gap-2">
+      <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[34px] min-h-[34px] rounded-md shadow-sm hover:shadow bg-stone-200 border-stone-200 text-stone-800 hover:bg-stone-100 hover:bg-stone-100">1</button>
+      <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[34px] min-h-[34px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none">2</button>
+      <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[34px] min-h-[34px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none">3</button>
+      <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[34px] min-h-[34px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none">...</button>
+      <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[34px] min-h-[34px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none">8</button>
+      <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[34px] min-h-[34px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none">9</button>
+      <button class="inline-grid place-items-center border align-middle select-none font-sans font-medium text-center transition-all duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-sm min-w-[34px] min-h-[34px] rounded-md bg-transparent border-transparent text-stone-800 hover:bg-stone-200/10 hover:border-stone-600/10 shadow-none hover:shadow-none">10</button>
+    </div>
+    <button class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center transition-all ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed focus:shadow-none text-sm py-1.5 px-3 shadow-sm bg-transparent relative text-stone-700 hover:text-stone-700 border-stone-300 hover:bg-transparent duration-150 hover:border-stone-600 rounded-lg hover:opacity-60 hover:shadow-none">Next</button>
+  </div>
+</div>
