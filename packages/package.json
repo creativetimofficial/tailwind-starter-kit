@@ -9,7 +9,11 @@
   "type": "module",
   "files": [
     "dist",
-    "src"
+    "src",
+    "README.md",
+    "LICENSE.md",
+    "package.json",
+    "rollup.config.js"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -23,6 +27,8 @@
   },
   "keywords": [
     "ui",
+    "ai",
+    "david-ai",
     "components",
     "tailwindcss",
     "javascript"
