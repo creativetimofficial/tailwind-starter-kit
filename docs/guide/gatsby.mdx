@@ -1,0 +1,154 @@
+---
+title: Material Tailwind with Gatsby - Installation Guide
+description: Learn how to use Material Tailwind components with Gatsby and Tailwind CSS to easily create elegant and flexible pages.
+github: guide/gatsby
+prev: docs/react/guide/vite
+next: docs/react/guide/cra
+---
+
+# Material Tailwind with Gatsby
+
+Learn how to setup and install `@material-tailwind/react` with Gatsby.
+
+---
+
+## Creating a Gatsby Project
+
+First, create a new Gatsby project using the command below, it will create a new Gatsby project.
+
+For more details check the <Link href="https://www.gatsbyjs.com/docs/reference/gatsby-cli/#how-to-use-gatsby-cli?ref=material-tailwind" target="_blank">Gatsby Official Documentation</Link>.
+
+<CodePreview>
+```bash
+npx gatsby new my-new-project
+```
+</CodePreview>
+
+---
+
+## Install Tailwind CSS
+
+Once you have created your Gatsby project, you need to install and configure Tailwind CSS by running the following command:
+
+<CodePreview>
+```bash
+npm install -D tailwindcss postcss autoprefixer gatsby-plugin-postcss && npx tailwindcss init -p
+```
+</CodePreview>
+
+---
+
+### Enable the Gatsby PostCSS Plugin
+
+Once you have installed Tailwind CSS, in your `gatsby-config.js` file, enable the `gatsby-plugin-postcss`.
+
+<CodePreview>
+```js
+// highlight(3)
+module.exports = {
+  plugins: [
+    'gatsby-plugin-postcss',
+    // ...
+  ],
+}
+```
+</CodePreview>
+
+---
+
+### Configure Your Template Paths
+
+Next, you need to configure your template paths in your `tailwind.config.js` file.
+
+<CodePreview>
+```js
+// highlight(3,4,5,6)
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+</CodePreview>
+
+### Add Tailwind CSS Directives to CSS
+
+Next, create a `./src/styles/global.css` file and add the `@tailwind` directives for each of Tailwind's layers.
+
+<CodePreview>
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+</CodePreview>
+
+### Import CSS File
+
+Next, create a `gatsby-browser.js` file at the root of your project if it doesn't already exist, and import your newly-created `./src/styles/global.css` file.
+
+<CodePreview>
+```js
+import './src/styles/global.css'
+```
+</CodePreview>
+
+---
+
+## Install Material Tailwind
+
+Once you installed and configured Tailwind CSS, you need to install `@material-tailwind/react` by running the following command:
+
+<CodePreview>
+```bash
+npm i @material-tailwind/react@beta
+```
+</CodePreview>
+
+---
+
+## Add Plugin and Template Path
+
+Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.js` file.
+
+<CodePreview>
+```ts
+// highlight(1,8,13)
+const mtConfig = require("@material-tailwind/react").mtConfig;
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,jsx,ts,tsx}",
+    "./src/components/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [mtConfig],
+}
+```
+</CodePreview>
+
+---
+
+## Example
+
+Now you're ready to use Material Tailwind components in your Gatsby project. Here's an example of how to use the `Button` component:
+
+<OldComponentPreview demo={<Button.ButtonDemo />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export default function Index() {
+  return <Button>Button</Button>
+}
+```
+</OldComponentPreview>

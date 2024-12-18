@@ -1,146 +1,343 @@
-# Tailwind Starter Kit <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.creative-tim.com%2Flearning-lab%2Ftailwindcss-starter-project%23%2Fpresentation&text=Tailwind%20Starter%20Kit%20by%20Creative%20Tim&original_referer=&via=Creative%20Tim&hashtags=creativetim" target="_blank">![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)</a>
+# David UI - Free Tailwind CSS Components Library
 
-![version](https://img.shields.io/badge/version-1.1.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aopen+is%3Aissue" target="_blank">![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/tailwind-starter-kit.svg)</a> <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues?q=is%3Aissue+is%3Aclosed" target="_blank">![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/tailwind-starter-kit.svg)</a> <a href="https://gitter.im/creative-tim-general/Lobby" target="_blank">![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)</a> <a href="https://discord.gg/E4aHAQy" target="_blank">![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)</a>
+[David UI](https://www.creative-tim.com/david-ui) is a free and open-source collection of customizable, production-ready UI components built with **Tailwind CSS**. Designed to be developer-friendly and performance-focused, David UI streamlines the creation of modern, visually appealing interfaces, helping you deliver high-quality user experiences faster.
 
-![Tailwind Starter Kit](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/creative-tim/opt_tsp_tailwindcss_thumbnail.jpg)
 
-### A beautiful extension for TailwindCSS.
-
-Tailwind Starter Kit is Free and Open Source. It does not change or add any CSS to the original TailwindCSS framework. It features multiple HTML elements and it comes with dynamic components for ReactJS, Vue and Angular.
-
-### CSS Components
-
-Tailwind Starter Kit comes with 120 Fully Coded CSS elements.
-
-### Pages
-
-This extension also comes with 4 sample pages.
-
-### JavaScript Components
-
-We also feature 16 dynamic components.
-
+[![David UI Thumb](https://github.com/creativetimofficial/public-assets/blob/master/ct-assets/david-ai.png?raw=true)](https://www.creative-tim.com/david-ui/html/overview)
 
 ## Table of Contents
-
-* [Versions](#versions)
-* [Documentation](#documentation)
-* [Quick Start](#quick-start)
-* [Custom themes and dashboards](#custom-themes-and-dashboards)
-* [Browser Support](#browser-support)
-* [Reporting Issues](#reporting-issues)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
-* [Resources](#resources)
-
-## Versions
-
-### FREE Dashboard
-
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/dashboard">![Dashboard Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/dashboard.jpg)</a>
-
-|Angular Dashboard Page|HTML Dashboard Page|React Dashboard Page|VueJS Dashboard Page|
-| --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/angular-dashboard-page" target="_blank">Download Angular</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/html-dashboard-page" target="_blank">Download HTML</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/react-dashboard-page" target="_blank">Download React</a>  | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Dashboard%20Page/vuejs-dashboard-page" target="_blank">Download Vue</a>  |
+- [David UI - Free Tailwind CSS Components Library](#david-ui---free-tailwind-css-components-library)
+  - [Table of Contents](#table-of-contents)
+  - [Quick Start](#quick-start)
+    - [Install `david-ai`](#install-david-ai)
+  - [Documentation](#documentation)
+  - [Explore Components](#explore-components)
+  - [Community](#community)
+  - [License](#license)
+  - [Contribute \& Feedback](#contribute--feedback)
 
 
-### FREE Design System (UI Kit)
+## Quick Start
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/landing">![Landing Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/landing.jpg)</a>
+Learn how to use `david-ai` components to quickly and easily create elegant and flexible pages using Tailwind CSS.
 
-|Angular Landing Page|HTML Landing Page|React Landing Page|VueJS Landing Page|NextJS Landing Page|
-| --- | --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/angular-landing-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/html-landing-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/react-landing-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/vuejs-landing-page" target="_blank">Download Vue</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Landing%20Page/next-landing-page" target="_blank">Download Next</a> |
+`david-ai` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <a href="https://tailwindcss.com/docs/installation" target="_blank">Tailwind CSS Installation.</a>
 
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/login">![Login Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/login.jpg)</a>
+### Install `david-ai`
 
-|Angular Login Page|HTML Login Page|React Login Page|VueJS Login Page|
-| --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/angular-login-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/html-login-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/react-login-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Login%20Page/vuejs-login-page" target="_blank">Download Vue</a> |
+```bash
+npm i david-ai
+```
 
-
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/profile">![Profile Page](https://raw.githubusercontent.com/creativetimofficial/tailwind-starter-kit/main/images/profile.jpg)</a>
-
-|Angular Profile Page|HTML Profile Page|React Profile Page|VueJS Profile Page|
-| --- | --- | --- | --- |
-| <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/angular-profile-page" target="_blank">Download Angular</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/html-profile-page" target="_blank">Download HTML</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/react-profile-page" target="_blank">Download React</a> | <a href="https://github.com/creativetimofficial/tailwind-starter-kit/tree/main/Profile%20Page/vuejs-profile-page" target="_blank">Download Vue</a> |
+Congratulations 🥳, you did it, now you're ready to use `david-ai`.
 
 ## Documentation
-The documentation for the Tailwind Starter Kit is hosted at our <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme" target="_blank">website</a>.
 
-<a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/presentation?ref=tsk-readme" target="_blank">View More</a>
+David UI’s documentation includes code snippets, previews, and detailed usage instructions for each component, ensuring a smooth implementation process.
 
-
-## Quick start
-
-- <a href="https://github.com/creativetimofficial/tailwind-starter-kit/archive/main.zip" target="_blank">Download from Github</a>.
-- <a href="https://github.com/creativetimofficial/tailwind-starter-kit" target="_blank">Check it on Github</a>.
-
-## Custom themes and dashboards
-| Javascript | React | Angular |
-|:---:|:---:|:---:|
-| [<img src="https://s3.amazonaws.com/creativetim_bucket/products/392/thumb/opt_notus_js_thumbnail.jpg">](https://www.creative-tim.com/product/notus-js?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/394/thumb/opt_notus_react_thumbnail.jpg">](https://www.creative-tim.com/product/notus-react?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/391/thumb/opt_notus_angular_thumbnail.jpg">](https://www.creative-tim.com/product/notus-angular?ref=ctd-readme) |
-
-| Vuejs | NextJs | Svelte |
-|:---:|:---:|:---:|
-| [<img src="https://s3.amazonaws.com/creativetim_bucket/products/396/thumb/opt_notus_vuejs_thumbnail.jpg">](https://www.creative-tim.com/product/vue-notus?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/393/thumb/opt_notus_nextjs_thumbnail.jpg">](https://www.creative-tim.com/product/notus-nextjs?ref=ctd-readme) | [<img src="https://s3.amazonaws.com/creativetim_bucket/products/395/thumb/opt_notus_svelte_thumbnail.jpg">](https://www.creative-tim.com/product/notus-svelte?ref=ctd-readme) |
-
-| Notus Pro React | 
-|:---:|
-| [<img src="https://s3.amazonaws.com/creativetim_bucket/products/452/thumb/opt_np_react_thumbnail.jpg?1619006214">](https://www.creative-tim.com/product/notus-pro-react) | 
-
-## Browser Support
-
-At present, we officially aim to support the last two versions of the following browsers:
-
-| Chrome | Firefox | Edge | Safari | Opera |
-|:---:|:---:|:---:|:---:|:---:|
-| <img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/chrome-logo.png?raw=true" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/firefox-logo.png" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/edge-logo.png" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/safari-logo.png" width="64" height="64"> | <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/opera-logo.png" width="64" height="64"> |
-
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the Angular Landing Page. Here is some advice for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the Angular Landing Page. Check the CHANGELOG from your dashboard on our <a href="https://www.creative-tim.com/?ref=tsk-readme" target="_blank">website</a>.
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
-
-## Licensing
-
-- Copyright 2019 <a href="https://www.creative-tim.com/?ref=tsk-readme" target="_blank">Creative Tim</a>
+Visit the **[David UI Docs](https://www.creative-tim.com/david-ui)** to explore the entire library.
 
 
 
-- Licensed under <a href="https://github.com/creativetimofficial/tailwind-starter-kit/blob/main/LICENSE.md" target="_blank">MIT</a>
+## Explore Components
 
-## Useful Links
+<table>
+  
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/accordion">
+        <img alt="accordion" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/accordion-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/alert">
+        <img alt="alert" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/alert-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/avatar">
+        <img alt="avatar" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/avatar-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Accordion</td>
+    <td width="33.3333%">Alert</td>
+    <td width="33.3333%">Avatar</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/badge">
+        <img alt="typography" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/badge-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/breadcrumb">
+        <img alt="breadcrumbs" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/breadcrumbs-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/button">
+        <img alt="button" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/button-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Badge</td>
+    <td width="33.3333%">Breadcrumbs</td>
+    <td width="33.3333%">Button</td>
+  </tr>
+  <tr height="30"></tr>
+  
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/button-group">
+        <img alt="select" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/buttongroup-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/card">
+        <img alt="card" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/card-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/checkbox">
+        <img alt="checkbox" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/checkbox-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Button Group</td>
+    <td width="33.3333%">Card</td>
+    <td width="33.3333%">Checkbox</td>
+  </tr>
+  <tr height="30"></tr>
+  
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/chip">
+        <img alt="chip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/chip-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/collapse">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/collapse-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/dropdown">
+        <img alt="menu" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/menu-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Chip</td>
+    <td width="33.3333%">Collapse</td>
+    <td width="33.3333%">Dropdown</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/footer">
+        <img alt="typography" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/footer-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/icon-button">
+        <img alt="icon-button" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/icon-button-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/image">
+        <img alt="typography" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/img-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Footer</td>
+    <td width="33.3333%">Icon Button</td>
+    <td width="33.3333%">Image</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/input">
+        <img alt="input" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/input-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/list">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/list-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/modal">
+        <img alt="dialog" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/dialog-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Input</td>
+    <td width="33.3333%">List</td>
+    <td width="33.3333%">Modal</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/navbar">
+        <img alt="navbar" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/navbar-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/pagination">
+        <img alt="pagination" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/pagination-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/popover">
+        <img alt="popover" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/popover-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Navbar</td>
+    <td width="33.3333%">Pagination</td>
+    <td width="33.3333%">Popover</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/progress">
+        <img alt="progress-bar" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/progress-bar-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/radio">
+        <img alt="radio-button" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/radio-button-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/rating">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/ratingbar-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Progress Bar</td>
+    <td width="33.3333%">Radio Button</td>
+    <td width="33.3333%">Rating Bar</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/sidebar">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/sidebar-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/spinner">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/spinner-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/stepper">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/stepper-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Sidebar</td>
+    <td width="33.3333%">Spinner</td>
+    <td width="33.3333%">Stepper</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/switch">
+        <img alt="switch" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/switch-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/table">
+        <img alt="typography" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/table-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/tabs">
+        <img alt="tabs" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/tabs-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Switch</td>
+    <td width="33.3333%">Table</td>
+    <td width="33.3333%">Tabs</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/textarea">
+        <img alt="textarea" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/text-area-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/tooltip">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/tooltip-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/typography">
+        <img alt="typography" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/typography-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Textarea</td>
+    <td width="33.3333%">Tooltip</td>
+    <td width="33.3333%">Typography</td>
+  </tr>
+  <tr height="30"></tr>
+  <tr>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/timeline">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/timeline-thumbnail.jpg">
+      </a>
+    </td>
+    <td width="33.3333%" style="padding: 0;">
+      <a href="https://www.creative-tim.com/david-ui/docs/html/video">
+        <img alt="tooltip" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/refs/heads/master/david-ui/img/video-thumbnail.jpg">
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td width="33.3333%">Timeline</td>
+    <td width="33.3333%">Video</td>
+  </tr>
+</table>
 
-- <a href="https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w" target="_blank">Tutorials</a>
-- <a href="https://www.creative-tim.com/affiliates/new?ref=tsk-readme" target="_blank">Affiliate Program</a> (earn money)
-- <a href="http://blog.creative-tim.com/?ref=tsk-readme" target="_blank">Blog Creative Tim</a>
-- <a href="https://www.creative-tim.com/templates/free?ref=tsk-readme" target="_blank">Free Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/premium?ref=tsk-readme" target="_blank">Premium Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/react?ref=tsk-readme" target="_blank">React Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/angular?ref=tsk-readme" target="_blank">Angular Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates/vuejs?ref=tsk-readme" target="_blank">VueJS Products</a> from Creative Tim
-- <a href="https://www.creative-tim.com/templates?ref=tsk-readme" target="_blank">More products</a> from Creative Tim
-- Check our Bundles <a href="https://www.creative-tim.com/bundles?ref=tsk-readme" target="_blank">here</a>
 
-### Social Media
+## Community
 
-Twitter: <a href="https://twitter.com/CreativeTim" target="_blank">https://twitter.com/CreativeTim</a>
+- We're excited to see the community adopt David AI, raise issues, and provide feedback.
+- Whether it's a feature request, bug report, or a project to showcase, please get involved!
+  
 
-Facebook: <a href="https://www.facebook.com/CreativeTim" target="_blank">https://www.facebook.com/CreativeTim</a>
+## License
 
-Dribbble: <a href="https://dribbble.com/creativetim" target="_blank">https://dribbble.com/creativetim</a>
-
-Instagram: <a href="https://www.instagram.com/creativetimofficial/" target="_blank">https://www.instagram.com/creativetimofficial/</a>
+Copyright (c) 2020-2025 [Creative Tim](https://www.creative-tim.com)
 
 
-## Resources
-- Demo: <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/presentation?ref=tsk-readme" target="_blank">https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/presentation?ref=tsk-readme</a>
-- Download Page: <a href="https://github.com/creativetimofficial/tailwind-starter-kit/archive/master.zip" target="_blank">https://github.com/creativetimofficial/tailwind-starter-kit/archive/main.zip</a>
-- Documentation: <a href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme" target="_blank">https://www.creative-tim.com/learning-lab/tailwind-starter-kit/#/documentation/quick-start?ref=tsk-readme</a>
-- Support: <a href="https://www.creative-tim.com/contact-us?ref=tsk-readme" target="_blank">https://www.creative-tim.com/contact-us?ref=tsk-readme</a>
-- Issues: <a href="https://github.com/creativetimofficial/tailwind-starter-kit/issues" target="_blank">Github Issues Page</a>
+
+David UI is distributed under the **[MIT License](https://creative-tim.com/david-ui/docs/html/license)**, providing freedom and flexibility for all projects.
+
+
+## Contribute & Feedback
+
+We welcome contributions and feedback! If you have suggestions, encounter issues, or want to propose new components, feel free to open an issue or submit a pull request on our repository. Your input helps make David UI better for everyone.
+
+---
+
+**Build better, faster, and smarter with David UI.** Explore the documentation and start leveraging our components to deliver polished, user-friendly interfaces with ease.
+

@@ -1,0 +1,175 @@
+---
+title: React and Tailwind CSS Algolia Search - Material Tailwind v3
+description: Integrate Algolia Search with React and Tailwind CSS in Material Tailwind v3. Enhance search functionality with fast and responsive Algolia Search components.
+github: plugins/algolia-search
+prev: docs/react/table
+next: docs/react/plugins/apexcharts
+---
+
+# Tailwind CSS Algolia Search - React
+
+Use our Tailwind CSS Algolia Search example to add global search in your web projects.
+
+See below our beautiful Aloglia Search example that you can use in your Tailwind CSS and React project. The example below is using the <Link href="https://docsearch.algolia.com/" target="_blank">@docsearch/react library</Link>, make sure to install it before using the example.
+
+---
+
+## Install Required Dependency
+
+We're using `@docsearch/react` library to provide the search functionality. Make sure to install it before using the example.
+
+<CodePreview>
+```bash
+npm install @docsearch/react
+```
+</CodePreview>
+
+---
+
+## Algolia Search Demo
+
+We're using `DocSearch` component from the `@docsearch/react` library. The `DocSearch` component requires the `appId`, `apiKey`, and `indexName` as props to work.
+
+In the below example we hide the `DocSearch` component and instead show a custom input field from `@material-tailwind/react` with a search icon. When the user clicks on the input or presses `Cmd + K` the `DocSearch` component is shown.
+
+<OldComponentPreview demo={<AlgoliaSearch.AlgoliaSearchDemo />}>
+```tsx
+"use client";
+
+import { DocSearch } from "@docsearch/react";
+import { KeyCommand, Search } from "iconoir-react";
+import { Input } from "@material-tailwind/react";
+
+const APP_ID = "37KXIBLNGX";
+const INDEX_NAME = "material-tailwind";
+const API_KEY = "8cc5688018e14bad2a2528eea41fbb35";
+
+export function AlgoliaSearchDemo() {
+  return (
+    <div className="group w-72">
+      <Input
+        readOnly
+        placeholder="Input"
+        className="group-hover:border-primary group-hover:ring-primary/10 group-focus:border-primary group-focus:ring-primary/10"
+      >
+        <Input.Icon>
+          <Search className="h-full w-full" />
+        </Input.Icon>
+        <kbd className="absolute right-[6px] top-1/2 flex -translate-y-[calc(50%+0.5px)] items-center gap-1 rounded border border-surface bg-surface-light px-1.5 py-1 text-[11px] font-semibold text-black shadow-[0_1.5px_0_0] shadow-surface dark:text-white">
+          <KeyCommand className="h-2.5 w-2.5 stroke-2" />K
+        </kbd>
+        <div className="absolute inset-0 m-0 w-full opacity-0 [&_>_button]:m-0 [&_>_button]:w-full [&_>_button]:rounded-none">
+          <DocSearch indexName={INDEX_NAME} apiKey={API_KEY} appId={APP_ID} />
+        </div>
+      </Input>
+    </div>
+  );
+}
+```
+</OldComponentPreview>
+
+---
+
+## Adding Custom Styles (Optional)
+
+You can copy/paste the below CSS code to your Tailwind CSS stylesheet to customise the search dialog appearance to match the `@material-tailwind/react` design.
+
+<CodePreview>
+```css
+/* backdrop */
+.DocSearch.DocSearch-Container {
+  @apply bg-black/50;
+}
+
+/* dialog */
+.DocSearch.DocSearch-Container .DocSearch-Modal {
+  @apply overflow-hidden rounded-none border border-surface bg-background shadow-2xl shadow-black/5;
+}
+
+@media screen and (min-width: 768px) {
+  .DocSearch.DocSearch-Container .DocSearch-Modal {
+    @apply rounded-xl;
+  }
+}
+
+/* search input */
+.DocSearch.DocSearch-Container .DocSearch-Form {
+  @apply rounded-md bg-transparent shadow-[0_0_0_2px] shadow-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-MagnifierLabel,
+.DocSearch.DocSearch-Container .DocSearch-LoadingIndicator {
+  @apply text-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-MagnifierLabel svg,
+.DocSearch.DocSearch-Container .DocSearch-LoadingIndicator svg {
+  @apply stroke-2;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Input {
+  @apply text-black dark:text-white placeholder:text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Reset svg {
+  @apply stroke-2 text-primary;
+}
+
+/* search area */
+.DocSearch.DocSearch-Container .DocSearch-Help {
+  @apply text-base text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Label {
+  @apply text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Dropdown {
+  @apply p-3;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-source {
+  @apply m-0.5 bg-transparent p-0 text-black dark:text-white;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit {
+  @apply rounded-lg pb-2.5;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit a {
+  @apply rounded-lg border border-surface bg-background text-foreground shadow-[0_4px_0_0] shadow-surface;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit[aria-selected="true"] a {
+  @apply border-primary bg-primary text-primary-foreground shadow-primary-dark;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-icon {
+  @apply text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Hit-title mark {
+  @apply text-primary;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Screen-Icon {
+  @apply mx-auto w-max text-foreground/60;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Prefill {
+  @apply text-primary;
+}
+.DocSearch.DocSearch-Container .DocSearch-Cancel {
+  @apply text-black dark:text-white;
+}
+
+/* footer */
+.DocSearch.DocSearch-Container .DocSearch-Footer {
+  @apply rounded-none border-t border-surface bg-transparent shadow-none;
+}
+
+.DocSearch.DocSearch-Container .DocSearch-Commands-Key {
+  @apply w-max rounded px-1.5 py-1 text-[11px] font-semibold text-black dark:text-white shadow-[0_1.5px_0_0] shadow-surface [background:rgb(var(--color-surface-light))] [border:1px_solid_rgb(var(--color-surface))];
+}
+```
+</CodePreview>

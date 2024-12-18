@@ -1,0 +1,124 @@
+---
+title: Material Tailwind with Vite - Installation Guide
+description: Learn how to use Material Tailwind components with Vite and Tailwind CSS to easily create elegant and flexible pages.
+github: guide/vite
+prev: docs/react/guide/astro
+next: docs/react/guide/gatsby
+---
+
+# Material Tailwind with Vite
+
+Learn how to setup and install `@material-tailwind/react` with Vite.
+
+---
+
+## Creating a Vite Project
+
+First, create a new Vite project using the command below, it will create a new Vite project with React installed.
+
+For more details check the <Link href="https://vitejs.dev/guide/?ref=material-tailwind" target="_blank">Vite Official Documentation</Link>.
+
+<CodePreview>
+```bash
+npm create vite@latest my-project -- --template react
+```
+</CodePreview>
+
+---
+
+## Install Tailwind CSS
+
+Once you have created your Vite project, you need to install and configure Tailwind CSS by running the following command:
+
+<CodePreview>
+```bash
+npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p
+```
+</CodePreview>
+
+### Configure Your Template Paths
+
+Once you have installed Tailwind CSS, you need to configure your template paths in your `tailwind.config.js` file.
+
+<CodePreview>
+```ts
+// highlight(3,4,5,6)
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+</CodePreview>
+
+### Add Tailwind CSS Directives to CSS
+
+Next, you need to add the Tailwind CSS directives to your CSS file. Add the `@tailwind` directives for each of Tailwind's layers to your `./src/index.css` file.
+
+<CodePreview>
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+</CodePreview>
+
+---
+
+## Install Material Tailwind
+
+Once you installed and configured Tailwind CSS, you need to install `@material-tailwind/react` by running the following command:
+
+<CodePreview>
+```bash
+npm i @material-tailwind/react@beta
+```
+</CodePreview>
+
+---
+
+## Add Plugin and Template Path
+
+Once you installed `@material-tailwind/react` you need to add `mtConfig` and the template path to your `tailwind.config.js` file.
+
+<CodePreview>
+```ts
+// highlight(1,8,13)
+import { mtConfig } from "@material-tailwind/react";
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [mtConfig],
+}
+```
+</CodePreview>
+
+---
+
+## Example
+
+Now you're ready to use Material Tailwind components in your Vite project. Here's an example of how to use the `Button` component:
+
+<OldComponentPreview demo={<Button.ButtonDemo />}>
+```tsx
+import { Button } from "@material-tailwind/react";
+
+export default function Index() {
+  return <Button>Button</Button>
+}
+```
+</OldComponentPreview>
