@@ -1,6 +1,6 @@
 {
   "name": "david-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "David UI is a free and open-source collection of customizable, production-ready UI components built with Tailwind CSS",
   "main": "dist/david-ai.js",
   "module": "dist/david-ai.esm.js",
