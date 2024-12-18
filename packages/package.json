@@ -4,6 +4,7 @@
   "description": "David UI is a free and open-source collection of customizable, production-ready UI components built with Tailwind CSS",
   "main": "dist/david-ai.js",
   "module": "dist/david-ai.esm.js",
+  "browser": "dist/david-ai.js",
   "unpkg": "dist/david-ai.min.js",
   "type": "module",
   "files": [
