@@ -503,7 +503,7 @@
   };
 
   // Auto-initialize components in the browser
-  if (typeof window !== "undefined") {
+  if (typeof window !== "undefined" && typeof document !== "undefined") {
     // Initialize Popper-independent components
     initAlert();
     initCollapse();
