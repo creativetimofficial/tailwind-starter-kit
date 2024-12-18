@@ -1,3 +1,6 @@
+> [!NOTE]
+> This repository was previously named **tailwind-starter-kit** and has been renamed to **david-ai** to better reflect its purpose and direction.
+
 # David UI - Free Tailwind CSS Components Library
 
 [David UI](https://www.creative-tim.com/david-ui) is a free and open-source collection of customizable, production-ready UI components built with **Tailwind CSS**. Designed to be developer-friendly and performance-focused, David UI streamlines the creation of modern, visually appealing interfaces, helping you deliver high-quality user experiences faster.
