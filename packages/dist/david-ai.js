@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.DavidAI = factory());
-})(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+  typeof define === 'function' && define.amd ? define(['exports'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.DavidAI = {}));
+})(this, (function (exports) { 'use strict';
 
   var popperLoaded = false; // Singleton flag to track loading state
   var popperReady = null; // Promise to handle loading Popper.js once
@@ -491,7 +491,7 @@
     initModal();
   }
 
-  // Combine all features into a global object
+  // Combine all features into a global object for default export
   var DavidAI = {
     initAlert: initAlert,
     initCollapse: initCollapse,
@@ -509,6 +509,7 @@
     initCollapse();
     initTabs();
     initModal();
+
     // Load Popper.js once, then initialize dependent components
     loadPopperJs().then(function () {
       initDropdowns();
@@ -522,7 +523,16 @@
     window.DavidAI = DavidAI;
   }
 
-  return DavidAI;
+  exports.default = DavidAI;
+  exports.initAlert = initAlert;
+  exports.initCollapse = initCollapse;
+  exports.initDropdowns = initDropdowns;
+  exports.initModal = initModal;
+  exports.initPopovers = initPopovers;
+  exports.initTabs = initTabs;
+  exports.initTooltips = initTooltips;
+
+  Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
 //# sourceMappingURL=david-ai.js.map
