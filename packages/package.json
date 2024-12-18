@@ -7,6 +7,10 @@
   "browser": "dist/david-ai.js",
   "unpkg": "dist/david-ai.min.js",
   "type": "module",
+  "exports": {
+    "import": "./dist/david-ai.esm.js",
+    "require": "./dist/david-ai.js"
+  },
   "files": [
     "dist",
     "src",
