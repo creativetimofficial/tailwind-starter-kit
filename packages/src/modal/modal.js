@@ -1,5 +1,7 @@
 // Modal Component
 
+const initializedModals = new WeakSet();
+
 export function toggleModal(event) {
   const modalID = event.currentTarget.getAttribute("data-dui-target");
   const modal = document.querySelector(modalID);
@@ -58,15 +60,21 @@ function closeOnOutsideClick(event) {
 
 export function initModal() {
   document.querySelectorAll("[data-dui-toggle='modal']").forEach((trigger) => {
-    trigger.addEventListener("click", toggleModal);
+    if (!initializedModals.has(trigger)) {
+      trigger.addEventListener("click", toggleModal);
+      initializedModals.add(trigger);
+    }
   });
 
   document.querySelectorAll("[data-dui-dismiss='modal']").forEach((button) => {
-    button.addEventListener("click", closeModal);
+    if (!initializedModals.has(button)) {
+      button.addEventListener("click", closeModal);
+      initializedModals.add(button);
+    }
   });
 }
 
 // Auto-initialize Modals in the Browser Environment
-if (typeof window !== "undefined") {
+if (typeof window !== "undefined" && typeof document !== "undefined") {
   initModal();
 }
