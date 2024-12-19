@@ -9,7 +9,7 @@ export function initPopovers() {
 
     const placement = trigger.getAttribute("data-dui-placement") || "top";
     const popoverClasses = trigger.getAttribute("data-dui-popover-class") || "popover-default";
-    const plainContent = trigger.getAttribute("data-dui-content");
+    const plainContent = trigger.getAttribute("data-dui-popover-content");
     const isOpenByDefault = trigger.hasAttribute("data-dui-open");
 
     let popoverInstance = null;
@@ -25,6 +25,7 @@ export function initPopovers() {
     async function openPopover() {
       await loadPopperJs();
 
+      // Create the popover element
       popoverElement = document.createElement("div");
       popoverElement.className = popoverClasses;
 
@@ -40,16 +41,26 @@ export function initPopovers() {
         return;
       }
 
+      // Append the popover element to the body
       document.body.appendChild(popoverElement);
 
+      // Initialize Popper.js
       popoverInstance = Popper.createPopper(trigger, popoverElement, {
         placement: placement,
         modifiers: [{ name: "offset", options: { offset: [0, 8] } }],
       });
 
+      // Add a small delay to ensure Popper.js calculations are correct
+      setTimeout(() => {
+        popoverElement.style.opacity = "1"; // Make the popover visible
+        popoverElement.style.transform = "scale(1)"; // Apply scaling animation
+        popoverInstance.update(); // Ensure Popper.js recalculates position
+      }, 0);
+
       // Track active popovers for cleanup
       activePopovers.push({ trigger, popoverElement, popoverInstance });
     }
+
 
     // Function to close the popover
     function closePopover() {
