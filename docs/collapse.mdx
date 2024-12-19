@@ -4,7 +4,7 @@ description: Showcase collapsible sections with Tailwind CSS Collapse components
 github: collapse
 ---
 
-<ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+<ScriptLoader />
 
 <InfoBadge />
 
@@ -34,7 +34,55 @@ Check out this example to discover how to design a responsive collapse component
 ---
 
 ## Required Script
-The collapse component needs a required script file for the collapse functionality to work. Add the script below to the bottom of your HTML file.
 
+The Collapse component in david-ai requires JavaScript to handle the expand/collapse functionality. The library provides smooth transitions and toggle behavior through data attributes.
 
-<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>
+### Installation
+
+To use the Collapse component in your project, you first need to install the `david-ai` library via npm:
+
+<CodePreviewTailwindClasses codeSnippet={`npm install david-ai`}/>
+
+### Basic Usage
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initCollapse } from 'david-ai';
+
+// Initialize collapse functionality
+initCollapse();
+`
+}/>
+
+### Using with Global Access
+If you prefer, you can use the DavidAI global object instead of directly importing initCollapse:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import * as DavidAI from 'david-ai';
+
+// Initialize collapse functionality
+DavidAI.initCollapse();
+`
+}/>
+
+### Using with CDN
+You can include david-ai via a CDN and initialize collapse functionality globally in the browser. Add the following script to your HTML file:
+
+<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/david-ai@1.0.4/packages/dist/david-ai.min.js" defer></script>`}/>
+
+### HTML Code Example
+
+<CodePreviewTailwindClasses codeSnippet={
+`<div data-dui-toggle="collapse" 
+     data-dui-target="#collapseExample" 
+     aria-expanded="false" 
+     aria-controls="collapseExample"
+     class="cursor-pointer">
+  Toggle Collapse
+</div>
+<div class="overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0" 
+     id="collapseExample">
+  <div class="p-4">
+    Collapse content goes here
+  </div>
+</div>`
+}/>

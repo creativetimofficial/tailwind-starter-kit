@@ -6,7 +6,7 @@ prev: docs/html/chip
 next: docs/html/footer
 ---
 
-<ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+<ScriptLoader />
 
 <InfoBadge />
 
@@ -87,10 +87,54 @@ A dropdown menu styled for user profiles. Includes options like "My Profile," "E
 ---
 
 ## Required Script
-The alert component needs a required script file for the dismissible functionality to work. Add the script below to the bottom of your HTML file.
 
-If you don't plan to use dismissible alerts, you can skip this step.
+The Dropdown component in david-ai requires JavaScript to handle the dropdown functionality and positioning. The library provides smooth transitions and toggle behavior through data attributes, powered by Popper.js for accurate positioning.
 
+### Installation
 
+To use the Dropdown component in your project, you first need to install the `david-ai` library via npm:
 
-<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>
+<CodePreviewTailwindClasses codeSnippet={`npm install david-ai`}/>
+
+### Basic Usage
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initDropdowns } from 'david-ai';
+
+// Initialize dropdown functionality
+initDropdowns();
+`
+}/>
+
+### Using with Global Access
+If you prefer, you can use the DavidAI global object instead of directly importing initDropdowns:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import * as DavidAI from 'david-ai';
+
+// Initialize dropdown functionality
+DavidAI.initDropdowns();
+`
+}/>
+
+### Using with CDN
+You can include david-ai via a CDN and initialize dropdown functionality globally in the browser. Add the following script to your HTML file:
+
+<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/david-ai@1.0.4/packages/dist/david-ai.min.js" defer></script>`}/>
+
+### HTML Code Example
+
+<CodePreviewTailwindClasses codeSnippet={
+`<div class="dropdown" data-dui-placement="bottom-start">
+  <button data-dui-toggle="dropdown" 
+          aria-expanded="false" 
+          class="inline-flex items-center justify-center px-4 py-2 text-sm text-stone-50 bg-stone-800 hover:bg-stone-700 rounded-lg shadow-sm hover:shadow-md transition">
+    Open
+  </button>
+  <div data-dui-role="menu" class="hidden mt-2 bg-white border border-stone-200 rounded-lg shadow-sm p-1 z-10">
+    <a href="#" class="block px-4 py-2 text-sm text-stone-800 hover:bg-stone-100 rounded-md">Add Team</a>
+    <a href="#" class="block px-4 py-2 text-sm text-stone-800 hover:bg-stone-100 rounded-md">Add Project</a>
+    <a href="#" class="block px-4 py-2 text-sm text-stone-800 hover:bg-stone-100 rounded-md">My Profile</a>
+  </div>
+</div>`
+}/>

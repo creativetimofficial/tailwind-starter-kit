@@ -6,7 +6,7 @@ prev: docs/react/inputs
 next: docs/react/Alert-group
 ---
 
-<ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+<ScriptLoader />
 
 <InfoBadge />
 
@@ -94,10 +94,50 @@ Here is an example of how you can implement unique styles for the Alert componen
 ---
 
 ## Required Script
-The alert component needs a required script file for the dismissible functionality to work. Add the script below to the bottom of your HTML file.
 
-If you don't plan to use dismissible alerts, you can skip this step.
+The Alert component in david-ai is only dependent on JavaScript if you are using dismissible alerts. This means if your alert includes a dismiss button with `data-dui-dismiss="alert"`, the library's JavaScript is required to enable the functionality for closing the alert. 
+
+### Installation
+
+To use the Alert component in your project, you first need to install the `david-ai` library via npm:
+
+<CodePreviewTailwindClasses codeSnippet={`npm install david-ai`}/>
 
 
+### Basic Usage
 
-<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>
+<CodePreviewTailwindClasses codeSnippet={
+`import { initAlert } from 'david-ai';
+
+// Initialize alerts
+initAlert();
+`
+}/>
+
+### Using with Global Access
+If you prefer, you can use the DavidAI global object instead of directly importing initAlert:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import * as DavidAI from 'david-ai';
+
+// Initialize alerts 
+DavidAI.initAlert();
+`
+}/>
+
+### Using with CDN
+You can include david-ai via a CDN and initialize alerts globally in the browser. Add the following script to your HTML file:
+
+<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/david-ai@1.0.4/packages/dist/david-ai.min.js" defer></script>`}/>
+
+### HTML Code Example
+
+<CodePreviewTailwindClasses codeSnippet={
+`<div role="alert" class="relative flex items-start w-full border rounded-md p-2 bg-stone-800 border-stone-800 text-stone-50">
+    <div class="w-full text-sm font-sans leading-none m-1.5">A simple alert for showing message</div>
+    <button data-dui-dismiss="alert" class="outline-none">x</button>
+</div>
+`
+}/>
+
+

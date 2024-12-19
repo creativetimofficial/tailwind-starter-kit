@@ -4,7 +4,7 @@ description: Create interactive tooltips with Tailwind CSS in David UI. Explore 
 github: tooltip
 ---
 
-<ScriptLoader src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" />
+<ScriptLoader />
 
 <InfoBadge />
 
@@ -50,9 +50,52 @@ An example of a Tooltip with custom styles, including borders, background colors
 --- 
 
 ## Required Script
-The tooltip component requires a script file to enable its functionality. Add the script below to the bottom of your HTML file.
 
-Note: The script includes Popper.js which is required for proper tooltip positioning and behavior.
+The Tooltip component in david-ai requires JavaScript to handle the tooltip functionality and positioning. The library provides smooth transitions and hover behavior through data attributes, powered by Popper.js for accurate positioning.
 
+### Installation
 
-<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit@david-ui-js/dist%20/david-ui-tailwind.min.js" defer></script>`}/>
+To use the Tooltip component in your project, you first need to install the `david-ai` library via npm:
+
+<CodePreviewTailwindClasses codeSnippet={`npm install david-ai`}/>
+
+### Basic Usage
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initTooltips } from 'david-ai';
+
+// Initialize tooltip functionality
+initTooltips();
+`
+}/>
+
+### Using with Global Access
+If you prefer, you can use the DavidAI global object instead of directly importing initTooltips:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import * as DavidAI from 'david-ai';
+
+// Initialize tooltip functionality
+DavidAI.initTooltips();
+`
+}/>
+
+### Using with CDN
+You can include david-ai via a CDN and initialize tooltip functionality globally in the browser. Add the following script to your HTML file:
+
+<CodePreviewTailwindClasses codeSnippet={`<script src="https://cdn.jsdelivr.net/gh/creativetimofficial/david-ai@1.0.4/packages/dist/david-ai.min.js" defer></script>`}/>
+
+### HTML Code Example
+
+<CodePreviewTailwindClasses codeSnippet={
+`<div class="flex justify-center">
+  <button type="button" 
+          data-dui-toggle="tooltip" 
+          data-dui-placement="top"
+          data-dui-title="Tooltip Title"
+          data-dui-tooltip-class="bg-stone-800 text-white text-xs rounded-md py-1 px-2 shadow-md z-50"
+          class="inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center duration-300 ease-in disabled:opacity-50 disabled:shadow-none disabled:cursor-not-allowed focus:shadow-none text-sm py-2 px-4 shadow-sm hover:shadow-md bg-stone-800 hover:bg-stone-700 relative bg-gradient-to-b from-stone-700 to-stone-800 border-stone-900 text-stone-50 rounded-lg hover:bg-gradient-to-b hover:from-stone-800 hover:to-stone-800 hover:border-stone-900 after:absolute after:inset-0 after:rounded-[inherit] after:box-shadow after:shadow-[inset_0_1px_0px_rgba(255,255,255,0.25),inset_0_-2px_0px_rgba(0,0,0,0.35)] after:pointer-events-none transition antialiased">
+    Hover me
+  </button>
+</div>`
+}/>
