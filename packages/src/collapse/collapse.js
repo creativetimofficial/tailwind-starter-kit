@@ -1,11 +1,13 @@
 // Collapse component
+const initializedElements = new WeakSet();
+
 export function toggleCollapse(event) {
-  const collapseID =
-    event.currentTarget.getAttribute("data-dui-target")
+  const collapseID = event.currentTarget.getAttribute("data-dui-target");
 
   if (collapseID && collapseID.startsWith("#")) {
     const collapseElement = document.querySelector(collapseID);
-    const isExpanded = event.currentTarget.getAttribute("aria-expanded") === "true";
+    const isExpanded =
+      event.currentTarget.getAttribute("aria-expanded") === "true";
 
     if (collapseElement) {
       // Toggle max-height for collapsible content
@@ -26,9 +28,14 @@ export function toggleCollapse(event) {
 }
 
 export function initCollapse() {
-  document.querySelectorAll("[data-dui-toggle='collapse']").forEach(button => {
-    button.addEventListener("click", toggleCollapse);
-  });
+  document
+    .querySelectorAll("[data-dui-toggle='collapse']")
+    .forEach((button) => {
+      if (!initializedElements.has(button)) {
+        button.addEventListener("click", toggleCollapse);
+        initializedElements.add(button); // Mark as initialized
+      }
+    });
 }
 
 // Auto-initialize collapsible components in the browser

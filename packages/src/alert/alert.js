@@ -1,17 +1,22 @@
 // src/alert/alert.js
 
+const initializedElements = new WeakSet();
+
 export function closeAlert(event) {
   const button = event.currentTarget;
   const alert = button.closest('[role="alert"]');
   if (alert) {
-    alert.parentNode.removeChild(alert);
+    alert.remove(); // Remove the alert
   }
 }
 
 export function initAlert() {
-  const dismissButtons = document.querySelectorAll("[data-dui-dismiss='alert']");
-  dismissButtons.forEach(button => {
-    button.addEventListener("click", closeAlert);
+  // Attach event listeners only to buttons that haven't been initialized
+  document.querySelectorAll("[data-dui-dismiss='alert']").forEach((button) => {
+    if (!initializedElements.has(button)) {
+      button.addEventListener("click", closeAlert);
+      initializedElements.add(button); // Track this button as initialized
+    }
   });
 }
 

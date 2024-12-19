@@ -1,4 +1,8 @@
 // Dropdown component
+import { loadPopperJs } from '../utils/loadPopper'; // Centralized loader
+
+const initializedDropdowns = new WeakSet();
+
 export class Dropdown {
   constructor(dropdownElement) {
     this.dropdown = dropdownElement;
@@ -6,35 +10,29 @@ export class Dropdown {
     this.menu = this.dropdown.querySelector('[data-dui-role="menu"]');
     this.popperInstance = null;
 
-    // Get placement dynamically or default to 'bottom-start'
     this.placement = this.dropdown.getAttribute("data-dui-placement") || "bottom-start";
 
     this.init();
   }
 
-  init() {
+  async init() {
+    // Ensure Popper.js is loaded
+    await loadPopperJs();
+
     // Initialize Popper.js
     this.popperInstance = Popper.createPopper(this.button, this.menu, {
       placement: this.placement,
       modifiers: [{ name: "offset", options: { offset: [0, 5] } }],
     });
 
-    // Check for open attribute
-    if (this.dropdown.hasAttribute("data-dui-open")) {
-      this.openDropdown();
-    }
-
-    // Toggle dropdown on button click
+    // Event listeners
     this.button.addEventListener("click", (e) => {
       e.stopPropagation();
       this.toggleDropdown();
     });
 
-    // Close dropdown on outside click
     document.addEventListener("click", (e) => {
-      if (!this.dropdown.contains(e.target)) {
-        this.closeDropdown();
-      }
+      if (!this.dropdown.contains(e.target)) this.closeDropdown();
     });
   }
 
@@ -48,7 +46,6 @@ export class Dropdown {
     this.menu.hidden = false;
     this.menu.classList.remove("hidden");
     this.popperInstance.update();
-    this.closeSiblings();
   }
 
   closeDropdown() {
@@ -56,24 +53,13 @@ export class Dropdown {
     this.menu.hidden = true;
     this.menu.classList.add("hidden");
   }
-
-  closeSiblings() {
-    const siblingMenus = this.dropdown.parentElement.querySelectorAll(
-      '[data-dui-role="menu"]:not(.hidden)'
-    );
-    siblingMenus.forEach((siblingMenu) => {
-      if (siblingMenu !== this.menu) {
-        siblingMenu.classList.add("hidden");
-        siblingMenu.parentElement
-          .querySelector('[data-dui-toggle="dropdown"]')
-          .setAttribute("aria-expanded", "false");
-      }
-    });
-  }
 }
 
 export function initDropdowns() {
   document.querySelectorAll(".dropdown").forEach((dropdownElement) => {
-    new Dropdown(dropdownElement);
+    if (!initializedDropdowns.has(dropdownElement)) {
+      new Dropdown(dropdownElement);
+      initializedDropdowns.add(dropdownElement);
+    }
   });
 }

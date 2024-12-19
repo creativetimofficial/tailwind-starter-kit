@@ -1,8 +1,13 @@
-// Tooltip component
-export function initTooltips() {
-  const tooltipTriggers = document.querySelectorAll("[data-dui-toggle='tooltip']");
+// Tooltip Component
+import { loadPopperJs } from '../utils/loadPopper';
 
-  tooltipTriggers.forEach((trigger) => {
+const initializedTooltips = new WeakSet(); // Prevent duplicate initialization
+let activeTooltips = []; // Track active tooltips for cleanup
+
+export function initTooltips() {
+  document.querySelectorAll("[data-dui-toggle='tooltip']").forEach((trigger) => {
+    if (initializedTooltips.has(trigger)) return; // Avoid re-initializing
+
     const title = trigger.getAttribute("data-dui-title"); // Plain text content
     const placement = trigger.getAttribute("data-dui-placement") || "top";
     const tooltipClasses = trigger.getAttribute("data-dui-tooltip-class") || "tooltip-default";
@@ -16,10 +21,8 @@ export function initTooltips() {
       customContentElement = trigger.nextElementSibling;
     }
 
-    // Show the tooltip
+    // Function to show the tooltip
     function showTooltip() {
-      if (tooltipElement) return; // Avoid duplicate tooltips
-
       tooltipElement = document.createElement("div");
       tooltipElement.className = tooltipClasses;
 
@@ -37,36 +40,56 @@ export function initTooltips() {
 
       document.body.appendChild(tooltipElement);
 
-      // Create Popper.js instance
       tooltipInstance = Popper.createPopper(trigger, tooltipElement, {
         placement: placement,
         modifiers: [{ name: "offset", options: { offset: [0, 8] } }],
       });
+
+      // Track active tooltips for cleanup
+      activeTooltips.push({ trigger, tooltipElement, tooltipInstance });
     }
 
-    // Hide the tooltip
+    // Function to hide the tooltip
     function hideTooltip() {
-      if (tooltipElement && !trigger.classList.contains("static-tooltip")) {
+      if (tooltipInstance) {
         tooltipInstance.destroy();
         tooltipInstance = null;
+      }
+
+      if (tooltipElement) {
         tooltipElement.remove();
         tooltipElement = null;
       }
+
+      // Remove from active tooltips
+      activeTooltips = activeTooltips.filter((t) => t.trigger !== trigger);
     }
 
-    // Event Listeners
+    // Add event listeners for showing and hiding tooltips
     trigger.addEventListener("mouseenter", showTooltip);
     trigger.addEventListener("mouseleave", hideTooltip);
 
-    // Toggle static tooltips on click
-    trigger.addEventListener("click", () => {
-      if (trigger.classList.contains("static-tooltip")) {
-        trigger.classList.remove("static-tooltip");
-        hideTooltip();
-      } else {
-        trigger.classList.add("static-tooltip");
-        showTooltip();
-      }
-    });
+    // Mark as initialized
+    initializedTooltips.add(trigger);
   });
+}
+
+// Cleanup function to destroy all active tooltips
+export function cleanupTooltips() {
+  activeTooltips.forEach(({ tooltipElement, tooltipInstance }) => {
+    if (tooltipInstance) tooltipInstance.destroy();
+    if (tooltipElement) tooltipElement.remove();
+  });
+  activeTooltips = [];
+}
+
+// Combined initialization function
+export async function loadAndInitTooltips() {
+  await loadPopperJs();
+  initTooltips();
+}
+
+// Auto-initialize Tooltips in the Browser Environment
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  loadAndInitTooltips();
 }

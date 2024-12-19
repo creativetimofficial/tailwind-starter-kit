@@ -2,8 +2,8 @@ import { loadPopperJs } from './utils/loadPopper.js';
 
 // Import components
 import { initDropdowns } from './dropdown/dropdown.js';
-import { initPopovers } from './popover/popover.js';
-import { initTooltips } from './tooltip/tooltip.js';
+import { initPopovers, cleanupPopovers } from './popover/popover.js';
+import { initTooltips, cleanupTooltips } from './tooltip/tooltip.js';
 import { initAlert } from './alert/alert.js';
 import { initCollapse } from './collapse/collapse.js';
 import { initTabs } from './tabs/tabs.js';
@@ -15,7 +15,9 @@ export {
   initCollapse,
   initDropdowns,
   initPopovers,
+  cleanupPopovers,
   initTooltips,
+  cleanupTooltips,
   initTabs,
   initModal
 };
@@ -26,7 +28,9 @@ const DavidAI = {
   initCollapse,
   initDropdowns,
   initPopovers,
+  cleanupPopovers,
   initTooltips,
+  cleanupTooltips,
   initTabs,
   initModal
 };
