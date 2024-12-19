@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.0.3] 2024-12-19
+
+### Added for NPM
+
+- Added for all components
+  - Init functions on DOMContentLoaded
+  - MutationObserver to reinitialize the components when new elements are added
+
 ## [1.0.2] 2024-12-19
 
 ### Added for NPM
