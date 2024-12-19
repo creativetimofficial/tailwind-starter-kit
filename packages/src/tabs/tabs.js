@@ -5,28 +5,38 @@ export function initTabs() {
     const tabLinks = tabList.querySelectorAll(".tab-link");
     const tabContents = tabGroup.querySelectorAll(".tab-content");
     const indicator = tabList.querySelector(".tab-indicator");
-
     const isVertical = tabGroup.getAttribute("data-dui-orientation") === "vertical";
 
-    // Function to update the indicator position dynamically
     function updateIndicator(link) {
       const rect = link.getBoundingClientRect();
       const parentRect = tabList.getBoundingClientRect();
 
-      if (isVertical) {
-        // For vertical tabs
-        indicator.style.height = `${rect.height}px`;
-        indicator.style.transform = `translateY(${rect.top - parentRect.top}px)`;
-      } else {
-        // For horizontal tabs
-        indicator.style.width = `${rect.width}px`;
-        indicator.style.transform = `translateX(${rect.left - parentRect.left}px)`;
-      }
+      requestAnimationFrame(() => {
+        if (isVertical) {
+          const offsetY = rect.top - parentRect.top;
+          const height = rect.height;
+
+          // Apply styles dynamically for vertical orientation
+          indicator.style.transform = `translateY(${offsetY}px)`;
+          indicator.style.height = `${height}px`;
+        } else {
+          const offsetX = rect.left - parentRect.left;
+          const width = rect.width;
+
+          // Apply styles dynamically for horizontal orientation
+          indicator.style.transform = `translateX(${offsetX}px)`;
+          indicator.style.width = `${width}px`;
+        }
+
+        // Make the indicator visible
+        indicator.classList.remove("hidden");
+        indicator.style.opacity = "1";
+        indicator.style.scale = "1";
+      });
     }
 
-    // Function to handle tab activation
     function activateTab(link) {
-      // Deactivate all tabs and hide contents
+      // Deactivate all tabs and hide their content
       tabLinks.forEach((item) => item.classList.remove("active"));
       tabContents.forEach((content) => {
         content.classList.add("hidden");
@@ -45,17 +55,19 @@ export function initTabs() {
       updateIndicator(link);
     }
 
-    // Initialize the tabs
-    tabLinks.forEach((link) => {
-      // If a tab is already active, update the indicator
-      if (link.classList.contains("active")) {
-        activateTab(link);
+    // Check for the tab with the `active` class and set the indicator initially
+    setTimeout(() => {
+      const activeLink = tabList.querySelector(".tab-link.active");
+      if (activeLink) {
+        activateTab(activeLink);
       }
+    }, 100);
 
-      // Add click event listener to each tab link
+    // Initialize click event listeners for each tab
+    tabLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
-        event.preventDefault();
-        activateTab(link);
+        event.preventDefault(); // Prevent default browser behavior
+        activateTab(link); // Activate the clicked tab and update the indicator
       });
     });
   });
@@ -63,5 +75,15 @@ export function initTabs() {
 
 // Auto-initialize tabs in the browser
 if (typeof window !== "undefined") {
-  initTabs();
+  document.addEventListener("DOMContentLoaded", () => {
+    initTabs();
+  });
 }
+
+
+
+
+
+
+
+
