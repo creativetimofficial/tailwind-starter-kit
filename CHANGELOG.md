@@ -1,5 +1,15 @@
 # Change Log
 
+## [1.0.2] 2024-12-19
+
+### Added for NPM
+
+- All components are now updated with weakset
+  - to prevent memory leaks
+  - to prevent multiple instances of the same component from being created
+  - duplicate instances of the same component will be ignored
+  - will initialize the components only once
+
 ## [1.0.1] 2024-12-18
 
 ### Added for NPM
