@@ -17,6 +17,7 @@
   - [Explore Components](#explore-components)
   - [Community](#community)
   - [License](#license)
+  - [Older Version](#older-version)
   - [Contribute \& Feedback](#contribute--feedback)
 
 
@@ -331,10 +332,10 @@ Visit the **[David UI Docs](https://www.creative-tim.com/david-ui)** to explore 
 
 Copyright (c) 2020-2025 [Creative Tim](https://www.creative-tim.com)
 
-
-
 David UI is distributed under the **[MIT License](https://creative-tim.com/david-ui/docs/html/license)**, providing freedom and flexibility for all projects.
 
+## Older Version
+You can find the older version of the David UI in the [tailwind-starter-kit](https://github.com/creativetimofficial/david-ai/tree/tailwind-starter-kit) branch.
 
 ## Contribute & Feedback
 
