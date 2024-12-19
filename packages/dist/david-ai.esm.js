@@ -1,32 +1,3 @@
-var popperLoaded = false; // Singleton flag to track loading state
-var popperReady = null; // Promise to handle loading Popper.js once
-
-function loadPopperJs() {
-  if (popperLoaded) {
-    return popperReady; // Return the existing Promise if already loading or loaded
-  }
-  popperLoaded = true; // Mark Popper.js as being loaded
-
-  popperReady = new Promise(function (resolve, reject) {
-    if (window.Popper) {
-      resolve(window.Popper); // If already loaded globally, resolve immediately
-      return;
-    }
-    var script = document.createElement("script");
-    script.src = "https://unpkg.com/@popperjs/core@2";
-    script.defer = true;
-    script.onload = function () {
-      window.Popper = window.Popper || window.Popper; // Expose Popper globally
-      resolve(window.Popper); // Resolve once Popper.js is loaded
-    };
-    script.onerror = function () {
-      reject(new Error("Failed to load Popper.js"));
-    };
-    document.head.appendChild(script);
-  });
-  return popperReady;
-}
-
 function asyncGeneratorStep(n, t, e, r, o, a, c) {
   try {
     var i = n[a](c),
@@ -65,6 +36,35 @@ function _createClass(e, r, t) {
   return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
     writable: !1
   }), e;
+}
+function _defineProperty(e, r, t) {
+  return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+    value: t,
+    enumerable: !0,
+    configurable: !0,
+    writable: !0
+  }) : e[r] = t, e;
+}
+function ownKeys(e, r) {
+  var t = Object.keys(e);
+  if (Object.getOwnPropertySymbols) {
+    var o = Object.getOwnPropertySymbols(e);
+    r && (o = o.filter(function (r) {
+      return Object.getOwnPropertyDescriptor(e, r).enumerable;
+    })), t.push.apply(t, o);
+  }
+  return t;
+}
+function _objectSpread2(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var t = null != arguments[r] ? arguments[r] : {};
+    r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
+      _defineProperty(e, r, t[r]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) {
+      Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+    });
+  }
+  return e;
 }
 function _regeneratorRuntime() {
   _regeneratorRuntime = function () {
@@ -382,6 +382,35 @@ function _toPropertyKey(t) {
   return "symbol" == typeof i ? i : i + "";
 }
 
+var popperLoaded = false; // Singleton flag to track loading state
+var popperReady = null; // Promise to handle loading Popper.js once
+
+function loadPopperJs() {
+  if (popperLoaded) {
+    return popperReady; // Return the existing Promise if already loading or loaded
+  }
+  popperLoaded = true; // Mark Popper.js as being loaded
+
+  popperReady = new Promise(function (resolve, reject) {
+    if (window.Popper) {
+      resolve(window.Popper); // If already loaded globally, resolve immediately
+      return;
+    }
+    var script = document.createElement("script");
+    script.src = "https://unpkg.com/@popperjs/core@2";
+    script.defer = true;
+    script.onload = function () {
+      window.Popper = window.Popper || window.Popper; // Expose Popper globally
+      resolve(window.Popper); // Resolve once Popper.js is loaded
+    };
+    script.onerror = function () {
+      reject(new Error("Failed to load Popper.js"));
+    };
+    document.head.appendChild(script);
+  });
+  return popperReady;
+}
+
 var initializedDropdowns = new WeakSet(); // Prevent duplicate initialization
 var activeDropdowns = []; // Track active dropdowns for cleanup
 
@@ -652,7 +681,7 @@ function cleanupPopovers() {
     if (popoverElement) popoverElement.remove();
   });
   activePopovers = [];
-  initializedPopovers.clear(); // Clear initialized elements
+  initializedPopovers["delete"](); // Clear initialized elements
 }
 
 // Combined initialization function
@@ -1028,7 +1057,7 @@ function cleanupTabs() {
       link.parentNode.replaceChild(clone, link);
     });
   });
-  initializedTabs.clear(); // Clear the WeakSet
+  initializedTabs["delete"](); // Clear the WeakSet
 }
 
 // Auto-initialize tabs in the browser
@@ -1135,7 +1164,7 @@ function cleanupModals() {
     modal.removeEventListener("click", closeOnOutsideClick);
   });
   activeModals = [];
-  initializedModals.clear(); // Clear initialized modals to allow reinitialization
+  initializedModals["delete"](); // Clear initialized modals to allow reinitialization
 }
 
 // Auto-initialize Modals in the Browser Environment
@@ -1154,7 +1183,7 @@ if (typeof window !== "undefined" && typeof document !== "undefined") {
   });
 }
 
-// Combine all features into a global object for default export
+// Combine all features into a global object
 var DavidAI = {
   initAlert: initAlert,
   initCollapse: initCollapse,
@@ -1170,41 +1199,54 @@ var DavidAI = {
   cleanupModals: cleanupModals
 };
 
-// Auto-initialize components in the browser
-if (typeof window !== "undefined" && typeof document !== "undefined") {
-  document.addEventListener("DOMContentLoaded", function () {
-    // Initialize Popper-independent components
-    initAlert();
-    initCollapse();
-    initTabs();
-    initModal();
+// **Global Initialization Function**
+function initDavidAI() {
+  // Initialize Popper-independent components
+  initAlert();
+  initCollapse();
+  initTabs();
+  initModal();
 
-    // Load Popper.js once, then initialize dependent components
-    loadPopperJs().then(function () {
-      initDropdowns();
-      initPopovers();
-      initTooltips();
-    })["catch"](function (error) {
-      console.error("Failed to load Popper.js:", error);
-    });
-
-    // Observe DOM for dynamically added elements and auto-initialize
-    // const observer = new MutationObserver(() => {
-    //   initAlert();
-    //   initCollapse();
-    //   initTabs();
-    //   initModal();
-    //   initDropdowns();
-    //   initPopovers();
-    //   initTooltips();
-    // });
-
-    // observer.observe(document.body, { childList: true, subtree: true });
-
-    // Expose DavidAI globally for UMD
-    window.DavidAI = DavidAI;
+  // Load Popper.js once, then initialize Popper-dependent components
+  loadPopperJs().then(function () {
+    initDropdowns();
+    initPopovers();
+    initTooltips();
+  })["catch"](function (error) {
+    console.error("Failed to load Popper.js:", error);
   });
 }
 
-export { cleanupDropdowns, cleanupModals, cleanupPopovers, cleanupTabs, cleanupTooltips, DavidAI as default, initAlert, initCollapse, initDropdowns, initModal, initPopovers, initTabs, initTooltips };
+// Auto-initialize components in the browser environment
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", function () {
+    // Use the global initializer
+    initDavidAI();
+
+    // Observe DOM for dynamically added elements to auto-initialize
+    var observer = new MutationObserver(function () {
+      initAlert();
+      initCollapse();
+      initTabs();
+      initModal();
+      initDropdowns();
+      initPopovers();
+      initTooltips();
+    });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Expose DavidAI globally for UMD
+    window.DavidAI = _objectSpread2(_objectSpread2({}, DavidAI), {}, {
+      initDavidAI: initDavidAI
+    });
+  });
+}
+var index = _objectSpread2(_objectSpread2({}, DavidAI), {}, {
+  initDavidAI: initDavidAI
+});
+
+export { cleanupDropdowns, cleanupModals, cleanupPopovers, cleanupTabs, cleanupTooltips, index as default, initAlert, initCollapse, initDavidAI, initDropdowns, initModal, initPopovers, initTabs, initTooltips };
 //# sourceMappingURL=david-ai.esm.js.map

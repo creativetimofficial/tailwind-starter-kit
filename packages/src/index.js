@@ -25,7 +25,7 @@ export {
   cleanupModals,
 };
 
-// Combine all features into a global object for default export
+// Combine all features into a global object
 const DavidAI = {
   initAlert,
   initCollapse,
@@ -41,42 +41,48 @@ const DavidAI = {
   cleanupModals,
 };
 
-// Auto-initialize components in the browser
+// **Global Initialization Function**
+export function initDavidAI() {
+  // Initialize Popper-independent components
+  initAlert();
+  initCollapse();
+  initTabs();
+  initModal();
+
+  // Load Popper.js once, then initialize Popper-dependent components
+  loadPopperJs()
+    .then(() => {
+      initDropdowns();
+      initPopovers();
+      initTooltips();
+    })
+    .catch((error) => {
+      console.error("Failed to load Popper.js:", error);
+    });
+}
+
+// Auto-initialize components in the browser environment
 if (typeof window !== "undefined" && typeof document !== "undefined") {
   document.addEventListener("DOMContentLoaded", () => {
-    // Initialize Popper-independent components
-    initAlert();
-    initCollapse();
-    initTabs();
-    initModal();
+    // Use the global initializer
+    initDavidAI();
 
-    // Load Popper.js once, then initialize dependent components
-    loadPopperJs()
-      .then(() => {
-        initDropdowns();
-        initPopovers();
-        initTooltips();
-      })
-      .catch((error) => {
-        console.error("Failed to load Popper.js:", error);
-      });
+    // Observe DOM for dynamically added elements to auto-initialize
+    const observer = new MutationObserver(() => {
+      initAlert();
+      initCollapse();
+      initTabs();
+      initModal();
+      initDropdowns();
+      initPopovers();
+      initTooltips();
+    });
 
-    // Observe DOM for dynamically added elements and auto-initialize
-    // const observer = new MutationObserver(() => {
-    //   initAlert();
-    //   initCollapse();
-    //   initTabs();
-    //   initModal();
-    //   initDropdowns();
-    //   initPopovers();
-    //   initTooltips();
-    // });
-
-    // observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, { childList: true, subtree: true });
 
     // Expose DavidAI globally for UMD
-    window.DavidAI = DavidAI;
+    window.DavidAI = { ...DavidAI, initDavidAI };
   });
 }
 
-export default DavidAI;
+export default { ...DavidAI, initDavidAI };
