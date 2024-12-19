@@ -564,7 +564,7 @@ function initPopovers() {
 
     var placement = trigger.getAttribute("data-dui-placement") || "top";
     var popoverClasses = trigger.getAttribute("data-dui-popover-class") || "popover-default";
-    var plainContent = trigger.getAttribute("data-dui-content");
+    var plainContent = trigger.getAttribute("data-dui-popover-content");
     var isOpenByDefault = trigger.hasAttribute("data-dui-open");
     var popoverInstance = null;
     var popoverElement = null;
@@ -585,6 +585,7 @@ function initPopovers() {
               _context.next = 2;
               return loadPopperJs();
             case 2:
+              // Create the popover element
               popoverElement = document.createElement("div");
               popoverElement.className = popoverClasses;
 
@@ -610,7 +611,10 @@ function initPopovers() {
               console.error("No content provided for popover:", trigger);
               return _context.abrupt("return");
             case 16:
+              // Append the popover element to the body
               document.body.appendChild(popoverElement);
+
+              // Initialize Popper.js
               popoverInstance = Popper.createPopper(trigger, popoverElement, {
                 placement: placement,
                 modifiers: [{
@@ -621,13 +625,20 @@ function initPopovers() {
                 }]
               });
 
+              // Add a small delay to ensure Popper.js calculations are correct
+              setTimeout(function () {
+                popoverElement.style.opacity = "1"; // Make the popover visible
+                popoverElement.style.transform = "scale(1)"; // Apply scaling animation
+                popoverInstance.update(); // Ensure Popper.js recalculates position
+              }, 0);
+
               // Track active popovers for cleanup
               activePopovers.push({
                 trigger: trigger,
                 popoverElement: popoverElement,
                 popoverInstance: popoverInstance
               });
-            case 19:
+            case 20:
             case "end":
               return _context.stop();
           }
