@@ -1,4 +1,3 @@
-// Popover Component
 import { loadPopperJs } from '../utils/loadPopper';
 
 const initializedPopovers = new WeakSet(); // Prevent duplicate initialization
@@ -23,7 +22,9 @@ export function initPopovers() {
       : null;
 
     // Function to open the popover
-    function openPopover() {
+    async function openPopover() {
+      await loadPopperJs();
+
       popoverElement = document.createElement("div");
       popoverElement.className = popoverClasses;
 
@@ -95,6 +96,7 @@ export function cleanupPopovers() {
     if (popoverElement) popoverElement.remove();
   });
   activePopovers = [];
+  initializedPopovers.clear(); // Clear initialized elements
 }
 
 // Combined initialization function
@@ -105,5 +107,13 @@ export async function loadAndInitPopovers() {
 
 // Auto-initialize Popovers in the Browser Environment
 if (typeof window !== "undefined" && typeof document !== "undefined") {
-  loadAndInitPopovers();
+  document.addEventListener("DOMContentLoaded", () => {
+    loadAndInitPopovers();
+
+    // Observe the DOM for dynamically added popovers
+    const observer = new MutationObserver(() => {
+      initPopovers(); // Reinitialize popovers when new elements are added
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
 }

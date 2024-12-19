@@ -38,7 +38,15 @@ export function initCollapse() {
     });
 }
 
-// Auto-initialize collapsible components in the browser
-if (typeof window !== 'undefined') {
-  initCollapse();
+// Auto-initialize on DOMContentLoaded and observe dynamically added elements
+if (typeof window !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    initCollapse(); // Initialize collapsibles after DOM is loaded
+
+    // Observe the DOM for dynamically added collapsible elements
+    const observer = new MutationObserver(() => {
+      initCollapse(); // Re-initialize collapsibles when new elements are added
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
 }
