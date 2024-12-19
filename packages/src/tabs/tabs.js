@@ -88,7 +88,7 @@ export function cleanupTabs() {
     });
   });
 
-  initializedTabs.clear(); // Clear the WeakSet
+  initializedTabs.delete(); // Clear the WeakSet
 }
 
 // Auto-initialize tabs in the browser

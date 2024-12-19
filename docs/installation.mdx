@@ -6,87 +6,261 @@ prev:
 next: docs/html/license
 ---
 
-# Get Started with David UI
+# David AI Installation & Usage Guide - Comprehensive Setup Tutorial
 
-David UI is a free and open-source components library for ReactJS and Tailwind CSS inspired by Material Design.
-
----
-
-## Installation
-
-Learn how to use `@material-tailwind/react` components from this documentation to quickly and easily create elegant and flexible pages using Tailwind CSS.
-
-`@material-tailwind/react` is working with Tailwind CSS classes and you need to have Tailwind CSS installed on your project - <Link href="https://tailwindcss.com/docs/installation/framework-guides?ref=material-tailwind" target="_blank">Tailwind CSS Installation Guide</Link>.
-
-<br />
-
-<CodePreview>
-```bash
-npm i @material-tailwind/react@beta
-```
-</CodePreview>
+David AI offers a powerful suite of TailwindCSS components enhanced with JavaScript functionality. This comprehensive guide walks you through integrating David AI into your web development projects, from basic setup to advanced usage patterns.
 
 ---
 
-## TailwindCSS Configurations
+## 1. Install TailwindCSS - Essential Foundation
 
-Once you installed `@material-tailwind/react` you need to add `mtConfig` to your `tailwind.config.js` file.
+TailwindCSS is a core requirement for David AI. Follow our step-by-step installation process:
 
-<br />
+### Complete TailwindCSS Setup Guide
 
-<CodePreview>
-```js
-// highlight(2,7,9)
-import type { Config } from "tailwindcss";
-import { mtConfig } from "@material-tailwind/react";
+**Step 1**: Begin with TailwindCSS installation via npm:
 
-const config: Config = {
-  content: [
-    ...
-    "./node_modules/@material-tailwind/react/**/*.{js,ts,jsx,tsx}"
-  ],
-  plugins: [mtConfig],
+<CodePreviewTailwindClasses codeSnippet={
+`npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init`
+}/>
+
+<br></br>
+**Step 2**: Set up your Tailwind configuration in `tailwind.config.js`:
+
+<CodePreviewTailwindClasses codeSnippet={
+`module.exports = {
+  content: ['./src/**/*.{html,js}', './node_modules/david-ai/**/*.{js,jsx,ts,tsx}'], // Add DavidAI paths
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};`
+}/>
+
+<br></br>
+**Step 3**: Configure your CSS foundation:
+
+Create a new `globals.css` file with these essential Tailwind directives:
+
+<CodePreviewTailwindClasses codeSnippet={
+`@tailwind base;
+@tailwind components;
+@tailwind utilities;`
+}/>
+
+<br></br>
+**Step 4**: Link your CSS configuration (Next.js example):
+
+<CodePreviewTailwindClasses codeSnippet={`import './globals.css';`}/>
+
+---
+
+## 2. David AI Installation - Core Setup
+
+Install the complete David AI package to access our full suite of features:
+
+<CodePreviewTailwindClasses codeSnippet={`npm install david-ai`}/>
+<br></br>
+Access our comprehensive JavaScript toolkit including initialization methods, cleanup utilities, and component-specific functionality.
+
+---
+
+## Component Initialization Guide
+
+Learn how to properly initialize David AI components in your application.
+
+### Global Initialization Example:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initDavidAI } from 'david-ai';
+
+// Initialize all components in your app
+initDavidAI();`
+}/>
+
+### Component-Specific Initialization
+
+For optimized performance, initialize only the components you need:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { initAlert, initTabs } from 'david-ai';
+
+// Initialize specific components
+initAlert();
+initTabs();`
+}/>
+
+---
+
+## Essential Cleanup Functions
+
+Optimize your application's performance with our cleanup utilities, perfect for single-page applications:
+
+### Complete Cleanup Function Reference:
+
+<br></br>
+| Component | Cleanup Function |
+|-----------|--------------|
+| Dropdown | `cleanupDropdowns()` |
+| Tooltip | `cleanupTooltips()` |
+| Popover | `cleanupPopovers()` |
+| Modal | `cleanupModals()` |
+| Tabs | `cleanupTabs()` |
+
+### Implementation Example:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { cleanupPopovers, cleanupDropdowns } from 'david-ai';
+
+// Cleanup specific components
+cleanupPopovers();
+cleanupDropdowns();`
+}/>
+
+---
+
+## Framework Integration Guides
+
+### React Integration
+
+Seamlessly integrate David AI with React applications:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import React, { useEffect } from 'react';
+import { initDavidAI } from 'david-ai';
+
+function App() {
+    useEffect(() => {
+      initDavidAI(); // Initialize DavidAI when the app mounts
+    }, []);
+
+    return <div>Welcome to DavidAI!</div>;
+}
+
+export default App;`
+}/>
+
+---
+
+### Vue Integration
+
+Implement David AI in Vue applications with these configuration patterns:
+
+<br></br>
+**main.js** Configuration:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { createApp } from 'vue';
+import App from './App.vue';
+import { initDavidAI } from 'david-ai';
+
+const app = createApp(App);
+
+// Initialize David AI globally
+initDavidAI();
+
+app.mount('#app');`
+}/>
+
+<br></br>
+**Component.vue** Implementation:
+
+<CodePreviewTailwindClasses codeSnippet={
+`<template>
+    <div>Welcome to David AI in Vue!</div>
+</template>
+
+<script>
+import { initTabs } from 'david-ai';
+
+export default {
+    mounted() {
+      initTabs(); // Initialize specific components
+    },
 };
-
-export default config;
-```
-</CodePreview>
-
-<br />
-
-For more guides on how to use `@material-tailwind/react` with different frameworks, check the <Link href="#frameworks-integration">Frameworks Integration</Link> section.
+</script>`
+}/>
 
 ---
 
-## Frameworks Integration
+### Angular Integration
 
-Framework-specific guides that cover our recommended approach to installing `@material-tailwind/react` in a number of popular environments. Select your preferred framework from the list below and follow the instructions.
+Integrate David AI with Angular applications:
 
-<div
-  className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4"
->
-  <FrameworkCard name="Next.js" route="/docs/v3/react/guide/next">
-    <Icons.NextLogo className="w-24 h-24" />
-  </FrameworkCard>
-  <FrameworkCard name="Remix" route="/docs/v3/react/guide/remix">
-    <Icons.RemixLogo className="w-24 h-24" />
-  </FrameworkCard>
-  <FrameworkCard name="Astro" route="/docs/v3/react/guide/astro">
-    <Icons.AstroLogo className="w-20 h-20" />
-  </FrameworkCard>
-  <FrameworkCard name="Vite" route="/docs/v3/react/guide/vite">
-    <Icons.ViteLogo className="w-24 h-24" />
-  </FrameworkCard>
-  <FrameworkCard name="Gatsby" route="/docs/v3/react/guide/gatsby">
-    <Icons.GatsbyLogo className="w-20 h-20" />
-  </FrameworkCard>
-  <FrameworkCard name="Create React App" route="/docs/v3/react/guide/cra">
-    <Icons.CraLogo className="w-24 h-24" />
-  </FrameworkCard>
-</div>
+**app.component.ts** Configuration:
+
+<CodePreviewTailwindClasses codeSnippet={
+`import { Component, AfterViewInit } from '@angular/core';
+import { initDavidAI } from 'david-ai';
+
+@Component({
+    selector: 'app-root',
+    template: '<div>Welcome to David AI in Angular!</div>',
+})
+
+export class AppComponent implements AfterViewInit {
+    ngAfterViewInit() {
+      initDavidAI(); // Initialize all David AI components
+    }
+}`
+}/>
 
 ---
 
-## TypeScript
+### Svelte Integration
 
-`@material-tailwind/react` is a TypeScript based components library and you can easily use it in your TypeScript based projects.
+Implement David AI in Svelte applications:
+
+**App.svelte** Setup:
+
+<CodePreviewTailwindClasses codeSnippet={
+`<script>
+  import { onMount } from 'svelte';
+  import { initDavidAI } from 'david-ai';
+
+  onMount(() => {
+    initDavidAI(); // Initialize all components
+  });
+</script>
+
+<div>Welcome to David AI in Svelte!</div>`
+}/>
+
+---
+
+### CDN Implementation Guide
+
+Quick start with David AI using CDN integration:
+
+**Complete HTML Implementation**:
+
+<CodePreviewTailwindClasses codeSnippet={
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David AI Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.13/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/creativetimofficial/david-ai@1.0.4/packages/dist/david-ai.min.js"></script>
+</head>
+<body>
+    <div role="alert" class="relative flex items-start w-full border rounded-md p-2 bg-stone-800 border-stone-800 text-stone-50">
+      <span class="grid place-items-center shrink-0 p-1">
+        <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5">
+          <path d="M12 7L12 13" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M12 17.01L12.01 16.9989" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </span>
+      <div class="w-full text-sm font-sans leading-none m-1.5">A simple alert for showing message</div>
+      <button data-dui-dismiss="alert" class="outline-none">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="m-1 h-5 w-5 stroke-2">
+          <path d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </div>
+</body>
+</html>`
+}/>

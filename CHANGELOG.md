@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.0.4] 2024-12-19
+
+### Added for NPM
+
+- Fixed Cleanup functions `clear()` replaced with `delete()`
+- Global init for all components via `initDavidAI()`
+- Fixed Popover custom content animation breaking
+
 ## [1.0.3] 2024-12-19
 
 ### Added for NPM

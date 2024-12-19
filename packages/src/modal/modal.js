@@ -89,7 +89,7 @@ export function cleanupModals() {
     modal.removeEventListener("click", closeOnOutsideClick);
   });
   activeModals = [];
-  initializedModals.clear(); // Clear initialized modals to allow reinitialization
+  initializedModals.delete(); // Clear initialized modals to allow reinitialization
 }
 
 // Auto-initialize Modals in the Browser Environment
