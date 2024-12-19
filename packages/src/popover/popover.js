@@ -1,8 +1,13 @@
-// Popover component
-export function initPopovers() {
-  const popoverTriggers = document.querySelectorAll("[data-dui-toggle='popover']");
+// Popover Component
+import { loadPopperJs } from '../utils/loadPopper';
 
-  popoverTriggers.forEach(trigger => {
+const initializedPopovers = new WeakSet(); // Prevent duplicate initialization
+let activePopovers = []; // Track active popovers for cleanup
+
+export function initPopovers() {
+  document.querySelectorAll("[data-dui-toggle='popover']").forEach((trigger) => {
+    if (initializedPopovers.has(trigger)) return; // Avoid re-initializing
+
     const placement = trigger.getAttribute("data-dui-placement") || "top";
     const popoverClasses = trigger.getAttribute("data-dui-popover-class") || "popover-default";
     const plainContent = trigger.getAttribute("data-dui-content");
@@ -38,14 +43,11 @@ export function initPopovers() {
 
       popoverInstance = Popper.createPopper(trigger, popoverElement, {
         placement: placement,
-        modifiers: [
-          { name: "offset", options: { offset: [0, 8] } }
-        ],
+        modifiers: [{ name: "offset", options: { offset: [0, 8] } }],
       });
 
-      // Store references for cleanup
-      trigger._popoverInstance = popoverInstance;
-      trigger._popoverElement = popoverElement;
+      // Track active popovers for cleanup
+      activePopovers.push({ trigger, popoverElement, popoverInstance });
     }
 
     // Function to close the popover
@@ -61,6 +63,9 @@ export function initPopovers() {
         popoverElement.remove();
         popoverElement = null;
       }
+
+      // Remove from active popovers
+      activePopovers = activePopovers.filter((p) => p.trigger !== trigger);
     }
 
     // Toggle popover on click
@@ -77,5 +82,28 @@ export function initPopovers() {
     if (isOpenByDefault) {
       openPopover();
     }
+
+    // Mark as initialized
+    initializedPopovers.add(trigger);
   });
+}
+
+// Cleanup function to destroy all active popovers
+export function cleanupPopovers() {
+  activePopovers.forEach(({ popoverElement, popoverInstance }) => {
+    if (popoverInstance) popoverInstance.destroy();
+    if (popoverElement) popoverElement.remove();
+  });
+  activePopovers = [];
+}
+
+// Combined initialization function
+export async function loadAndInitPopovers() {
+  await loadPopperJs();
+  initPopovers();
+}
+
+// Auto-initialize Popovers in the Browser Environment
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  loadAndInitPopovers();
 }
