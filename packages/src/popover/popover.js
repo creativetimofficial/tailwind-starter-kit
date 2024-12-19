@@ -96,7 +96,7 @@ export function cleanupPopovers() {
     if (popoverElement) popoverElement.remove();
   });
   activePopovers = [];
-  initializedPopovers.clear(); // Clear initialized elements
+  initializedPopovers.delete(); // Clear initialized elements
 }
 
 // Combined initialization function
