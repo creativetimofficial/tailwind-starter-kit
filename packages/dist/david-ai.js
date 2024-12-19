@@ -388,7 +388,9 @@
     return "symbol" == typeof i ? i : i + "";
   }
 
-  var initializedDropdowns = new WeakSet();
+  var initializedDropdowns = new WeakSet(); // Prevent duplicate initialization
+  var activeDropdowns = []; // Track active dropdowns for cleanup
+
   var Dropdown = /*#__PURE__*/function () {
     function Dropdown(dropdownElement) {
       _classCallCheck(this, Dropdown);
@@ -421,15 +423,23 @@
                   }]
                 });
 
-                // Event listeners
+                // Add event listeners
                 this.button.addEventListener("click", function (e) {
                   e.stopPropagation();
                   _this.toggleDropdown();
                 });
                 document.addEventListener("click", function (e) {
-                  if (!_this.dropdown.contains(e.target)) _this.closeDropdown();
+                  if (!_this.dropdown.contains(e.target)) {
+                    _this.closeDropdown();
+                  }
                 });
-              case 5:
+
+                // Track active dropdown for cleanup
+                activeDropdowns.push({
+                  dropdown: this.dropdown,
+                  popperInstance: this.popperInstance
+                });
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -472,6 +482,55 @@
     });
   }
 
+  // Cleanup function to destroy all active dropdowns
+  function cleanupDropdowns() {
+    activeDropdowns.forEach(function (_ref) {
+      var dropdown = _ref.dropdown,
+        popperInstance = _ref.popperInstance;
+      if (popperInstance) popperInstance.destroy();
+      if (dropdown) initializedDropdowns["delete"](dropdown);
+    });
+    activeDropdowns = [];
+  }
+
+  // Combined initialization function
+  function loadAndInitDropdowns() {
+    return _loadAndInitDropdowns.apply(this, arguments);
+  }
+
+  // Auto-initialize Dropdowns in the Browser Environment
+  function _loadAndInitDropdowns() {
+    _loadAndInitDropdowns = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return loadPopperJs();
+          case 2:
+            initDropdowns();
+          case 3:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return _loadAndInitDropdowns.apply(this, arguments);
+  }
+  if (typeof window !== "undefined" && typeof document !== "undefined") {
+    document.addEventListener("DOMContentLoaded", function () {
+      loadAndInitDropdowns();
+
+      // Observe the DOM for dynamically added dropdowns
+      var observer = new MutationObserver(function () {
+        initDropdowns();
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
+  }
+
   var initializedPopovers = new WeakSet(); // Prevent duplicate initialization
   var activePopovers = []; // Track active popovers for cleanup
 
@@ -493,40 +552,66 @@
 
       // Function to open the popover
       function openPopover() {
-        popoverElement = document.createElement("div");
-        popoverElement.className = popoverClasses;
+        return _openPopover.apply(this, arguments);
+      } // Function to close the popover
+      function _openPopover() {
+        _openPopover = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+          return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return loadPopperJs();
+              case 2:
+                popoverElement = document.createElement("div");
+                popoverElement.className = popoverClasses;
 
-        // Use custom HTML content or plain text
-        if (contentElement) {
-          originalContentElement = contentElement.cloneNode(true);
-          originalContentElement.classList.remove("hidden");
-          popoverElement.appendChild(originalContentElement);
-        } else if (plainContent) {
-          popoverElement.textContent = plainContent;
-        } else {
-          console.error("No content provided for popover:", trigger);
-          return;
-        }
-        document.body.appendChild(popoverElement);
-        popoverInstance = Popper.createPopper(trigger, popoverElement, {
-          placement: placement,
-          modifiers: [{
-            name: "offset",
-            options: {
-              offset: [0, 8]
+                // Use custom HTML content or plain text
+                if (!contentElement) {
+                  _context.next = 10;
+                  break;
+                }
+                originalContentElement = contentElement.cloneNode(true);
+                originalContentElement.classList.remove("hidden");
+                popoverElement.appendChild(originalContentElement);
+                _context.next = 16;
+                break;
+              case 10:
+                if (!plainContent) {
+                  _context.next = 14;
+                  break;
+                }
+                popoverElement.textContent = plainContent;
+                _context.next = 16;
+                break;
+              case 14:
+                console.error("No content provided for popover:", trigger);
+                return _context.abrupt("return");
+              case 16:
+                document.body.appendChild(popoverElement);
+                popoverInstance = Popper.createPopper(trigger, popoverElement, {
+                  placement: placement,
+                  modifiers: [{
+                    name: "offset",
+                    options: {
+                      offset: [0, 8]
+                    }
+                  }]
+                });
+
+                // Track active popovers for cleanup
+                activePopovers.push({
+                  trigger: trigger,
+                  popoverElement: popoverElement,
+                  popoverInstance: popoverInstance
+                });
+              case 19:
+              case "end":
+                return _context.stop();
             }
-          }]
-        });
-
-        // Track active popovers for cleanup
-        activePopovers.push({
-          trigger: trigger,
-          popoverElement: popoverElement,
-          popoverInstance: popoverInstance
-        });
+          }, _callee);
+        }));
+        return _openPopover.apply(this, arguments);
       }
-
-      // Function to close the popover
       function closePopover() {
         if (popoverInstance) {
           popoverInstance.destroy();
@@ -573,6 +658,7 @@
       if (popoverElement) popoverElement.remove();
     });
     activePopovers = [];
+    initializedPopovers.clear(); // Clear initialized elements
   }
 
   // Combined initialization function
@@ -582,82 +668,128 @@
 
   // Auto-initialize Popovers in the Browser Environment
   function _loadAndInitPopovers() {
-    _loadAndInitPopovers = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
+    _loadAndInitPopovers = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            _context.next = 2;
+            _context2.next = 2;
             return loadPopperJs();
           case 2:
             initPopovers();
           case 3:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
-      }, _callee);
+      }, _callee2);
     }));
     return _loadAndInitPopovers.apply(this, arguments);
   }
   if (typeof window !== "undefined" && typeof document !== "undefined") {
-    loadAndInitPopovers();
+    document.addEventListener("DOMContentLoaded", function () {
+      loadAndInitPopovers();
+
+      // Observe the DOM for dynamically added popovers
+      var observer = new MutationObserver(function () {
+        initPopovers(); // Reinitialize popovers when new elements are added
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
   }
 
-  var initializedTooltips = new WeakSet(); // Prevent duplicate initialization
+  var initializedTooltips = new WeakSet(); // Track initialized tooltips
   var activeTooltips = []; // Track active tooltips for cleanup
 
   function initTooltips() {
     document.querySelectorAll("[data-dui-toggle='tooltip']").forEach(function (trigger) {
       var _trigger$nextElementS;
-      if (initializedTooltips.has(trigger)) return; // Avoid re-initializing
+      if (initializedTooltips.has(trigger)) return; // Skip already initialized tooltips
 
-      var title = trigger.getAttribute("data-dui-title"); // Plain text content
+      var title = trigger.getAttribute("data-dui-title"); // Tooltip text content
       var placement = trigger.getAttribute("data-dui-placement") || "top";
       var tooltipClasses = trigger.getAttribute("data-dui-tooltip-class") || "tooltip-default";
       var tooltipInstance = null;
       var tooltipElement = null;
       var customContentElement = null;
 
-      // Check for sibling content with custom HTML
+      // Check for custom HTML content in sibling
       if ((_trigger$nextElementS = trigger.nextElementSibling) !== null && _trigger$nextElementS !== void 0 && _trigger$nextElementS.matches("[data-dui-tooltip-content]")) {
         customContentElement = trigger.nextElementSibling;
       }
 
       // Function to show the tooltip
       function showTooltip() {
-        tooltipElement = document.createElement("div");
-        tooltipElement.className = tooltipClasses;
+        return _showTooltip.apply(this, arguments);
+      } // Function to hide the tooltip
+      function _showTooltip() {
+        _showTooltip = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+          var contentClone;
+          return _regeneratorRuntime().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                if (!tooltipElement) {
+                  _context.next = 2;
+                  break;
+                }
+                return _context.abrupt("return");
+              case 2:
+                _context.next = 4;
+                return loadPopperJs();
+              case 4:
+                // Ensure Popper.js is loaded
 
-        // Use custom HTML content or plain text
-        if (customContentElement) {
-          var contentClone = customContentElement.cloneNode(true);
-          contentClone.classList.remove("hidden");
-          tooltipElement.appendChild(contentClone);
-        } else if (title) {
-          tooltipElement.textContent = title;
-        } else {
-          console.warn("No tooltip content provided for:", trigger);
-          return;
-        }
-        document.body.appendChild(tooltipElement);
-        tooltipInstance = Popper.createPopper(trigger, tooltipElement, {
-          placement: placement,
-          modifiers: [{
-            name: "offset",
-            options: {
-              offset: [0, 8]
+                tooltipElement = document.createElement("div");
+                tooltipElement.className = tooltipClasses;
+
+                // Add custom HTML or plain text to tooltip
+                if (!customContentElement) {
+                  _context.next = 12;
+                  break;
+                }
+                contentClone = customContentElement.cloneNode(true);
+                contentClone.classList.remove("hidden");
+                tooltipElement.appendChild(contentClone);
+                _context.next = 18;
+                break;
+              case 12:
+                if (!title) {
+                  _context.next = 16;
+                  break;
+                }
+                tooltipElement.textContent = title;
+                _context.next = 18;
+                break;
+              case 16:
+                console.warn("No tooltip content provided for:", trigger);
+                return _context.abrupt("return");
+              case 18:
+                document.body.appendChild(tooltipElement);
+                tooltipInstance = Popper.createPopper(trigger, tooltipElement, {
+                  placement: placement,
+                  modifiers: [{
+                    name: "offset",
+                    options: {
+                      offset: [0, 8]
+                    }
+                  }]
+                });
+
+                // Track active tooltip for cleanup
+                activeTooltips.push({
+                  trigger: trigger,
+                  tooltipElement: tooltipElement,
+                  tooltipInstance: tooltipInstance
+                });
+              case 21:
+              case "end":
+                return _context.stop();
             }
-          }]
-        });
-
-        // Track active tooltips for cleanup
-        activeTooltips.push({
-          trigger: trigger,
-          tooltipElement: tooltipElement,
-          tooltipInstance: tooltipInstance
-        });
+          }, _callee);
+        }));
+        return _showTooltip.apply(this, arguments);
       }
-
-      // Function to hide the tooltip
       function hideTooltip() {
         if (tooltipInstance) {
           tooltipInstance.destroy();
@@ -674,16 +806,16 @@
         });
       }
 
-      // Add event listeners for showing and hiding tooltips
+      // Event listeners for showing and hiding tooltips
       trigger.addEventListener("mouseenter", showTooltip);
       trigger.addEventListener("mouseleave", hideTooltip);
 
-      // Mark as initialized
+      // Mark the trigger as initialized
       initializedTooltips.add(trigger);
     });
   }
 
-  // Cleanup function to destroy all active tooltips
+  // Cleanup function to remove all active tooltips
   function cleanupTooltips() {
     activeTooltips.forEach(function (_ref) {
       var tooltipElement = _ref.tooltipElement,
@@ -694,35 +826,45 @@
     activeTooltips = [];
   }
 
-  // Combined initialization function
+  // Combined initialization and loading function
   function loadAndInitTooltips() {
     return _loadAndInitTooltips.apply(this, arguments);
   }
 
-  // Auto-initialize Tooltips in the Browser Environment
+  // Auto-initialize Tooltips in the browser
   function _loadAndInitTooltips() {
-    _loadAndInitTooltips = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
+    _loadAndInitTooltips = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            _context.next = 2;
+            _context2.next = 2;
             return loadPopperJs();
           case 2:
             initTooltips();
           case 3:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
-      }, _callee);
+      }, _callee2);
     }));
     return _loadAndInitTooltips.apply(this, arguments);
   }
   if (typeof window !== "undefined" && typeof document !== "undefined") {
-    loadAndInitTooltips();
+    document.addEventListener("DOMContentLoaded", function () {
+      loadAndInitTooltips();
+
+      // Observe DOM for dynamically added tooltips
+      var observer = new MutationObserver(function () {
+        initTooltips();
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
   }
 
-  // src/alert/alert.js
-
+  // Alert component
   var initializedElements$1 = new WeakSet();
   function closeAlert(event) {
     var button = event.currentTarget;
@@ -732,18 +874,28 @@
     }
   }
   function initAlert() {
-    // Attach event listeners only to buttons that haven't been initialized
     document.querySelectorAll("[data-dui-dismiss='alert']").forEach(function (button) {
       if (!initializedElements$1.has(button)) {
         button.addEventListener("click", closeAlert);
-        initializedElements$1.add(button); // Track this button as initialized
+        initializedElements$1.add(button);
       }
     });
   }
 
-  // Auto-initialize if running in a browser environment
-  if (typeof window !== 'undefined') {
-    initAlert();
+  // Auto-initialize on DOMContentLoaded and observe dynamically added elements
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", function () {
+      initAlert(); // Initialize alerts after DOM is loaded
+
+      // Observe the DOM for dynamically added alerts
+      var observer = new MutationObserver(function () {
+        initAlert(); // Re-initialize alerts when new elements are added
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
   }
 
   // Collapse component
@@ -777,37 +929,45 @@
     });
   }
 
-  // Auto-initialize collapsible components in the browser
-  if (typeof window !== 'undefined') {
-    initCollapse();
+  // Auto-initialize on DOMContentLoaded and observe dynamically added elements
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", function () {
+      initCollapse(); // Initialize collapsibles after DOM is loaded
+
+      // Observe the DOM for dynamically added collapsible elements
+      var observer = new MutationObserver(function () {
+        initCollapse(); // Re-initialize collapsibles when new elements are added
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
   }
 
-  // Tabs Component
+  var initializedTabs = new WeakSet(); // Track initialized tabs for preventing duplication
+
   function initTabs() {
     document.querySelectorAll(".tab-group").forEach(function (tabGroup) {
+      if (initializedTabs.has(tabGroup)) return; // Avoid re-initializing the same tab group
+
       var tabList = tabGroup.querySelector("[role='tablist']");
       var tabLinks = tabList.querySelectorAll(".tab-link");
       var tabContents = tabGroup.querySelectorAll(".tab-content");
       var indicator = tabList.querySelector(".tab-indicator");
       var isVertical = tabGroup.getAttribute("data-dui-orientation") === "vertical";
+
+      // Function to update the indicator's position dynamically
       function updateIndicator(link) {
         var rect = link.getBoundingClientRect();
         var parentRect = tabList.getBoundingClientRect();
         requestAnimationFrame(function () {
           if (isVertical) {
-            var offsetY = rect.top - parentRect.top;
-            var height = rect.height;
-
-            // Apply styles dynamically for vertical orientation
-            indicator.style.transform = "translateY(".concat(offsetY, "px)");
-            indicator.style.height = "".concat(height, "px");
+            indicator.style.transform = "translateY(".concat(rect.top - parentRect.top, "px)");
+            indicator.style.height = "".concat(rect.height, "px");
           } else {
-            var offsetX = rect.left - parentRect.left;
-            var width = rect.width;
-
-            // Apply styles dynamically for horizontal orientation
-            indicator.style.transform = "translateX(".concat(offsetX, "px)");
-            indicator.style.width = "".concat(width, "px");
+            indicator.style.transform = "translateX(".concat(rect.left - parentRect.left, "px)");
+            indicator.style.width = "".concat(rect.width, "px");
           }
 
           // Make the indicator visible
@@ -816,6 +976,8 @@
           indicator.style.scale = "1";
         });
       }
+
+      // Function to activate the selected tab
       function activateTab(link) {
         // Deactivate all tabs and hide their content
         tabLinks.forEach(function (item) {
@@ -838,34 +1000,62 @@
         updateIndicator(link);
       }
 
-      // Check for the tab with the `active` class and set the indicator initially
-      setTimeout(function () {
+      // Initialize the tab group
+      function initializeTabGroup() {
         var activeLink = tabList.querySelector(".tab-link.active");
         if (activeLink) {
-          activateTab(activeLink);
+          activateTab(activeLink); // Set indicator for the initially active tab
+        } else if (tabLinks.length > 0) {
+          activateTab(tabLinks[0]); // Fallback to the first tab if no active tab is defined
         }
-      }, 100);
 
-      // Initialize click event listeners for each tab
-      tabLinks.forEach(function (link) {
-        link.addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent default browser behavior
-          activateTab(link); // Activate the clicked tab and update the indicator
+        // Attach click listeners to each tab link
+        tabLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default browser behavior
+            activateTab(link); // Activate the clicked tab and update the indicator
+          });
         });
+      }
+      initializeTabGroup();
+      initializedTabs.add(tabGroup); // Mark the tab group as initialized
+    });
+  }
+
+  // Cleanup function for tabs
+  function cleanupTabs() {
+    initializedTabs.forEach(function (tabGroup) {
+      var tabList = tabGroup.querySelector("[role='tablist']");
+      var tabLinks = tabList.querySelectorAll(".tab-link");
+
+      // Remove event listeners from tab links
+      tabLinks.forEach(function (link) {
+        var clone = link.cloneNode(true);
+        link.parentNode.replaceChild(clone, link);
       });
     });
+    initializedTabs.clear(); // Clear the WeakSet
   }
 
   // Auto-initialize tabs in the browser
   if (typeof window !== "undefined") {
     document.addEventListener("DOMContentLoaded", function () {
       initTabs();
+
+      // Observe DOM changes to reinitialize tabs dynamically
+      var observer = new MutationObserver(function () {
+        initTabs();
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
     });
   }
 
-  // Modal Component
-
   var initializedModals = new WeakSet();
+  var activeModals = []; // Track active modals for cleanup
+
   function toggleModal(event) {
     var modalID = event.currentTarget.getAttribute("data-dui-target");
     var modal = document.querySelector(modalID);
@@ -891,6 +1081,15 @@
       } else {
         modal.removeEventListener("click", closeOnOutsideClick);
       }
+
+      // Track active modal for cleanup
+      if (isHidden) {
+        activeModals.push(modal);
+      } else {
+        activeModals = activeModals.filter(function (m) {
+          return m !== modal;
+        });
+      }
     }
   }
   function closeModal(event) {
@@ -906,6 +1105,11 @@
         modal.setAttribute("aria-hidden", "true");
       }, 300);
       modal.removeEventListener("click", closeOnOutsideClick);
+
+      // Remove from active modals
+      activeModals = activeModals.filter(function (m) {
+        return m !== modal;
+      });
     }
   }
   function closeOnOutsideClick(event) {
@@ -931,9 +1135,29 @@
     });
   }
 
+  // Cleanup function to destroy active modals and event listeners
+  function cleanupModals() {
+    activeModals.forEach(function (modal) {
+      modal.removeEventListener("click", closeOnOutsideClick);
+    });
+    activeModals = [];
+    initializedModals.clear(); // Clear initialized modals to allow reinitialization
+  }
+
   // Auto-initialize Modals in the Browser Environment
   if (typeof window !== "undefined" && typeof document !== "undefined") {
-    initModal();
+    document.addEventListener("DOMContentLoaded", function () {
+      initModal();
+
+      // Observe the DOM for dynamically added modals
+      var observer = new MutationObserver(function () {
+        initModal(); // Reinitialize modals when new elements are added
+      });
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+    });
   }
 
   // Combine all features into a global object for default export
@@ -941,36 +1165,57 @@
     initAlert: initAlert,
     initCollapse: initCollapse,
     initDropdowns: initDropdowns,
+    cleanupDropdowns: cleanupDropdowns,
     initPopovers: initPopovers,
     cleanupPopovers: cleanupPopovers,
     initTooltips: initTooltips,
     cleanupTooltips: cleanupTooltips,
     initTabs: initTabs,
-    initModal: initModal
+    cleanupTabs: cleanupTabs,
+    initModal: initModal,
+    cleanupModals: cleanupModals
   };
 
   // Auto-initialize components in the browser
   if (typeof window !== "undefined" && typeof document !== "undefined") {
-    // Initialize Popper-independent components
-    initAlert();
-    initCollapse();
-    initTabs();
-    initModal();
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initialize Popper-independent components
+      initAlert();
+      initCollapse();
+      initTabs();
+      initModal();
 
-    // Load Popper.js once, then initialize dependent components
-    loadPopperJs().then(function () {
-      initDropdowns();
-      initPopovers();
-      initTooltips();
-    })["catch"](function (error) {
-      console.error("Failed to load Popper.js:", error);
+      // Load Popper.js once, then initialize dependent components
+      loadPopperJs().then(function () {
+        initDropdowns();
+        initPopovers();
+        initTooltips();
+      })["catch"](function (error) {
+        console.error("Failed to load Popper.js:", error);
+      });
+
+      // Observe DOM for dynamically added elements and auto-initialize
+      // const observer = new MutationObserver(() => {
+      //   initAlert();
+      //   initCollapse();
+      //   initTabs();
+      //   initModal();
+      //   initDropdowns();
+      //   initPopovers();
+      //   initTooltips();
+      // });
+
+      // observer.observe(document.body, { childList: true, subtree: true });
+
+      // Expose DavidAI globally for UMD
+      window.DavidAI = DavidAI;
     });
-
-    // Expose DavidAI globally for UMD
-    window.DavidAI = DavidAI;
   }
 
+  exports.cleanupDropdowns = cleanupDropdowns;
+  exports.cleanupModals = cleanupModals;
   exports.cleanupPopovers = cleanupPopovers;
+  exports.cleanupTabs = cleanupTabs;
   exports.cleanupTooltips = cleanupTooltips;
   exports.default = DavidAI;
   exports.initAlert = initAlert;

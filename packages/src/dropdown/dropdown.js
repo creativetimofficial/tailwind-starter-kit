@@ -1,7 +1,8 @@
-// Dropdown component
+// Dropdown Component
 import { loadPopperJs } from '../utils/loadPopper'; // Centralized loader
 
-const initializedDropdowns = new WeakSet();
+const initializedDropdowns = new WeakSet(); // Prevent duplicate initialization
+let activeDropdowns = []; // Track active dropdowns for cleanup
 
 export class Dropdown {
   constructor(dropdownElement) {
@@ -25,15 +26,20 @@ export class Dropdown {
       modifiers: [{ name: "offset", options: { offset: [0, 5] } }],
     });
 
-    // Event listeners
+    // Add event listeners
     this.button.addEventListener("click", (e) => {
       e.stopPropagation();
       this.toggleDropdown();
     });
 
     document.addEventListener("click", (e) => {
-      if (!this.dropdown.contains(e.target)) this.closeDropdown();
+      if (!this.dropdown.contains(e.target)) {
+        this.closeDropdown();
+      }
     });
+
+    // Track active dropdown for cleanup
+    activeDropdowns.push({ dropdown: this.dropdown, popperInstance: this.popperInstance });
   }
 
   toggleDropdown() {
@@ -61,5 +67,33 @@ export function initDropdowns() {
       new Dropdown(dropdownElement);
       initializedDropdowns.add(dropdownElement);
     }
+  });
+}
+
+// Cleanup function to destroy all active dropdowns
+export function cleanupDropdowns() {
+  activeDropdowns.forEach(({ dropdown, popperInstance }) => {
+    if (popperInstance) popperInstance.destroy();
+    if (dropdown) initializedDropdowns.delete(dropdown);
+  });
+  activeDropdowns = [];
+}
+
+// Combined initialization function
+export async function loadAndInitDropdowns() {
+  await loadPopperJs();
+  initDropdowns();
+}
+
+// Auto-initialize Dropdowns in the Browser Environment
+if (typeof window !== "undefined" && typeof document !== "undefined") {
+  document.addEventListener("DOMContentLoaded", () => {
+    loadAndInitDropdowns();
+
+    // Observe the DOM for dynamically added dropdowns
+    const observer = new MutationObserver(() => {
+      initDropdowns();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
   });
 }

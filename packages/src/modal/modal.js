@@ -1,6 +1,5 @@
-// Modal Component
-
 const initializedModals = new WeakSet();
+let activeModals = []; // Track active modals for cleanup
 
 export function toggleModal(event) {
   const modalID = event.currentTarget.getAttribute("data-dui-target");
@@ -28,6 +27,13 @@ export function toggleModal(event) {
     } else {
       modal.removeEventListener("click", closeOnOutsideClick);
     }
+
+    // Track active modal for cleanup
+    if (isHidden) {
+      activeModals.push(modal);
+    } else {
+      activeModals = activeModals.filter((m) => m !== modal);
+    }
   }
 }
 
@@ -47,6 +53,9 @@ export function closeModal(event) {
     }, 300);
 
     modal.removeEventListener("click", closeOnOutsideClick);
+
+    // Remove from active modals
+    activeModals = activeModals.filter((m) => m !== modal);
   }
 }
 
@@ -74,7 +83,24 @@ export function initModal() {
   });
 }
 
+// Cleanup function to destroy active modals and event listeners
+export function cleanupModals() {
+  activeModals.forEach((modal) => {
+    modal.removeEventListener("click", closeOnOutsideClick);
+  });
+  activeModals = [];
+  initializedModals.clear(); // Clear initialized modals to allow reinitialization
+}
+
 // Auto-initialize Modals in the Browser Environment
 if (typeof window !== "undefined" && typeof document !== "undefined") {
-  initModal();
+  document.addEventListener("DOMContentLoaded", () => {
+    initModal();
+
+    // Observe the DOM for dynamically added modals
+    const observer = new MutationObserver(() => {
+      initModal(); // Reinitialize modals when new elements are added
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
 }
